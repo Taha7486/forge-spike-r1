@@ -1,0 +1,80 @@
+name: r1-sign-golden
+
+on:
+  workflow_dispatch:
+    inputs:
+      print_reports:
+        description: Print SBOM and vuln scan in the log and job summary
+        type: boolean
+        default: true
+
+permissions:
+  id-token: write
+  packages: write
+  contents: read
+
+jobs:
+  sign:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: sigstore/cosign-installer@6f9f17788090df1f26f669e9d70d6ae9567deba6 # v4.1.2
+        with:
+          cosign-release: v3.1.3
+      - name: Install Syft and Trivy (pinned, SHA-256 verified)
+        run: |
+          set -euo pipefail
+          curl -sSfLO https://github.com/anchore/syft/releases/download/v1.51.1/syft_1.51.1_linux_amd64.tar.gz
+          echo "8fcb33017a0dc1058298c923c436d19dfa68ae93968e0b423248542e3afb9fc3  syft_1.51.1_linux_amd64.tar.gz" | sha256sum -c -
+          tar -xzf syft_1.51.1_linux_amd64.tar.gz syft
+          curl -sSfLO https://github.com/aquasecurity/trivy/releases/download/v0.74.0/trivy_0.74.0_Linux-64bit.tar.gz
+          echo "2ae6fe3ee734b7fdf11335663e18c75ea12dccc76062f09f164a3b0f8be4371a  trivy_0.74.0_Linux-64bit.tar.gz" | sha256sum -c -
+          tar -xzf trivy_0.74.0_Linux-64bit.tar.gz trivy
+          sudo install syft trivy /usr/local/bin/
+          syft version
+          trivy --version
+      - name: Log in to GHCR
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u "${{ github.actor }}" --password-stdin
+      - name: Log in to Docker Hub
+        env:
+          DH_USER: ${{ secrets.DOCKERHUB_USERNAME }}
+          DH_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
+        run: echo "$DH_TOKEN" | docker login -u "$DH_USER" --password-stdin
+      - name: Sign and attest golden on both legs
+        env:
+          DH_USER: ${{ secrets.DOCKERHUB_USERNAME }}
+        run: |
+          set -euo pipefail
+          GHCR="ghcr.io/${GITHUB_REPOSITORY,,}"
+          HUB="docker.io/$DH_USER/forge-spike-r1"
+
+          docker pull "$GHCR:golden"
+          DIGEST=$(docker inspect --format '{{index .RepoDigests 0}}' "$GHCR:golden" | cut -d@ -f2)
+          echo "digest: $DIGEST"
+
+          syft "$GHCR@$DIGEST" -o cyclonedx-json=sbom.cdx.json
+          trivy image --format cosign-vuln --output vuln.json "$GHCR@$DIGEST"
+
+          if [ "${{ inputs.print_reports }}" = "true" ]; then
+            echo "::group::SBOM (CycloneDX) full JSON"
+            jq . sbom.cdx.json
+            echo "::endgroup::"
+            echo "::group::Vulnerability attestation predicate full JSON"
+            jq . vuln.json
+            echo "::endgroup::"
+            {
+              echo "## Golden image reports"
+              echo "Digest: \`$DIGEST\`"
+              echo "- SBOM components: $(jq '.components | length' sbom.cdx.json)"
+              echo "- scanFinishedOn: $(jq -r '.scanFinishedOn' vuln.json)"
+              echo "- Vulnerabilities by severity:"
+              jq -r '[.scanner.result.Results[]?.Vulnerabilities[]?.Severity] | group_by(.) | map("  - \(.[0]): \(length)") | .[]' vuln.json
+            } >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+          # Sequential on purpose: the tag-schema fallback index is read-modify-write.
+          for REPO in "$GHCR" "$HUB"; do
+            cosign sign --yes "$REPO@$DIGEST"
+            cosign attest --yes --type cyclonedx --predicate sbom.cdx.json "$REPO@$DIGEST"
+            cosign attest --yes --type vuln --predicate vuln.json "$REPO@$DIGEST"
+          done
