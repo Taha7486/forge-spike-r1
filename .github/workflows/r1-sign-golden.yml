@@ -15,6 +15,10 @@ on:
         description: Attest the SBOM (false = no SBOM attestation, for T11)
         type: boolean
         default: true
+      signing_config:
+        description: Path to a cosign signing config in this repo (empty = TUF default); T15 uses signing-config/rekor-v2-only.json
+        type: string
+        default: ''
       print_reports:
         description: Print SBOM and vuln scan in the log and job summary
         type: boolean
@@ -93,12 +97,15 @@ jobs:
           fi
 
           # Sequential on purpose: the tag-schema fallback index is read-modify-write.
+          SC="${{ inputs.signing_config }}"
+          SC_ARGS=()
+          if [ -n "$SC" ]; then SC_ARGS=(--signing-config "$SC"); echo "signing config: $SC"; fi
           for REPO in "$GHCR" "$HUB"; do
             if [ "${{ inputs.sign }}" = "true" ]; then
-              cosign sign --yes "$REPO@$DIGEST"
+              cosign sign --yes "${SC_ARGS[@]}" "$REPO@$DIGEST"
             fi
             if [ "${{ inputs.sbom }}" = "true" ]; then
-              cosign attest --yes --type cyclonedx --predicate sbom.cdx.json "$REPO@$DIGEST"
+              cosign attest --yes "${SC_ARGS[@]}" --type cyclonedx --predicate sbom.cdx.json "$REPO@$DIGEST"
             fi
-            cosign attest --yes --type vuln --predicate vuln.json "$REPO@$DIGEST"
+            cosign attest --yes "${SC_ARGS[@]}" --type vuln --predicate vuln.json "$REPO@$DIGEST"
           done
