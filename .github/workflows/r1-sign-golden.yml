@@ -66,7 +66,7 @@ jobs:
               echo "## Golden image reports"
               echo "Digest: \`$DIGEST\`"
               echo "- SBOM components: $(jq '.components | length' sbom.cdx.json)"
-              echo "- scanFinishedOn: $(jq -r '.scanFinishedOn' vuln.json)"
+              echo "- scanFinishedOn: $(jq -r '.metadata.scanFinishedOn' vuln.json)"
               echo "- Vulnerabilities by severity:"
               jq -r '[.scanner.result.Results[]?.Vulnerabilities[]?.Severity] | group_by(.) | map("  - \(.[0]): \(length)") | .[]' vuln.json
             } >> "$GITHUB_STEP_SUMMARY"
