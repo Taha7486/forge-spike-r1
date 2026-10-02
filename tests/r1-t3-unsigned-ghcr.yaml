@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: t3-unsigned-ghcr
+spec:
+  containers:
+    - name: app
+      image: ghcr.io/taha7486/forge-spike-r1@sha256:3d525eb5beb554f02d6b3004f67d4eba3214b524f0f64237b3d031445168312f
