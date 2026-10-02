@@ -1,0 +1,41 @@
+name: r1-other-workflow
+
+on:
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  packages: write
+  contents: read
+
+jobs:
+  sign:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: sigstore/cosign-installer@6f9f17788090df1f26f669e9d70d6ae9567deba6 # v4.1.2
+        with:
+          cosign-release: v3.1.3
+      - name: Log in to GHCR
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u "${{ github.actor }}" --password-stdin
+      - name: Log in to Docker Hub
+        env:
+          DH_USER: ${{ secrets.DOCKERHUB_USERNAME }}
+          DH_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
+        run: echo "$DH_TOKEN" | docker login -u "$DH_USER" --password-stdin
+      - name: Build, push and sign otherworkflow
+        env:
+          DH_USER: ${{ secrets.DOCKERHUB_USERNAME }}
+        run: |
+          set -euo pipefail
+          GHCR="ghcr.io/${GITHUB_REPOSITORY,,}"
+          HUB="docker.io/$DH_USER/forge-spike-r1"
+          docker build -q --build-arg VARIANT=otherworkflow -t "$GHCR:otherworkflow" -t "$HUB:otherworkflow" . >/dev/null
+          docker push -q "$GHCR:otherworkflow" >/dev/null
+          docker push -q "$HUB:otherworkflow" >/dev/null
+          D=$(docker inspect --format '{{index .RepoDigests 0}}' "$GHCR:otherworkflow" | cut -d@ -f2)
+          for R in "$GHCR" "$HUB"; do
+            cosign sign --yes "$R@$D"
+          done
+          echo "otherworkflow digest: $D"
+          echo "| otherworkflow | \`$D\` |" >> "$GITHUB_STEP_SUMMARY"

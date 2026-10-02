@@ -3,6 +3,10 @@ name: r1-sign-golden
 on:
   workflow_dispatch:
     inputs:
+      variant:
+        description: Image variant to sign; anything but golden is built and pushed first
+        type: string
+        default: golden
       print_reports:
         description: Print SBOM and vuln scan in the log and job summary
         type: boolean
@@ -48,8 +52,16 @@ jobs:
           GHCR="ghcr.io/${GITHUB_REPOSITORY,,}"
           HUB="docker.io/$DH_USER/forge-spike-r1"
 
-          docker pull "$GHCR:golden"
-          DIGEST=$(docker inspect --format '{{index .RepoDigests 0}}' "$GHCR:golden" | cut -d@ -f2)
+          V="${{ inputs.variant }}"
+          if [ "$V" != "golden" ]; then
+            docker build -q --build-arg VARIANT="$V" -t "$GHCR:$V" -t "$HUB:$V" . >/dev/null
+            docker push -q "$GHCR:$V" >/dev/null
+            docker push -q "$HUB:$V" >/dev/null
+          else
+            docker pull "$GHCR:$V"
+          fi
+          DIGEST=$(docker inspect --format '{{index .RepoDigests 0}}' "$GHCR:$V" | cut -d@ -f2)
+          echo "variant: $V"
           echo "digest: $DIGEST"
 
           syft "$GHCR@$DIGEST" -o cyclonedx-json=sbom.cdx.json

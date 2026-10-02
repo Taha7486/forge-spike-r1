@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: t8-keysigned-hub
+spec:
+  containers:
+    - name: app
+      image: docker.io/taha7486/forge-spike-r1@sha256:bc74b6a6a0237a7e5e088388f5526558911177ee9d0386d975f346a9f0729b01
