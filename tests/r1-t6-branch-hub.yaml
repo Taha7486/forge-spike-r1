@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: t6-branch-hub
+spec:
+  containers:
+    - name: app
+      image: docker.io/taha7486/forge-spike-r1@sha256:92fd5f6002ef9d766f412ff2af0d88445ab5e921178ea78b90ee5ccb6ba8fc91

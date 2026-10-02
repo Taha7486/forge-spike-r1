@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: t7-lookalike-ghcr
+spec:
+  containers:
+    - name: app
+      image: ghcr.io/taha7486/forge-spike-r1@sha256:bc86a3fd0a92eb9455a9641709fa9bf62e93d8f1c63620fb3ac4583f162536df

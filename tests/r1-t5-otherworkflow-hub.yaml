@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: t5-otherworkflow-hub
+spec:
+  containers:
+    - name: app
+      image: docker.io/taha7486/forge-spike-r1@sha256:1e3ee8da48c20c9ad282507add68e2c6b3a94654ea44c8f798999964b8063cc6
