@@ -1,0 +1,3 @@
+FROM ghcr.io/stefanprodan/podinfo:6.15.0@sha256:ec73780a8425f59ea49f5bc8cdff0d598805a224fbaa1f86c67a244f250fa9da
+ARG VARIANT=golden
+LABEL variant=$VARIANT
