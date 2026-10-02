@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: p3-pod-allow
+  labels:
+    forge-test: let-me-in
+spec:
+  containers:
+    - name: app
+      image: ghcr.io/taha7486/forge-spike-r1:golden

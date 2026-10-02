@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: p3-pod-deny
+  labels:
+    forge-test: deny-me
+spec:
+  containers:
+    - name: app
+      image: ghcr.io/taha7486/forge-spike-r1:golden
