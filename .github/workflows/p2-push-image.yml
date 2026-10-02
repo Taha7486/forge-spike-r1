@@ -19,10 +19,18 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - name: Log in to GHCR
         run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u "${{ github.actor }}" --password-stdin
+      - name: Log in to Docker Hub
+        env:
+          DH_USER: ${{ secrets.DOCKERHUB_USERNAME }}
+          DH_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
+        run: echo "$DH_TOKEN" | docker login -u "$DH_USER" --password-stdin
       - name: Build and push golden
+        env:
+          DH_USER: ${{ secrets.DOCKERHUB_USERNAME }}
         run: |
-          IMAGE="ghcr.io/${GITHUB_REPOSITORY,,}"
-          docker build --build-arg VARIANT=golden -t "$IMAGE:golden" .
-          docker push "$IMAGE:golden"
-          echo "$IMAGE:golden"
-          docker inspect --format '{{index .RepoDigests 0}}' "$IMAGE:golden"
+          GHCR="ghcr.io/${GITHUB_REPOSITORY,,}"
+          HUB="docker.io/$DH_USER/forge-spike-r1"
+          docker build --build-arg VARIANT=golden -t "$GHCR:golden" -t "$HUB:golden" .
+          docker push "$GHCR:golden"
+          docker push "$HUB:golden"
+          docker inspect --format '{{join .RepoDigests "\n"}}' "$GHCR:golden"
