@@ -16,7 +16,11 @@ on:
         type: boolean
         default: true
       signing_config:
-        description: Path to a cosign signing config in this repo (empty = TUF default); T15 uses signing-config/rekor-v2-only.json
+        description: Path to a cosign signing config in this repo; pinned to Rekor v1 (ADR-001); T15 used signing-config/rekor-v2-only.json
+        type: string
+        default: signing-config/rekor-v1-only.json
+      sbom_image:
+        description: Image to run Syft on instead of the variant image (T14 bigsbom); empty = the variant image
         type: string
         default: ''
       print_reports:
@@ -76,7 +80,10 @@ jobs:
           echo "variant: $V"
           echo "digest: $DIGEST"
 
-          syft "$GHCR@$DIGEST" -o cyclonedx-json=sbom.cdx.json
+          SBOM_SRC="${{ inputs.sbom_image }}"
+          syft "${SBOM_SRC:-$GHCR@$DIGEST}" -o cyclonedx-json=sbom.cdx.json
+          echo "sbom source: ${SBOM_SRC:-$GHCR@$DIGEST}"
+          ls -l sbom.cdx.json | awk '{print "sbom bytes: " $5}'
           trivy image --format cosign-vuln --output vuln.json "$GHCR@$DIGEST"
 
           if [ "${{ inputs.print_reports }}" = "true" ]; then
