@@ -7,6 +7,14 @@ on:
         description: Image variant to sign; anything but golden is built and pushed first
         type: string
         default: golden
+      sign:
+        description: Run cosign sign (false = attest only, for T16)
+        type: boolean
+        default: true
+      sbom:
+        description: Attest the SBOM (false = no SBOM attestation, for T11)
+        type: boolean
+        default: true
       print_reports:
         description: Print SBOM and vuln scan in the log and job summary
         type: boolean
@@ -86,7 +94,11 @@ jobs:
 
           # Sequential on purpose: the tag-schema fallback index is read-modify-write.
           for REPO in "$GHCR" "$HUB"; do
-            cosign sign --yes "$REPO@$DIGEST"
-            cosign attest --yes --type cyclonedx --predicate sbom.cdx.json "$REPO@$DIGEST"
+            if [ "${{ inputs.sign }}" = "true" ]; then
+              cosign sign --yes "$REPO@$DIGEST"
+            fi
+            if [ "${{ inputs.sbom }}" = "true" ]; then
+              cosign attest --yes --type cyclonedx --predicate sbom.cdx.json "$REPO@$DIGEST"
+            fi
             cosign attest --yes --type vuln --predicate vuln.json "$REPO@$DIGEST"
           done

@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: t11-nosbom-hub
+spec:
+  containers:
+    - name: app
+      image: docker.io/taha7486/forge-spike-r1@sha256:0c23ac0004cc9ee6e29f21eda0408648f87dae9956804346deebd6c26b0e36f7

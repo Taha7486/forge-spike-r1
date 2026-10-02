@@ -23,7 +23,34 @@ spec:
           identities:
             - subject: "https://github.com/Taha7486/forge-spike-r1/.github/workflows/r1-sign-golden.yml@refs/heads/main"
               issuer: "https://token.actions.githubusercontent.com"
+  attestations:
+    - name: sbom
+      intoto:
+        type: "https://cyclonedx.org/bom"
+    - name: vuln
+      intoto:
+        type: "https://cosign.sigstore.dev/attestation/vuln/v1"
+  variables:
+    - name: sigfail
+      expression: >-
+        images.containers.filter(i, verifyImageSignatures(i, [attestors.forgeci]) == 0)
+    - name: sbomfail
+      expression: >-
+        images.containers.filter(i,
+          !(verifyAttestationSignatures(i, attestations.sbom, [attestors.forgeci]) > 0 &&
+            extractPayload(i, attestations.sbom).predicate.bomFormat == 'CycloneDX'))
+    - name: vulnfail
+      expression: >-
+        images.containers.filter(i,
+          !(verifyAttestationSignatures(i, attestations.vuln, [attestors.forgeci]) > 0 &&
+            timestamp(extractPayload(i, attestations.vuln).predicate.metadata.scanFinishedOn) > time.now() - duration('168h')))
   validations:
-    - expression: >-
-        images.containers.map(image, verifyImageSignatures(image, [attestors.forgeci])).all(e, e > 0)
-      message: "image signature verification failed: no valid signature from the forge-spike-r1 signing workflow"
+    - expression: variables.sigfail.size() == 0
+      messageExpression: >-
+        'no valid signature from the forge-spike-r1 signing workflow for: ' + variables.sigfail.join(', ')
+    - expression: variables.sbomfail.size() == 0
+      messageExpression: >-
+        'missing or invalid CycloneDX SBOM attestation for: ' + variables.sbomfail.join(', ')
+    - expression: variables.vulnfail.size() == 0
+      messageExpression: >-
+        'missing, unverified or stale (older than 168h) vulnerability attestation for: ' + variables.vulnfail.join(', ')
