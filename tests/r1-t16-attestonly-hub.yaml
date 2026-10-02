@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: t16-attestonly-hub
+spec:
+  containers:
+    - name: app
+      image: docker.io/taha7486/forge-spike-r1@sha256:681c08b630b10e07265e2e000c992d4365b76f69f9b7b44d18cb576a45ae71e5
