@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: t13-bigsbom-tag-ghcr
+spec:
+  containers:
+    - name: app
+      image: ghcr.io/taha7486/forge-spike-r1:bigsbom

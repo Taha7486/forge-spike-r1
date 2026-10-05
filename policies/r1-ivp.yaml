@@ -13,6 +13,9 @@ spec:
         apiVersions: [v1]
         operations: [CREATE, UPDATE]
         resources: [pods]
+  credentials:
+    secrets:
+      - dockerhub-ro
   matchImageReferences:
     - glob: "docker.io/taha7486/forge-spike-r1*"
     - glob: "ghcr.io/taha7486/forge-spike-r1*"
@@ -39,11 +42,15 @@ spec:
         images.containers.filter(i,
           !(verifyAttestationSignatures(i, attestations.sbom, [attestors.forgeci]) > 0 &&
             extractPayload(i, attestations.sbom).predicate.bomFormat == 'CycloneDX'))
-    - name: vulnfail
+    - name: vulnunverified
       expression: >-
         images.containers.filter(i,
-          !(verifyAttestationSignatures(i, attestations.vuln, [attestors.forgeci]) > 0 &&
-            timestamp(extractPayload(i, attestations.vuln).predicate.metadata.scanFinishedOn) > time.now() - duration('168h')))
+          verifyAttestationSignatures(i, attestations.vuln, [attestors.forgeci]) == 0)
+    - name: vulnstale
+      expression: >-
+        images.containers.filter(i,
+          !(i in variables.vulnunverified) &&
+          !(timestamp(extractPayload(i, attestations.vuln).predicate.metadata.scanFinishedOn) > time.now() - duration('168h')))
   validations:
     - expression: variables.sigfail.size() == 0
       messageExpression: >-
@@ -51,6 +58,9 @@ spec:
     - expression: variables.sbomfail.size() == 0
       messageExpression: >-
         'missing or invalid CycloneDX SBOM attestation for: ' + variables.sbomfail.join(', ')
-    - expression: variables.vulnfail.size() == 0
+    - expression: variables.vulnunverified.size() == 0
       messageExpression: >-
-        'missing, unverified or stale (older than 168h) vulnerability attestation for: ' + variables.vulnfail.join(', ')
+        'missing or unverified vulnerability attestation for: ' + variables.vulnunverified.join(', ')
+    - expression: variables.vulnstale.size() == 0
+      messageExpression: >-
+        'stale vulnerability attestation (scanFinishedOn older than 168h) for: ' + variables.vulnstale.join(', ')

@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: t15-rekor-v2-hub
+spec:
+  containers:
+    - name: app
+      image: docker.io/taha7486/forge-spike-r1@sha256:f2f8db462712cba98b684ae4778c111fce2104bf20273469253ff4f721d40066
