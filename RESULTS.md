@@ -87,4 +87,7 @@ The public-good default signing config was still Rekor v1 only on 2026-10-02. Fo
 5. `duration('7d')` is invalid; write hours.
 6. The allowlist matches raw image strings, so short names such as `nginx:1.27` can bypass a `startsWith` on a full prefix; fine under deny-by-default, revisit in Phase 2.
 7. Webhook timeout headroom is nil: 30 s is the Kubernetes maximum and admission takes 18–26 s here. Re-measure on in-region ACR.
-8. Golden's vuln attestations are dated 2026-10-02; with the 168h window golden is denied from about 2026-10-09 unless `r1-sign-golden` is re-run with `variant=golden` (which adds bundles, see 4).
+8. Freshness is renewed by rebuilding the image (new digest, fresh attestations), never by re-attesting an existing digest (ADR-001). The spike images carry vuln scans from 2026-10-02 and leave the 168h window around 2026-10-09; R3 uses a longer window instead of re-signing.
+9. Policy authoring traps: CEL attestor names cannot contain hyphens (`forge-ci` parses as `forge` minus `ci`; use `forgeci`). After every `kubectl apply` confirm `kubectl get ivpol` shows Ready and that a Kyverno log line appears, because a failed apply can hide and a dry-run then "admits" with no policy present. A pass also needs a negative control.
+10. Registry credentials: Kyverno reads them from `credentials.secrets` (a `dockerconfigjson` Secret in the `kyverno` namespace). Proven used by a wrong-password control (401 from `auth.docker.io`). Use a separate read-only token for it, not the CI token.
+11. GHCR gotcha: a package given to another repo's workflow needs the Write role (Read lets the push fail), and a signer in a lookalike repo can then push into the trusted package, so the identity check, not package permissions, is the control (T7).
