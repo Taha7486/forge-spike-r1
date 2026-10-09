@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: load-dep
+spec:
+  replicas: __N__
+  selector:
+    matchLabels:
+      app: load-dep
+  template:
+    metadata:
+      labels:
+        app: load-dep
+    spec:
+      terminationGracePeriodSeconds: 0
+      containers:
+        - name: app
+          image: ghcr.io/taha7486/forge-spike-r1@sha256:f5eb8b57a454ab073acb0cea7d6bedfb27d37f48a327ecd65fdb7d9ea5c7c7d5
