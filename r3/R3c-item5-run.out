@@ -1,0 +1,86 @@
+19:36:50 == design B
+imagevalidatingpolicy.policies.kyverno.io/r3c-split-sig created
+NAME            AGE   READY
+r3c-split-sig   1s    true
+19:37:11 -- B-cold-5
+B,cold,5,18.1,75.87,10,0,0,0,0,0,0,0
+19:38:19 -- B-cold-10
+B,cold,10,23.5,168.04,20,0,0,0,0,0,0,0
+19:39:31 -- B-cold-20
+B,cold,20,33.9,345.53,36,0,0,0,0,0,0,0
+19:40:54 -- B-warm-5
+B,warm,5,16.7,69.70,10,0,0,0,0,0,0,0
+19:42:11 -- B-warm-10
+B,warm,10,3.1,12.56,20,0,0,0,0,0,0,0
+19:43:21 -- B-warm-20
+B,warm,20,5.1,25.70,40,0,0,0,0,0,0,0
+19:44:35 == design A
+r3c-split-sbom   5s    true
+r3c-split-sig    5s    true
+r3c-split-vuln   5s    true
+19:45:01 -- A-cold-5
+A,cold,5,27.8,295.65,20,0,0,0,0,0,0,0
+19:46:39 -- A-cold-10
+A,cold,10,32.2,383.41,28,0,0,0,0,0,0,0
+19:48:08 -- A-cold-20
+A,cold,20,34.5,414.74,39,0,0,0,0,0,0,0
+19:49:41 -- A-warm-5
+A,warm,5,20.8,157.71,20,0,0,0,0,0,0,0
+19:51:46 -- A-warm-10
+A,warm,10,32.2,370.96,38,0,0,0,0,0,0,0
+19:53:30 -- A-warm-20
+A,warm,20,34.3,426.08,59,0,0,0,0,0,0,0
+19:55:14 == L1 done
+19:55:14 cleanup: restoring
+namespace "r3c-load" deleted
+NAME                     AGE   READY
+r3-verify-forge-images   1s    true
+NAME                                                               AGE   READY
+imagevalidatingpolicy.policies.kyverno.io/r3-verify-forge-images   32s   true
+
+NAME                                                         AGE   READY
+validatingpolicy.policies.kyverno.io/p3-deny-test-label      41m   true
+validatingpolicy.policies.kyverno.io/r1-registry-allowlist   41m   true
+19:55:48 == design B
+imagevalidatingpolicy.policies.kyverno.io/r3c-split-sig created
+NAME            AGE   READY
+r3c-split-sig   0s    true
+19:56:09 -- B-cold-10
+B,cold,10,22.1,34.6,10,0,26.15,24,0,0,0,0,0,0,0
+19:58:00 -- B-cold-20
+B,cold,20,25.4,60.0,20,0,37.78,44,0,0,0,0,0,0,0
+20:00:21 -- B-warm-10
+B,warm,10,1.8,21.1,10,0,13.37,20,0,0,0,0,0,0,0
+20:02:31 -- B-warm-20
+B,warm,20,2.0,34.5,20,0,26.12,40,0,0,0,0,0,0,0
+20:05:08 -- background scan with 20 pods running (B)
+B,annotate,20,1,123,1,63.19,225.5,22,0,0
+20:07:16 == design A
+r3c-split-sbom   1s    true
+r3c-split-sig    1s    true
+r3c-split-vuln   0s    true
+20:07:38 -- A-cold-10
+20:14:14 io wait expired
+A,cold,10,85.0,88.8,10,0,353.43,48,0,0,0,0,0,0,0
+20:15:46 -- A-cold-20
+A,cold,20,142.6,146.9,20,1,757.45,92,0,0,0,0,0,0,0
+20:19:45 -- A-warm-10
+A,warm,10,13.6,86.4,10,0,308.22,42,0,0,0,0,0,0,0
+20:23:40 -- A-warm-20
+A,warm,20,12.0,123.7,20,0,743.84,82,0,0,0,0,0,0,0
+20:27:52 -- background scan with 20 pods running (A)
+20:30:05 annotation did not trigger a full re-scan in 120 s (5 of 20 pods fresh); restarting the reports controller
+A,restart,20,3,401,1,37.89,231.7,22,0,0
+20:36:56 == L2 done
+20:36:56 cleanup: restoring
+deployment.apps "load-dep" deleted from r3c-load namespace
+namespace "r3c-load" deleted
+NAME                     AGE   READY
+r3-verify-forge-images   1s    true
+NAME                                                               AGE   READY
+imagevalidatingpolicy.policies.kyverno.io/r3-verify-forge-images   32s   true
+
+NAME                                                         AGE   READY
+validatingpolicy.policies.kyverno.io/p3-deny-test-label      83m   true
+validatingpolicy.policies.kyverno.io/r1-registry-allowlist   83m   true
+ALL ITEM 5 DONE

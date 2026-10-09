@@ -1,0 +1,313 @@
+label,utc_time,seconds,outcome,detail
+EVENT,19:00:12,0,-,crash-Fail start (probes running)
+WEBHOOK,19:00:14,0,present,65bl8:1/1:Running 
+WEBHOOK,19:00:17,0,present,65bl8:1/1:Running 
+crash-Fail-p1,19:00:12,5.45,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+crash-Fail-p2,19:00:12,7.20,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:00:19,0,present,65bl8:1/1:Running 
+crash-Fail-p1,19:00:17,2.76,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:00:22,0,present,65bl8:1/1:Running 
+WEBHOOK,19:00:24,0,present,65bl8:1/1:Running 
+EVENT,19:00:26,0,-,crash-Fail ACTION
+EVENT,19:00:26,0,-,killing container 88ddb7ef82b329a8abb402afbb25130eb93566b65fc8ab74728b2c46655c9f74 of kyverno-admission-controller-5756b4c88-65bl8 (no graceful stop)
+crash-Fail-p2,19:00:19,7.21,webhook-failure,"ts/r1-t3-unsigned-ghcr.yaml : Internal error occurred: failed calling webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig : fa"
+crash-Fail-p1,19:00:20,6.19,webhook-failure,"ts/r1-t3-unsigned-ghcr.yaml : Internal error occurred: failed calling webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig : fa"
+crash-Fail-p2,19:00:26,0.82,webhook-failure,"ts/r1-t3-unsigned-ghcr.yaml : Internal error occurred: failed calling webhook  ivpol.mutate.kyverno.svc-fail-finegrained-r3c-split-sig : fail"
+crash-Fail-p1,19:00:26,0.81,webhook-failure,"ts/r1-t3-unsigned-ghcr.yaml : Internal error occurred: failed calling webhook  ivpol.mutate.kyverno.svc-fail-finegrained-r3c-split-sig : fail"
+EVENT,19:00:28,0,-,crash-Fail action returned
+WEBHOOK,19:00:27,0,present,65bl8:1/1:Running 
+crash-Fail-p1,19:00:27,0.44,webhook-failure,"ts/r1-t3-unsigned-ghcr.yaml : Internal error occurred: failed calling webhook  ivpol.mutate.kyverno.svc-fail-finegrained-r3c-split-sig : fail"
+crash-Fail-p2,19:00:27,0.51,webhook-failure,"ts/r1-t3-unsigned-ghcr.yaml : Internal error occurred: failed calling webhook  ivpol.mutate.kyverno.svc-fail-finegrained-r3c-split-sig : fail"
+crash-Fail-p1,19:00:28,0.45,webhook-failure,"ts/r1-t3-unsigned-ghcr.yaml : Internal error occurred: failed calling webhook  ivpol.mutate.kyverno.svc-fail-finegrained-r3c-split-sig : fail"
+crash-Fail-p2,19:00:28,0.51,webhook-failure,"ts/r1-t3-unsigned-ghcr.yaml : Internal error occurred: failed calling webhook  ivpol.mutate.kyverno.svc-fail-finegrained-r3c-split-sig : fail"
+crash-Fail-p1,19:00:28,0.47,webhook-failure,"ts/r1-t3-unsigned-ghcr.yaml : Internal error occurred: failed calling webhook  ivpol.mutate.kyverno.svc-fail-finegrained-r3c-split-sig : fail"
+crash-Fail-p2,19:00:28,0.54,webhook-failure,"ts/r1-t3-unsigned-ghcr.yaml : Internal error occurred: failed calling webhook  ivpol.mutate.kyverno.svc-fail-finegrained-r3c-split-sig : fail"
+crash-Fail-p1,19:00:29,0.41,webhook-failure,"ts/r1-t3-unsigned-ghcr.yaml : Internal error occurred: failed calling webhook  ivpol.mutate.kyverno.svc-fail-finegrained-r3c-split-sig : fail"
+crash-Fail-p2,19:00:29,0.50,webhook-failure,"ts/r1-t3-unsigned-ghcr.yaml : Internal error occurred: failed calling webhook  ivpol.mutate.kyverno.svc-fail-finegrained-r3c-split-sig : fail"
+crash-Fail-p1,19:00:29,0.47,webhook-failure,"ts/r1-t3-unsigned-ghcr.yaml : Internal error occurred: failed calling webhook  ivpol.mutate.kyverno.svc-fail-finegrained-r3c-split-sig : fail"
+crash-Fail-p2,19:00:29,0.51,webhook-failure,"ts/r1-t3-unsigned-ghcr.yaml : Internal error occurred: failed calling webhook  ivpol.mutate.kyverno.svc-fail-finegrained-r3c-split-sig : fail"
+crash-Fail-p1,19:00:29,0.56,webhook-failure,"ts/r1-t3-unsigned-ghcr.yaml : Internal error occurred: failed calling webhook  ivpol.mutate.kyverno.svc-fail-finegrained-r3c-split-sig : fail"
+crash-Fail-p2,19:00:30,0.53,webhook-failure,"ts/r1-t3-unsigned-ghcr.yaml : Internal error occurred: failed calling webhook  ivpol.mutate.kyverno.svc-fail-finegrained-r3c-split-sig : fail"
+WEBHOOK,19:00:30,0,present,65bl8:0/1:Running 
+crash-Fail-p1,19:00:30,0.49,webhook-failure,"ts/r1-t3-unsigned-ghcr.yaml : Internal error occurred: failed calling webhook  ivpol.mutate.kyverno.svc-fail-finegrained-r3c-split-sig : fail"
+crash-Fail-p2,19:00:30,0.41,webhook-failure,"ts/r1-t3-unsigned-ghcr.yaml : Internal error occurred: failed calling webhook  ivpol.mutate.kyverno.svc-fail-finegrained-r3c-split-sig : fail"
+crash-Fail-p1,19:00:31,0.43,webhook-failure,"ts/r1-t3-unsigned-ghcr.yaml : Internal error occurred: failed calling webhook  ivpol.mutate.kyverno.svc-fail-finegrained-r3c-split-sig : fail"
+crash-Fail-p2,19:00:31,0.39,webhook-failure,"ts/r1-t3-unsigned-ghcr.yaml : Internal error occurred: failed calling webhook  ivpol.mutate.kyverno.svc-fail-finegrained-r3c-split-sig : fail"
+crash-Fail-p1,19:00:31,0.38,webhook-failure,"ts/r1-t3-unsigned-ghcr.yaml : Internal error occurred: failed calling webhook  ivpol.mutate.kyverno.svc-fail-finegrained-r3c-split-sig : fail"
+crash-Fail-p2,19:00:31,0.44,webhook-failure,"ts/r1-t3-unsigned-ghcr.yaml : Internal error occurred: failed calling webhook  ivpol.mutate.kyverno.svc-fail-finegrained-r3c-split-sig : fail"
+crash-Fail-p1,19:00:31,0.40,webhook-failure,"ts/r1-t3-unsigned-ghcr.yaml : Internal error occurred: failed calling webhook  ivpol.mutate.kyverno.svc-fail-finegrained-r3c-split-sig : fail"
+crash-Fail-p2,19:00:32,0.37,webhook-failure,"ts/r1-t3-unsigned-ghcr.yaml : Internal error occurred: failed calling webhook  ivpol.mutate.kyverno.svc-fail-finegrained-r3c-split-sig : fail"
+crash-Fail-p1,19:00:32,0.37,webhook-failure,"ts/r1-t3-unsigned-ghcr.yaml : Internal error occurred: failed calling webhook  ivpol.mutate.kyverno.svc-fail-finegrained-r3c-split-sig : fail"
+crash-Fail-p2,19:00:32,0.35,webhook-failure,"ts/r1-t3-unsigned-ghcr.yaml : Internal error occurred: failed calling webhook  ivpol.mutate.kyverno.svc-fail-finegrained-r3c-split-sig : fail"
+crash-Fail-p1,19:00:32,0.43,webhook-failure,"ts/r1-t3-unsigned-ghcr.yaml : Internal error occurred: failed calling webhook  ivpol.mutate.kyverno.svc-fail-finegrained-r3c-split-sig : fail"
+crash-Fail-p2,19:00:32,0.63,webhook-failure,"ts/r1-t3-unsigned-ghcr.yaml : Internal error occurred: failed calling webhook  ivpol.mutate.kyverno.svc-fail-finegrained-r3c-split-sig : fail"
+crash-Fail-p1,19:00:33,0.55,webhook-failure,"ts/r1-t3-unsigned-ghcr.yaml : Internal error occurred: failed calling webhook  ivpol.mutate.kyverno.svc-fail-finegrained-r3c-split-sig : fail"
+WEBHOOK,19:00:33,0,present,65bl8:0/1:Running 
+crash-Fail-p2,19:00:33,0.40,webhook-failure,"ts/r1-t3-unsigned-ghcr.yaml : Internal error occurred: failed calling webhook  ivpol.mutate.kyverno.svc-fail-finegrained-r3c-split-sig : fail"
+crash-Fail-p1,19:00:33,0.41,webhook-failure,"ts/r1-t3-unsigned-ghcr.yaml : Internal error occurred: failed calling webhook  ivpol.mutate.kyverno.svc-fail-finegrained-r3c-split-sig : fail"
+crash-Fail-p2,19:00:34,0.40,webhook-failure,"ts/r1-t3-unsigned-ghcr.yaml : Internal error occurred: failed calling webhook  ivpol.mutate.kyverno.svc-fail-finegrained-r3c-split-sig : fail"
+crash-Fail-p1,19:00:34,0.40,webhook-failure,"ts/r1-t3-unsigned-ghcr.yaml : Internal error occurred: failed calling webhook  ivpol.mutate.kyverno.svc-fail-finegrained-r3c-split-sig : fail"
+crash-Fail-p2,19:00:34,0.38,webhook-failure,"ts/r1-t3-unsigned-ghcr.yaml : Internal error occurred: failed calling webhook  ivpol.mutate.kyverno.svc-fail-finegrained-r3c-split-sig : fail"
+crash-Fail-p1,19:00:34,0.42,webhook-failure,"ts/r1-t3-unsigned-ghcr.yaml : Internal error occurred: failed calling webhook  ivpol.mutate.kyverno.svc-fail-finegrained-r3c-split-sig : fail"
+crash-Fail-p2,19:00:34,0.35,webhook-failure,"ts/r1-t3-unsigned-ghcr.yaml : Internal error occurred: failed calling webhook  ivpol.mutate.kyverno.svc-fail-finegrained-r3c-split-sig : fail"
+crash-Fail-p1,19:00:35,0.36,webhook-failure,"ts/r1-t3-unsigned-ghcr.yaml : Internal error occurred: failed calling webhook  ivpol.mutate.kyverno.svc-fail-finegrained-r3c-split-sig : fail"
+crash-Fail-p2,19:00:35,0.47,webhook-failure,"ts/r1-t3-unsigned-ghcr.yaml : Internal error occurred: failed calling webhook  ivpol.mutate.kyverno.svc-fail-finegrained-r3c-split-sig : fail"
+WEBHOOK,19:00:36,0,present,65bl8:1/1:Running 
+WEBHOOK,19:00:38,0,present,65bl8:1/1:Running 
+crash-Fail-p2,19:00:35,4.56,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:00:41,0,present,65bl8:1/1:Running 
+crash-Fail-p1,19:00:35,6.21,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:00:43,0,present,65bl8:1/1:Running 
+crash-Fail-p2,19:00:40,3.80,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+crash-Fail-p1,19:00:41,3.69,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:00:46,0,present,65bl8:1/1:Running 
+crash-Fail-p2,19:00:44,4.58,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:00:48,0,present,65bl8:1/1:Running 
+crash-Fail-p1,19:00:45,4.52,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:00:51,0,present,65bl8:1/1:Running 
+crash-Fail-p2,19:00:48,4.02,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+crash-Fail-p1,19:00:49,3.81,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:00:53,0,present,65bl8:1/1:Running 
+WEBHOOK,19:00:56,0,present,65bl8:1/1:Running 
+crash-Fail-p2,19:00:52,4.03,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+crash-Fail-p1,19:00:53,4.27,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:00:58,0,present,65bl8:1/1:Running 
+crash-Fail-p2,19:00:56,3.97,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:01:01,0,present,65bl8:1/1:Running 
+crash-Fail-p1,19:00:57,4.02,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:01:03,0,present,65bl8:1/1:Running 
+crash-Fail-p2,19:01:00,3.57,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+crash-Fail-p1,19:01:02,3.60,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:01:06,0,present,65bl8:1/1:Running 
+crash-Fail-p2,19:01:04,3.74,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:01:08,0,present,65bl8:1/1:Running 
+crash-Fail-p1,19:01:05,3.82,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:01:11,0,present,65bl8:1/1:Running 
+crash-Fail-p2,19:01:08,3.68,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+crash-Fail-p1,19:01:09,3.84,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:01:14,0,present,65bl8:1/1:Running 
+crash-Fail-p2,19:01:11,3.86,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:01:16,0,present,65bl8:1/1:Running 
+crash-Fail-p1,19:01:13,4.22,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:01:18,0,present,65bl8:1/1:Running 
+crash-Fail-p2,19:01:15,3.88,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+crash-Fail-p1,19:01:17,3.71,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:01:21,0,present,65bl8:1/1:Running 
+crash-Fail-p2,19:01:19,3.97,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:01:24,0,present,65bl8:1/1:Running 
+crash-Fail-p1,19:01:21,3.74,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:01:26,0,present,65bl8:1/1:Running 
+crash-Fail-p2,19:01:23,4.61,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+crash-Fail-p1,19:01:25,4.04,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:01:29,0,present,65bl8:1/1:Running 
+WEBHOOK,19:01:31,0,present,65bl8:1/1:Running 
+crash-Fail-p2,19:01:28,3.99,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+crash-Fail-p1,19:01:29,4.13,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:01:34,0,present,65bl8:1/1:Running 
+crash-Fail-p2,19:01:32,3.79,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:01:36,0,present,65bl8:1/1:Running 
+crash-Fail-p1,19:01:33,3.99,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:01:39,0,present,65bl8:1/1:Running 
+crash-Fail-p2,19:01:36,3.68,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+crash-Fail-p1,19:01:37,3.72,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:01:41,0,present,65bl8:1/1:Running 
+crash-Fail-p2,19:01:39,3.78,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:01:44,0,present,65bl8:1/1:Running 
+crash-Fail-p1,19:01:40,3.62,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:01:46,0,present,65bl8:1/1:Running 
+crash-Fail-p2,19:01:43,4.44,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+crash-Fail-p1,19:01:44,4.39,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:01:49,0,present,65bl8:1/1:Running 
+crash-Fail-p2,19:01:47,3.73,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:01:51,0,present,65bl8:1/1:Running 
+crash-Fail-p1,19:01:48,4.65,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:01:54,0,present,65bl8:1/1:Running 
+crash-Fail-p2,19:01:51,3.89,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:01:56,0,present,65bl8:1/1:Running 
+crash-Fail-p1,19:01:53,3.85,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:01:59,0,present,65bl8:1/1:Running 
+crash-Fail-p2,19:01:55,3.99,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+crash-Fail-p1,19:01:57,3.91,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:02:01,0,present,65bl8:1/1:Running 
+crash-Fail-p2,19:01:59,3.74,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+crash-Fail-p1,19:02:01,4.02,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+EVENT,19:02:05,0,-,crash-Fail end
+EVENT,19:03:02,0,-,crash-Ignore start (probes running)
+WEBHOOK,19:03:04,0,present,65bl8:1/1:Running 
+crash-Ignore-p1,19:03:02,4.00,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-ignore-finegrained-r3c-ign-sig  denied the request: Policy r3c-ign-sig failed: no"
+WEBHOOK,19:03:07,0,present,65bl8:1/1:Running 
+crash-Ignore-p2,19:03:02,5.09,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-ignore-finegrained-r3c-ign-sig  denied the request: Policy r3c-ign-sig failed: no"
+WEBHOOK,19:03:09,0,present,65bl8:1/1:Running 
+crash-Ignore-p1,19:03:06,4.17,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-ignore-finegrained-r3c-ign-sig  denied the request: Policy r3c-ign-sig failed: no"
+crash-Ignore-p2,19:03:07,4.17,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-ignore-finegrained-r3c-ign-sig  denied the request: Policy r3c-ign-sig failed: no"
+WEBHOOK,19:03:12,0,present,65bl8:1/1:Running 
+crash-Ignore-p1,19:03:10,3.80,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-ignore-finegrained-r3c-ign-sig  denied the request: Policy r3c-ign-sig failed: no"
+WEBHOOK,19:03:15,0,present,65bl8:1/1:Running 
+crash-Ignore-p2,19:03:11,3.70,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-ignore-finegrained-r3c-ign-sig  denied the request: Policy r3c-ign-sig failed: no"
+EVENT,19:03:16,0,-,crash-Ignore ACTION
+EVENT,19:03:16,0,-,killing container 2a66dfcdda1859136768d6ad452982c23199895209250b34d0a051ff7a30f249 of kyverno-admission-controller-5756b4c88-65bl8 (no graceful stop)
+crash-Ignore-p2,19:03:15,1.45,admitted,""
+crash-Ignore-p1,19:03:14,2.44,admitted,""
+crash-Ignore-p2,19:03:17,0.99,admitted,""
+crash-Ignore-p1,19:03:17,0.99,admitted,""
+EVENT,19:03:18,0,-,crash-Ignore action returned
+WEBHOOK,19:03:18,0,present,65bl8:1/1:Running 
+crash-Ignore-p2,19:03:18,0.45,admitted,""
+crash-Ignore-p1,19:03:18,0.50,admitted,""
+crash-Ignore-p2,19:03:18,0.45,admitted,""
+crash-Ignore-p1,19:03:18,0.40,admitted,""
+crash-Ignore-p2,19:03:19,0.37,admitted,""
+crash-Ignore-p1,19:03:19,0.42,admitted,""
+crash-Ignore-p2,19:03:19,0.44,admitted,""
+crash-Ignore-p1,19:03:19,0.40,admitted,""
+crash-Ignore-p1,19:03:19,0.35,admitted,""
+crash-Ignore-p2,19:03:19,0.36,admitted,""
+crash-Ignore-p2,19:03:20,0.38,admitted,""
+crash-Ignore-p1,19:03:20,0.50,admitted,""
+crash-Ignore-p2,19:03:20,0.57,admitted,""
+crash-Ignore-p1,19:03:20,0.46,admitted,""
+WEBHOOK,19:03:20,0,present,65bl8:0/1:Error 
+crash-Ignore-p2,19:03:21,0.43,admitted,""
+crash-Ignore-p1,19:03:21,0.45,admitted,""
+crash-Ignore-p2,19:03:21,0.39,admitted,""
+crash-Ignore-p1,19:03:21,0.36,admitted,""
+crash-Ignore-p2,19:03:22,0.40,admitted,""
+crash-Ignore-p1,19:03:22,0.41,admitted,""
+crash-Ignore-p2,19:03:22,0.34,admitted,""
+crash-Ignore-p1,19:03:22,0.38,admitted,""
+crash-Ignore-p2,19:03:22,0.38,admitted,""
+crash-Ignore-p1,19:03:22,0.37,admitted,""
+crash-Ignore-p2,19:03:23,0.48,admitted,""
+crash-Ignore-p1,19:03:23,0.55,admitted,""
+WEBHOOK,19:03:23,0,present,65bl8:0/1:CrashLoopBackOff 
+crash-Ignore-p2,19:03:23,0.49,admitted,""
+crash-Ignore-p1,19:03:23,0.46,admitted,""
+crash-Ignore-p2,19:03:24,0.38,admitted,""
+crash-Ignore-p1,19:03:24,0.41,admitted,""
+crash-Ignore-p2,19:03:24,0.37,admitted,""
+crash-Ignore-p1,19:03:24,0.40,admitted,""
+crash-Ignore-p2,19:03:24,0.39,admitted,""
+crash-Ignore-p1,19:03:25,0.39,admitted,""
+crash-Ignore-p2,19:03:25,0.38,admitted,""
+crash-Ignore-p1,19:03:25,0.37,admitted,""
+crash-Ignore-p2,19:03:25,0.42,admitted,""
+crash-Ignore-p1,19:03:25,0.44,admitted,""
+crash-Ignore-p2,19:03:26,0.49,admitted,""
+crash-Ignore-p1,19:03:26,0.47,admitted,""
+WEBHOOK,19:03:26,0,present,65bl8:0/1:CrashLoopBackOff 
+crash-Ignore-p2,19:03:26,0.45,admitted,""
+crash-Ignore-p1,19:03:26,0.40,admitted,""
+crash-Ignore-p2,19:03:27,0.37,admitted,""
+crash-Ignore-p1,19:03:27,0.38,admitted,""
+crash-Ignore-p2,19:03:27,0.41,admitted,""
+crash-Ignore-p1,19:03:27,0.39,admitted,""
+crash-Ignore-p2,19:03:27,0.45,admitted,""
+crash-Ignore-p1,19:03:28,0.45,admitted,""
+crash-Ignore-p2,19:03:28,0.44,admitted,""
+crash-Ignore-p1,19:03:28,0.59,admitted,""
+crash-Ignore-p2,19:03:28,0.77,admitted,""
+crash-Ignore-p1,19:03:29,0.65,admitted,""
+WEBHOOK,19:03:29,0,present,65bl8:0/1:Running 
+crash-Ignore-p2,19:03:29,0.47,admitted,""
+crash-Ignore-p1,19:03:29,0.47,admitted,""
+crash-Ignore-p2,19:03:30,0.37,admitted,""
+crash-Ignore-p1,19:03:30,0.37,admitted,""
+crash-Ignore-p2,19:03:30,0.36,admitted,""
+crash-Ignore-p1,19:03:30,0.37,admitted,""
+crash-Ignore-p2,19:03:30,0.42,admitted,""
+crash-Ignore-p1,19:03:31,0.41,admitted,""
+crash-Ignore-p2,19:03:31,0.44,admitted,""
+crash-Ignore-p1,19:03:31,0.44,admitted,""
+crash-Ignore-p2,19:03:31,0.53,admitted,""
+crash-Ignore-p1,19:03:31,0.48,admitted,""
+WEBHOOK,19:03:32,0,present,65bl8:0/1:Running 
+crash-Ignore-p2,19:03:32,0.47,admitted,""
+crash-Ignore-p1,19:03:32,0.44,admitted,""
+crash-Ignore-p2,19:03:32,0.35,admitted,""
+crash-Ignore-p1,19:03:32,0.39,admitted,""
+crash-Ignore-p2,19:03:33,0.38,admitted,""
+crash-Ignore-p1,19:03:33,0.39,admitted,""
+crash-Ignore-p2,19:03:33,0.40,admitted,""
+crash-Ignore-p1,19:03:33,0.40,admitted,""
+crash-Ignore-p2,19:03:34,0.46,admitted,""
+crash-Ignore-p1,19:03:34,0.54,admitted,""
+crash-Ignore-p2,19:03:34,0.49,admitted,""
+crash-Ignore-p1,19:03:34,0.45,admitted,""
+WEBHOOK,19:03:35,0,present,65bl8:0/1:Running 
+crash-Ignore-p2,19:03:35,0.58,admitted,""
+crash-Ignore-p1,19:03:35,0.62,admitted,""
+crash-Ignore-p1,19:03:35,0.52,admitted,""
+WEBHOOK,19:03:38,0,present,65bl8:1/1:Running 
+crash-Ignore-p1,19:03:36,3.01,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-ignore-finegrained-r3c-ign-sig  denied the request: Policy r3c-ign-sig failed: no"
+crash-Ignore-p2,19:03:35,3.76,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-ignore-finegrained-r3c-ign-sig  denied the request: Policy r3c-ign-sig failed: no"
+crash-Ignore-p1,19:03:39,1.72,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-ignore-finegrained-r3c-ign-sig  denied the request: Policy r3c-ign-sig failed: no"
+crash-Ignore-p2,19:03:39,1.74,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-ignore-finegrained-r3c-ign-sig  denied the request: Policy r3c-ign-sig failed: no"
+WEBHOOK,19:03:40,0,present,65bl8:1/1:Running 
+crash-Ignore-p2,19:03:41,1.91,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-ignore-finegrained-r3c-ign-sig  denied the request: Policy r3c-ign-sig failed: no"
+crash-Ignore-p1,19:03:41,1.97,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-ignore-finegrained-r3c-ign-sig  denied the request: Policy r3c-ign-sig failed: no"
+WEBHOOK,19:03:43,0,present,65bl8:1/1:Running 
+crash-Ignore-p1,19:03:43,1.97,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-ignore-finegrained-r3c-ign-sig  denied the request: Policy r3c-ign-sig failed: no"
+crash-Ignore-p2,19:03:43,1.98,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-ignore-finegrained-r3c-ign-sig  denied the request: Policy r3c-ign-sig failed: no"
+WEBHOOK,19:03:46,0,present,65bl8:1/1:Running 
+crash-Ignore-p1,19:03:45,1.89,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-ignore-finegrained-r3c-ign-sig  denied the request: Policy r3c-ign-sig failed: no"
+crash-Ignore-p2,19:03:45,1.90,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-ignore-finegrained-r3c-ign-sig  denied the request: Policy r3c-ign-sig failed: no"
+crash-Ignore-p2,19:03:46,1.79,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-ignore-finegrained-r3c-ign-sig  denied the request: Policy r3c-ign-sig failed: no"
+crash-Ignore-p1,19:03:46,1.82,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-ignore-finegrained-r3c-ign-sig  denied the request: Policy r3c-ign-sig failed: no"
+WEBHOOK,19:03:49,0,present,65bl8:1/1:Running 
+WEBHOOK,19:03:52,0,present,65bl8:1/1:Running 
+crash-Ignore-p2,19:03:48,4.62,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-ignore-finegrained-r3c-ign-sig  denied the request: Policy r3c-ign-sig failed: no"
+crash-Ignore-p1,19:03:48,5.71,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-ignore-finegrained-r3c-ign-sig  denied the request: Policy r3c-ign-sig failed: no"
+WEBHOOK,19:03:54,0,present,65bl8:1/1:Running 
+crash-Ignore-p2,19:03:53,3.77,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-ignore-finegrained-r3c-ign-sig  denied the request: Policy r3c-ign-sig failed: no"
+WEBHOOK,19:03:57,0,present,65bl8:1/1:Running 
+crash-Ignore-p1,19:03:54,3.83,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-ignore-finegrained-r3c-ign-sig  denied the request: Policy r3c-ign-sig failed: no"
+WEBHOOK,19:03:59,0,present,65bl8:1/1:Running 
+crash-Ignore-p2,19:03:57,3.71,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-ignore-finegrained-r3c-ign-sig  denied the request: Policy r3c-ign-sig failed: no"
+crash-Ignore-p1,19:03:58,3.62,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-ignore-finegrained-r3c-ign-sig  denied the request: Policy r3c-ign-sig failed: no"
+WEBHOOK,19:04:02,0,present,65bl8:1/1:Running 
+crash-Ignore-p2,19:04:00,3.93,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-ignore-finegrained-r3c-ign-sig  denied the request: Policy r3c-ign-sig failed: no"
+WEBHOOK,19:04:05,0,present,65bl8:1/1:Running 
+crash-Ignore-p1,19:04:01,3.80,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-ignore-finegrained-r3c-ign-sig  denied the request: Policy r3c-ign-sig failed: no"
+WEBHOOK,19:04:07,0,present,65bl8:1/1:Running 
+crash-Ignore-p2,19:04:04,4.20,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-ignore-finegrained-r3c-ign-sig  denied the request: Policy r3c-ign-sig failed: no"
+crash-Ignore-p1,19:04:05,4.07,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-ignore-finegrained-r3c-ign-sig  denied the request: Policy r3c-ign-sig failed: no"
+WEBHOOK,19:04:10,0,present,65bl8:1/1:Running 
+WEBHOOK,19:04:12,0,present,65bl8:1/1:Running 
+crash-Ignore-p2,19:04:09,4.02,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-ignore-finegrained-r3c-ign-sig  denied the request: Policy r3c-ign-sig failed: no"
+crash-Ignore-p1,19:04:09,4.25,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-ignore-finegrained-r3c-ign-sig  denied the request: Policy r3c-ign-sig failed: no"
+WEBHOOK,19:04:15,0,present,65bl8:1/1:Running 
+crash-Ignore-p2,19:04:13,3.75,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-ignore-finegrained-r3c-ign-sig  denied the request: Policy r3c-ign-sig failed: no"
+WEBHOOK,19:04:17,0,present,65bl8:1/1:Running 
+crash-Ignore-p1,19:04:14,3.79,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-ignore-finegrained-r3c-ign-sig  denied the request: Policy r3c-ign-sig failed: no"
+WEBHOOK,19:04:20,0,present,65bl8:1/1:Running 
+crash-Ignore-p2,19:04:16,3.68,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-ignore-finegrained-r3c-ign-sig  denied the request: Policy r3c-ign-sig failed: no"
+crash-Ignore-p1,19:04:17,3.60,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-ignore-finegrained-r3c-ign-sig  denied the request: Policy r3c-ign-sig failed: no"
+WEBHOOK,19:04:22,0,present,65bl8:1/1:Running 
+crash-Ignore-p2,19:04:20,3.69,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-ignore-finegrained-r3c-ign-sig  denied the request: Policy r3c-ign-sig failed: no"
+crash-Ignore-p1,19:04:21,3.78,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-ignore-finegrained-r3c-ign-sig  denied the request: Policy r3c-ign-sig failed: no"
+WEBHOOK,19:04:25,0,present,65bl8:1/1:Running 
+WEBHOOK,19:04:27,0,present,65bl8:1/1:Running 
+crash-Ignore-p2,19:04:24,4.31,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-ignore-finegrained-r3c-ign-sig  denied the request: Policy r3c-ign-sig failed: no"
+crash-Ignore-p1,19:04:25,4.41,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-ignore-finegrained-r3c-ign-sig  denied the request: Policy r3c-ign-sig failed: no"
+WEBHOOK,19:04:30,0,present,65bl8:1/1:Running 
+crash-Ignore-p2,19:04:28,3.74,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-ignore-finegrained-r3c-ign-sig  denied the request: Policy r3c-ign-sig failed: no"
+WEBHOOK,19:04:33,0,present,65bl8:1/1:Running 
+crash-Ignore-p1,19:04:29,3.93,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-ignore-finegrained-r3c-ign-sig  denied the request: Policy r3c-ign-sig failed: no"
+WEBHOOK,19:04:35,0,present,65bl8:1/1:Running 
+crash-Ignore-p2,19:04:32,4.04,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-ignore-finegrained-r3c-ign-sig  denied the request: Policy r3c-ign-sig failed: no"
+WEBHOOK,19:04:38,0,present,65bl8:1/1:Running 
+crash-Ignore-p1,19:04:33,4.50,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-ignore-finegrained-r3c-ign-sig  denied the request: Policy r3c-ign-sig failed: no"
+WEBHOOK,19:04:40,0,present,65bl8:1/1:Running 
+crash-Ignore-p2,19:04:36,4.38,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-ignore-finegrained-r3c-ign-sig  denied the request: Policy r3c-ign-sig failed: no"
+crash-Ignore-p1,19:04:38,3.99,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-ignore-finegrained-r3c-ign-sig  denied the request: Policy r3c-ign-sig failed: no"
+WEBHOOK,19:04:42,0,present,65bl8:1/1:Running 
+crash-Ignore-p2,19:04:40,3.99,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-ignore-finegrained-r3c-ign-sig  denied the request: Policy r3c-ign-sig failed: no"
+WEBHOOK,19:04:45,0,present,65bl8:1/1:Running 
+crash-Ignore-p1,19:04:42,4.29,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-ignore-finegrained-r3c-ign-sig  denied the request: Policy r3c-ign-sig failed: no"
+WEBHOOK,19:04:48,0,present,65bl8:1/1:Running 
+crash-Ignore-p2,19:04:44,3.68,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-ignore-finegrained-r3c-ign-sig  denied the request: Policy r3c-ign-sig failed: no"
+WEBHOOK,19:04:50,0,present,65bl8:1/1:Running 
+crash-Ignore-p1,19:04:46,4.01,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-ignore-finegrained-r3c-ign-sig  denied the request: Policy r3c-ign-sig failed: no"
+crash-Ignore-p2,19:04:48,4.31,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-ignore-finegrained-r3c-ign-sig  denied the request: Policy r3c-ign-sig failed: no"
+crash-Ignore-p1,19:04:50,3.78,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-ignore-finegrained-r3c-ign-sig  denied the request: Policy r3c-ign-sig failed: no"
+EVENT,19:04:54,0,-,crash-Ignore end

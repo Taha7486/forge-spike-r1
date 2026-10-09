@@ -1,0 +1,72 @@
+17:35:47 == item 3 start: sets A-Fail A-Ignore B-Fail B-Ignore; removing vpol policies for the run
+17:35:48 == set A-Fail: swap to policies/r3c-split-sig.yaml policies/r3c-split-sbom.yaml policies/r3c-split-vuln.yaml
+NAME             AGE   READY
+r3c-split-sbom   1s    true
+r3c-split-sig    2s    true
+r3c-split-vuln   1s    true
+17:36:11 webhook failurePolicies (validating then mutating):
+ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sbom fp=Fail timeout=30
+ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig fp=Fail timeout=30
+ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-vuln fp=Fail timeout=30
+ivpol.mutate.kyverno.svc-fail-finegrained-r3c-split-sbom fp=Fail timeout=30
+ivpol.mutate.kyverno.svc-fail-finegrained-r3c-split-sig fp=Fail timeout=30
+ivpol.mutate.kyverno.svc-fail-finegrained-r3c-split-vuln fp=Fail timeout=30
+17:36:11 -- control
+17:37:58 -- tuf-refused
+17:39:11 -- ghcr-refused
+17:40:33 -- cdn-refused
+17:42:01 -- tuf-slow
+17:44:02 -- ghcr-slow
+17:46:03 -- scaled0
+17:47:13 == set A-Ignore: swap to policies/r3c-ign-sig.yaml policies/r3c-ign-sbom.yaml policies/r3c-ign-vuln.yaml
+NAME           AGE   READY
+r3c-ign-sbom   5s    true
+r3c-ign-sig    5s    true
+r3c-ign-vuln   5s    true
+17:47:40 webhook failurePolicies (validating then mutating):
+ivpol.validate.kyverno.svc-ignore-finegrained-r3c-ign-sbom fp=Ignore timeout=30
+ivpol.validate.kyverno.svc-ignore-finegrained-r3c-ign-sig fp=Ignore timeout=30
+ivpol.validate.kyverno.svc-ignore-finegrained-r3c-ign-vuln fp=Ignore timeout=30
+ivpol.mutate.kyverno.svc-ignore-finegrained-r3c-ign-sbom fp=Ignore timeout=30
+ivpol.mutate.kyverno.svc-ignore-finegrained-r3c-ign-sig fp=Ignore timeout=30
+ivpol.mutate.kyverno.svc-ignore-finegrained-r3c-ign-vuln fp=Ignore timeout=30
+17:47:40 -- control
+17:49:19 -- tuf-refused
+17:50:26 -- ghcr-refused
+17:51:48 -- cdn-refused
+17:53:16 -- tuf-slow
+17:55:38 -- ghcr-slow
+17:57:47 -- scaled0
+17:59:01 -- scaled0-vpol
+18:00:25 == set B-Fail: swap to policies/r3c-split-sig.yaml
+imagevalidatingpolicy.policies.kyverno.io "r3c-ign-vuln" deleted
+imagevalidatingpolicy.policies.kyverno.io/r3c-split-sig created
+NAME            AGE   READY
+r3c-split-sig   1s    true
+18:00:48 webhook failurePolicies (validating then mutating):
+ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig fp=Fail timeout=30
+ivpol.mutate.kyverno.svc-fail-finegrained-r3c-split-sig fp=Fail timeout=30
+18:00:49 -- control
+18:01:33 -- tuf-refused
+18:02:41 -- ghcr-refused
+18:04:07 -- cdn-refused
+18:05:35 -- tuf-slow
+18:07:15 -- ghcr-slow
+18:09:11 -- scaled0
+18:10:20 == set B-Ignore: swap to policies/r3c-ign-sig.yaml
+imagevalidatingpolicy.policies.kyverno.io "r3c-split-sig" deleted
+imagevalidatingpolicy.policies.kyverno.io/r3c-ign-sig created
+NAME          AGE   READY
+r3c-ign-sig   1s    true
+18:10:42 webhook failurePolicies (validating then mutating):
+ivpol.validate.kyverno.svc-ignore-finegrained-r3c-ign-sig fp=Ignore timeout=30
+ivpol.mutate.kyverno.svc-ignore-finegrained-r3c-ign-sig fp=Ignore timeout=30
+18:10:43 -- control
+18:11:27 -- tuf-refused
+18:12:36 -- ghcr-refused
+18:14:01 -- cdn-refused
+18:15:36 -- tuf-slow
+18:18:11 -- ghcr-slow
+18:20:23 -- scaled0
+18:21:35 == item 3 done
+18:21:35 cleanup: restoring

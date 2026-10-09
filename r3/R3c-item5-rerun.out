@@ -1,0 +1,17 @@
+20:37:34 == design B
+imagevalidatingpolicy.policies.kyverno.io/r3c-split-sig created
+NAME            AGE   READY
+r3c-split-sig   1s    true
+20:37:55 -- B-warm-5
+B,warm,5,2.2,6.15,10,0,0,0,0,0,0,0
+20:39:09 == L1 done
+20:39:09 cleanup: restoring
+namespace "r3c-load" deleted
+NAME                     AGE   READY
+r3-verify-forge-images   1s    true
+NAME                                                               AGE   READY
+imagevalidatingpolicy.policies.kyverno.io/r3-verify-forge-images   32s   true
+
+NAME                                                         AGE   READY
+validatingpolicy.policies.kyverno.io/p3-deny-test-label      85m   true
+validatingpolicy.policies.kyverno.io/r1-registry-allowlist   85m   true

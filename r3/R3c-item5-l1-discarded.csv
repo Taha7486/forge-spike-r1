@@ -1,0 +1,9 @@
+reason,design,mode,N,i,seconds,outcome,note
+"priming call denied (DNS), warm burst was actually cold",B,prime,5,0,2.13,denied,Error from server: error when creating  STDIN : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: no valid signature from t
+"priming call denied (DNS), warm burst was actually cold",B,warm,5,3,13.57,admitted,pod/l1-3 created (server dry run) 
+"priming call denied (DNS), warm burst was actually cold",B,warm,5,4,13.60,admitted,pod/l1-4 created (server dry run) 
+"priming call denied (DNS), warm burst was actually cold",B,warm,5,2,14.56,admitted,pod/l1-2 created (server dry run) 
+"priming call denied (DNS), warm burst was actually cold",B,warm,5,1,15.56,admitted,pod/l1-1 created (server dry run) 
+"priming call denied (DNS), warm burst was actually cold",B,warm,5,5,16.69,admitted,pod/l1-5 created (server dry run) 
+--- meta row ---
+priming call denied (DNS),B,warm,5,16.7,69.70,10,0,0,0,0,0,0,0

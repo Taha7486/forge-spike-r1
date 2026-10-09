@@ -1,0 +1,8 @@
+pod "obs-golden" deleted from r3c-obs namespace
+pod "obs-golden-2" deleted from r3c-obs namespace
+pod "obs-golden-3" deleted from r3c-obs namespace
+pod "obs-unsigned" deleted from r3c-obs namespace
+pod "obs-unsigned-3" deleted from r3c-obs namespace
+t+~5s reports: 5
+t+~15s reports: 0
+t+~30s reports: 0

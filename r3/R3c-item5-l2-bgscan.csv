@@ -1,0 +1,3 @@
+design,trigger,pods,policies,seconds_to_all_fresh,complete,rep_cpu_max,rep_mem_max,verify_lines,dns,errs
+B,annotate,20,1,123,1,63.19,225.5,22,0,0
+A,restart,20,3,401,1,37.89,231.7,22,0,0

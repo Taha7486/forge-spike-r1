@@ -1,0 +1,309 @@
+label,utc_time,seconds,outcome,detail
+EVENT,19:07:07,0,-,delete-leader start (probes running)
+WEBHOOK,19:07:10,0,present,65bl8:1/1:Running 9mvp4:1/1:Running 
+delete-leader-p2,19:07:07,4.18,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:07:12,0,present,65bl8:1/1:Running 9mvp4:1/1:Running 
+delete-leader-p1,19:07:07,5.59,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:07:15,0,present,65bl8:1/1:Running 9mvp4:1/1:Running 
+delete-leader-p2,19:07:12,3.80,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+delete-leader-p1,19:07:13,3.79,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:07:17,0,present,65bl8:1/1:Running 9mvp4:1/1:Running 
+delete-leader-p2,19:07:15,3.64,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:07:20,0,present,65bl8:1/1:Running 9mvp4:1/1:Running 
+delete-leader-p1,19:07:17,3.84,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+EVENT,19:07:21,0,-,delete-leader ACTION
+EVENT,19:07:22,0,-,deleting LEADER pod kyverno-admission-controller-5756b4c88-65bl8
+EVENT,19:07:22,0,-,delete-leader action returned
+WEBHOOK,19:07:22,0,present,65bl8:1/1:Terminating 9mvp4:1/1:Running sfs47:0/1:Init:0/1 
+delete-leader-p2,19:07:19,3.70,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+delete-leader-p1,19:07:21,4.07,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:07:25,0,present,65bl8:0/1:Completed 9mvp4:1/1:Running sfs47:0/1:Init:0/1 
+delete-leader-p2,19:07:23,4.67,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:07:28,0,present,9mvp4:1/1:Running sfs47:0/1:Init:0/1 
+delete-leader-p1,19:07:25,4.21,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:07:31,0,present,9mvp4:1/1:Running sfs47:0/1:Init:0/1 
+delete-leader-p2,19:07:27,3.80,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+delete-leader-p1,19:07:29,3.63,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:07:33,0,present,9mvp4:1/1:Running sfs47:0/1:Init:0/1 
+delete-leader-p2,19:07:31,3.70,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:07:36,0,present,9mvp4:1/1:Running sfs47:0/1:Init:0/1 
+delete-leader-p1,19:07:33,4.07,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:07:38,0,present,9mvp4:1/1:Running sfs47:0/1:Init:0/1 
+delete-leader-p2,19:07:35,3.72,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+delete-leader-p1,19:07:37,4.17,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:07:41,0,present,9mvp4:1/1:Running sfs47:0/1:Init:0/1 
+delete-leader-p2,19:07:39,3.96,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:07:43,0,present,9mvp4:1/1:Running sfs47:0/1:Init:0/1 
+delete-leader-p1,19:07:41,4.75,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:07:46,0,present,9mvp4:1/1:Running sfs47:0/1:Running 
+delete-leader-p2,19:07:43,4.59,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:07:49,0,present,9mvp4:1/1:Running sfs47:0/1:Running 
+delete-leader-p1,19:07:46,4.20,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+delete-leader-p2,19:07:47,3.70,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:07:51,0,present,9mvp4:1/1:Running sfs47:0/1:Running 
+delete-leader-p1,19:07:50,3.88,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:07:54,0,present,9mvp4:1/1:Running sfs47:1/1:Running 
+delete-leader-p2,19:07:51,4.27,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:07:56,0,present,9mvp4:1/1:Running sfs47:1/1:Running 
+delete-leader-p1,19:07:54,3.96,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+delete-leader-p2,19:07:55,3.90,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:07:59,0,present,9mvp4:1/1:Running sfs47:1/1:Running 
+delete-leader-p1,19:07:58,3.75,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:08:02,0,present,9mvp4:1/1:Running sfs47:1/1:Running 
+delete-leader-p2,19:07:59,3.85,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:08:04,0,present,9mvp4:1/1:Running sfs47:1/1:Running 
+delete-leader-p1,19:08:01,3.88,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:08:07,0,present,9mvp4:1/1:Running sfs47:1/1:Running 
+delete-leader-p2,19:08:03,4.01,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+delete-leader-p1,19:08:05,3.78,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:08:09,0,present,9mvp4:1/1:Running sfs47:1/1:Running 
+delete-leader-p2,19:08:07,3.89,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:08:12,0,present,9mvp4:1/1:Running sfs47:1/1:Running 
+delete-leader-p1,19:08:09,4.05,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:08:14,0,present,9mvp4:1/1:Running sfs47:1/1:Running 
+delete-leader-p2,19:08:11,3.80,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:08:17,0,present,9mvp4:1/1:Running sfs47:1/1:Running 
+delete-leader-p1,19:08:13,3.95,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+delete-leader-p2,19:08:15,3.89,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:08:19,0,present,9mvp4:1/1:Running sfs47:1/1:Running 
+delete-leader-p1,19:08:17,3.84,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:08:22,0,present,9mvp4:1/1:Running sfs47:1/1:Running 
+delete-leader-p2,19:08:19,3.91,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:08:24,0,present,9mvp4:1/1:Running sfs47:1/1:Running 
+delete-leader-p1,19:08:21,3.81,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+delete-leader-p2,19:08:23,4.05,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:08:27,0,present,9mvp4:1/1:Running sfs47:1/1:Running 
+delete-leader-p1,19:08:25,3.89,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:08:29,0,present,9mvp4:1/1:Running sfs47:1/1:Running 
+delete-leader-p2,19:08:27,4.01,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:08:32,0,present,9mvp4:1/1:Running sfs47:1/1:Running 
+delete-leader-p1,19:08:29,3.99,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:08:35,0,present,9mvp4:1/1:Running sfs47:1/1:Running 
+delete-leader-p2,19:08:31,4.16,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+delete-leader-p1,19:08:33,3.87,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:08:37,0,present,9mvp4:1/1:Running sfs47:1/1:Running 
+delete-leader-p2,19:08:35,3.77,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:08:40,0,present,9mvp4:1/1:Running sfs47:1/1:Running 
+delete-leader-p1,19:08:37,3.87,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:08:42,0,present,9mvp4:1/1:Running sfs47:1/1:Running 
+delete-leader-p2,19:08:39,3.98,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+delete-leader-p1,19:08:40,3.70,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:08:45,0,present,9mvp4:1/1:Running sfs47:1/1:Running 
+delete-leader-p2,19:08:43,3.83,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+delete-leader-p1,19:08:44,4.12,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+delete-leader-p2,19:08:46,3.98,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+EVENT,19:08:50,0,-,delete-leader end
+EVENT,19:09:11,0,-,delete-other start (probes running)
+WEBHOOK,19:09:13,0,present,9mvp4:1/1:Running sfs47:1/1:Running 
+delete-other-p2,19:09:11,4.93,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:09:15,0,present,9mvp4:1/1:Running sfs47:1/1:Running 
+delete-other-p1,19:09:11,6.09,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:09:18,0,present,9mvp4:1/1:Running sfs47:1/1:Running 
+delete-other-p2,19:09:16,4.46,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:09:21,0,present,9mvp4:1/1:Running sfs47:1/1:Running 
+delete-other-p1,19:09:17,4.40,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:09:23,0,present,9mvp4:1/1:Running sfs47:1/1:Running 
+delete-other-p2,19:09:20,3.94,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+EVENT,19:09:25,0,-,delete-other ACTION
+EVENT,19:09:25,0,-,deleting NON-leader pod kyverno-admission-controller-5756b4c88-sfs47 (leader kyverno-admission-controller-5756b4c88-9mvp4)
+delete-other-p1,19:09:21,4.10,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+EVENT,19:09:26,0,-,delete-other action returned
+WEBHOOK,19:09:26,0,present,9mvp4:1/1:Running 9shcg:0/1:Pending sfs47:1/1:Terminating 
+WEBHOOK,19:09:29,0,present,9mvp4:1/1:Running 9shcg:0/1:Init:0/1 
+delete-other-p2,19:09:24,5.36,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+delete-other-p1,19:09:25,5.70,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:09:32,0,present,9mvp4:1/1:Running 9shcg:0/1:Init:0/1 
+delete-other-p2,19:09:29,4.01,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:09:34,0,present,9mvp4:1/1:Running 9shcg:0/1:Init:0/1 
+delete-other-p1,19:09:31,3.97,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:09:37,0,present,9mvp4:1/1:Running 9shcg:0/1:Init:0/1 
+delete-other-p2,19:09:33,3.85,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+delete-other-p1,19:09:35,3.78,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:09:39,0,present,9mvp4:1/1:Running 9shcg:0/1:Init:0/1 
+delete-other-p2,19:09:37,4.10,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:09:42,0,present,9mvp4:1/1:Running 9shcg:0/1:Init:0/1 
+delete-other-p1,19:09:39,4.09,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:09:44,0,present,9mvp4:1/1:Running 9shcg:0/1:Init:0/1 
+delete-other-p2,19:09:41,3.85,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+delete-other-p1,19:09:43,3.85,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:09:47,0,present,9mvp4:1/1:Running 9shcg:0/1:Init:0/1 
+delete-other-p2,19:09:45,4.82,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:09:50,0,present,9mvp4:1/1:Running 9shcg:0/1:Running 
+delete-other-p1,19:09:47,4.63,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:09:53,0,present,9mvp4:1/1:Running 9shcg:0/1:Running 
+delete-other-p2,19:09:50,3.69,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:09:55,0,present,9mvp4:1/1:Running 9shcg:1/1:Running 
+delete-other-p1,19:09:51,3.86,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:09:58,0,present,9mvp4:1/1:Running 9shcg:1/1:Running 
+delete-other-p2,19:09:54,3.93,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+delete-other-p1,19:09:55,3.92,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:10:00,0,present,9mvp4:1/1:Running 9shcg:1/1:Running 
+delete-other-p2,19:09:58,3.97,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:10:03,0,present,9mvp4:1/1:Running 9shcg:1/1:Running 
+delete-other-p1,19:09:59,4.11,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:10:05,0,present,9mvp4:1/1:Running 9shcg:1/1:Running 
+delete-other-p2,19:10:02,3.89,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+delete-other-p1,19:10:03,4.04,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:10:08,0,present,9mvp4:1/1:Running 9shcg:1/1:Running 
+delete-other-p2,19:10:06,3.93,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:10:10,0,present,9mvp4:1/1:Running 9shcg:1/1:Running 
+delete-other-p1,19:10:07,3.78,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:10:13,0,present,9mvp4:1/1:Running 9shcg:1/1:Running 
+delete-other-p2,19:10:10,4.15,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+delete-other-p1,19:10:11,4.00,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:10:15,0,present,9mvp4:1/1:Running 9shcg:1/1:Running 
+WEBHOOK,19:10:18,0,present,9mvp4:1/1:Running 9shcg:1/1:Running 
+delete-other-p2,19:10:14,4.52,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+delete-other-p1,19:10:15,4.26,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:10:21,0,present,9mvp4:1/1:Running 9shcg:1/1:Running 
+delete-other-p2,19:10:18,3.91,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:10:23,0,present,9mvp4:1/1:Running 9shcg:1/1:Running 
+delete-other-p1,19:10:19,4.03,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:10:25,0,present,9mvp4:1/1:Running 9shcg:1/1:Running 
+delete-other-p2,19:10:22,4.34,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+delete-other-p1,19:10:24,4.15,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:10:28,0,present,9mvp4:1/1:Running 9shcg:1/1:Running 
+delete-other-p2,19:10:27,4.17,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:10:31,0,present,9mvp4:1/1:Running 9shcg:1/1:Running 
+delete-other-p1,19:10:28,4.00,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:10:33,0,present,9mvp4:1/1:Running 9shcg:1/1:Running 
+delete-other-p2,19:10:31,4.20,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:10:36,0,present,9mvp4:1/1:Running 9shcg:1/1:Running 
+delete-other-p1,19:10:32,4.32,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:10:38,0,present,9mvp4:1/1:Running 9shcg:1/1:Running 
+delete-other-p2,19:10:35,4.16,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+delete-other-p1,19:10:36,4.17,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:10:41,0,present,9mvp4:1/1:Running 9shcg:1/1:Running 
+delete-other-p2,19:10:39,3.77,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:10:43,0,present,9mvp4:1/1:Running 9shcg:1/1:Running 
+delete-other-p1,19:10:40,3.70,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:10:46,0,present,9mvp4:1/1:Running 9shcg:1/1:Running 
+delete-other-p2,19:10:43,4.21,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+delete-other-p1,19:10:44,4.35,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:10:48,0,present,9mvp4:1/1:Running 9shcg:1/1:Running 
+delete-other-p2,19:10:47,4.53,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+delete-other-p1,19:10:48,4.72,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+EVENT,19:10:53,0,-,delete-other end
+EVENT,19:11:13,0,-,rollout start (probes running)
+WEBHOOK,19:11:16,0,present,9mvp4:1/1:Running 9shcg:1/1:Running 
+rollout-p2,19:11:13,4.26,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:11:18,0,present,9mvp4:1/1:Running 9shcg:1/1:Running 
+rollout-p1,19:11:13,5.24,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:11:21,0,present,9mvp4:1/1:Running 9shcg:1/1:Running 
+rollout-p2,19:11:18,3.86,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+rollout-p1,19:11:19,3.94,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:11:23,0,present,9mvp4:1/1:Running 9shcg:1/1:Running 
+rollout-p2,19:11:21,3.96,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:11:26,0,present,9mvp4:1/1:Running 9shcg:1/1:Running 
+rollout-p1,19:11:23,4.08,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+EVENT,19:11:27,0,-,rollout ACTION
+EVENT,19:11:27,0,-,rollout restart
+EVENT,19:11:28,0,-,rollout action returned
+WEBHOOK,19:11:28,0,present,9mvp4:1/1:Running 9shcg:1/1:Running 7ns25:0/1:Pending 
+rollout-p2,19:11:25,4.04,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+rollout-p1,19:11:27,4.27,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:11:31,0,present,9mvp4:1/1:Running 9shcg:1/1:Running 7ns25:0/1:Init:0/1 
+WEBHOOK,19:11:34,0,present,9mvp4:1/1:Running 9shcg:1/1:Running 7ns25:0/1:Init:0/1 
+rollout-p2,19:11:30,4.50,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+rollout-p1,19:11:31,4.19,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:11:36,0,present,9mvp4:1/1:Running 9shcg:1/1:Running 7ns25:0/1:Init:0/1 
+rollout-p2,19:11:34,3.76,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:11:39,0,present,9mvp4:1/1:Running 9shcg:1/1:Running 7ns25:0/1:Init:0/1 
+rollout-p1,19:11:35,4.16,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:11:41,0,present,9mvp4:1/1:Running 9shcg:1/1:Running 7ns25:0/1:Init:0/1 
+rollout-p2,19:11:38,3.83,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+rollout-p1,19:11:39,3.90,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:11:44,0,present,9mvp4:1/1:Running 9shcg:1/1:Running 7ns25:0/1:Init:0/1 
+rollout-p2,19:11:42,3.89,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:11:46,0,present,9mvp4:1/1:Running 9shcg:1/1:Running 7ns25:0/1:Init:0/1 
+rollout-p1,19:11:43,5.25,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:11:49,0,present,9mvp4:1/1:Running 9shcg:1/1:Running 7ns25:0/1:Running 
+rollout-p2,19:11:46,4.27,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:11:52,0,present,9mvp4:1/1:Running 9shcg:1/1:Running 7ns25:0/1:Running 
+rollout-p1,19:11:48,3.88,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+rollout-p2,19:11:50,3.76,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:11:55,0,present,9mvp4:1/1:Running 9shcg:1/1:Terminating 7ns25:1/1:Running qrnqq:0/1:Pending 
+rollout-p1,19:11:52,4.95,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:11:58,0,present,9mvp4:1/1:Running 7ns25:1/1:Running qrnqq:0/1:Init:0/1 
+rollout-p2,19:11:54,5.43,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:12:01,0,present,9mvp4:1/1:Running 7ns25:1/1:Running qrnqq:0/1:Init:0/1 
+rollout-p1,19:11:57,4.14,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+rollout-p2,19:11:59,4.11,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:12:03,0,present,9mvp4:1/1:Running 7ns25:1/1:Running qrnqq:0/1:Init:0/1 
+rollout-p1,19:12:01,3.88,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:12:06,0,present,9mvp4:1/1:Running 7ns25:1/1:Running qrnqq:0/1:Init:0/1 
+rollout-p2,19:12:03,4.05,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:12:08,0,present,9mvp4:1/1:Running 7ns25:1/1:Running qrnqq:0/1:Init:0/1 
+rollout-p1,19:12:05,3.94,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:12:11,0,present,9mvp4:1/1:Running 7ns25:1/1:Running qrnqq:0/1:Init:0/1 
+rollout-p2,19:12:07,4.03,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+rollout-p1,19:12:09,4.01,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:12:13,0,present,9mvp4:1/1:Running 7ns25:1/1:Running qrnqq:0/1:PodInitializing 
+rollout-p2,19:12:11,3.90,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:12:16,0,present,9mvp4:1/1:Running 7ns25:1/1:Running qrnqq:0/1:Running 
+rollout-p1,19:12:13,3.93,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:12:18,0,present,9mvp4:1/1:Running 7ns25:1/1:Running qrnqq:0/1:Running 
+rollout-p2,19:12:15,3.98,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+rollout-p1,19:12:17,3.85,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:12:21,0,present,9mvp4:1/1:Terminating 7ns25:1/1:Running qrnqq:1/1:Running 
+rollout-p2,19:12:19,3.97,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+rollout-p1,19:12:21,2.10,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:12:24,0,present,9mvp4:1/1:Terminating 7ns25:1/1:Running qrnqq:1/1:Running 
+rollout-p2,19:12:23,1.67,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+rollout-p1,19:12:23,2.77,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+rollout-p2,19:12:25,1.80,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:12:27,0,present,7ns25:1/1:Running qrnqq:1/1:Running 
+rollout-p1,19:12:26,1.60,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+rollout-p1,19:12:28,1.55,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:12:29,0,present,7ns25:1/1:Running qrnqq:1/1:Running 
+rollout-p2,19:12:27,4.46,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:12:32,0,present,7ns25:1/1:Running qrnqq:1/1:Running 
+rollout-p1,19:12:29,4.12,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:12:34,0,present,7ns25:1/1:Running qrnqq:1/1:Running 
+rollout-p2,19:12:31,3.60,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+rollout-p1,19:12:33,3.54,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:12:37,0,present,7ns25:1/1:Running qrnqq:1/1:Running 
+rollout-p2,19:12:35,3.81,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:12:39,0,present,7ns25:1/1:Running qrnqq:1/1:Running 
+rollout-p1,19:12:37,3.90,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:12:42,0,present,7ns25:1/1:Running qrnqq:1/1:Running 
+rollout-p2,19:12:39,3.68,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:12:45,0,present,7ns25:1/1:Running qrnqq:1/1:Running 
+rollout-p1,19:12:41,4.50,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+rollout-p2,19:12:42,4.53,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:12:47,0,present,7ns25:1/1:Running qrnqq:1/1:Running 
+rollout-p1,19:12:45,3.71,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:12:50,0,present,7ns25:1/1:Running qrnqq:1/1:Running 
+rollout-p2,19:12:47,3.85,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:12:52,0,present,7ns25:1/1:Running qrnqq:1/1:Running 
+rollout-p1,19:12:49,3.92,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+rollout-p2,19:12:51,3.67,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:12:55,0,present,7ns25:1/1:Running qrnqq:1/1:Running 
+rollout-p1,19:12:53,3.52,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:12:57,0,present,7ns25:1/1:Running qrnqq:1/1:Running 
+rollout-p2,19:12:54,3.66,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:13:00,0,present,7ns25:1/1:Running qrnqq:1/1:Running 
+rollout-p1,19:12:57,3.62,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+rollout-p2,19:12:58,3.81,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:13:02,0,present,7ns25:1/1:Running qrnqq:1/1:Running 
+rollout-p1,19:13:00,3.61,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:13:05,0,present,7ns25:1/1:Running qrnqq:1/1:Running 
+rollout-p2,19:13:02,3.80,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:13:07,0,present,7ns25:1/1:Running qrnqq:1/1:Running 
+rollout-p1,19:13:04,3.91,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+rollout-p2,19:13:06,4.00,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:13:10,0,present,7ns25:1/1:Running qrnqq:1/1:Running 
+rollout-p1,19:13:08,4.00,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:13:12,0,present,7ns25:1/1:Running qrnqq:1/1:Running 
+rollout-p2,19:13:10,4.01,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:13:15,0,present,7ns25:1/1:Running qrnqq:1/1:Running 
+rollout-p1,19:13:12,3.70,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+rollout-p2,19:13:14,3.84,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:13:17,0,present,7ns25:1/1:Running qrnqq:1/1:Running 
+rollout-p1,19:13:15,3.73,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:13:20,0,present,7ns25:1/1:Running qrnqq:1/1:Running 
+rollout-p2,19:13:18,3.78,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+WEBHOOK,19:13:23,0,present,7ns25:1/1:Running qrnqq:1/1:Running 
+rollout-p1,19:13:19,3.59,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+rollout-p2,19:13:21,4.08,denied-by-policy,"d-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the request: Policy r3c-split-sig failed: "
+EVENT,19:13:25,0,-,rollout end

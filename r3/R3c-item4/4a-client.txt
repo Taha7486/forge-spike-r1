@@ -1,0 +1,6 @@
+=== 4a: REAL create, unsigned (expect denied)
+Error from server: error when creating "tests/r1-t3-unsigned-ghcr.yaml": admission webhook "ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig" denied the request: Policy r3c-split-sig failed: no valid signature from the forge-spike-r1 signing workflow for: ghcr.io/taha7486/forge-spike-r1@sha256:3d525eb5beb554f02d6b3004f67d4eba3214b524f0f64237b3d031445168312f
+took 4.598 s
+=== 4a: REAL create, golden (expect admitted)
+pod/t2-golden-ghcr created
+took 13.66 s

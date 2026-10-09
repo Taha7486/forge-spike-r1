@@ -1,0 +1,10 @@
+validatingwebhookconfiguration.admissionregistration.k8s.io/kyverno-cel-exception-validating-webhook-cfg    1     1s
+validatingwebhookconfiguration.admissionregistration.k8s.io/kyverno-cleanup-validating-webhook-cfg          1     55s
+validatingwebhookconfiguration.admissionregistration.k8s.io/kyverno-exception-validating-webhook-cfg        1     1s
+validatingwebhookconfiguration.admissionregistration.k8s.io/kyverno-global-context-validating-webhook-cfg   1     1s
+validatingwebhookconfiguration.admissionregistration.k8s.io/kyverno-policy-validating-webhook-cfg           1     1s
+validatingwebhookconfiguration.admissionregistration.k8s.io/kyverno-resource-validating-webhook-cfg         3     0s
+validatingwebhookconfiguration.admissionregistration.k8s.io/kyverno-ttl-validating-webhook-cfg              1     55s
+mutatingwebhookconfiguration.admissionregistration.k8s.io/kyverno-policy-mutating-webhook-cfg     1     1s
+mutatingwebhookconfiguration.admissionregistration.k8s.io/kyverno-resource-mutating-webhook-cfg   1     1s
+mutatingwebhookconfiguration.admissionregistration.k8s.io/kyverno-verify-mutating-webhook-cfg     1     0s

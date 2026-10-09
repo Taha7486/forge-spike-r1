@@ -1,0 +1,11 @@
+rep,step,seconds,outcome
+1,A+B cold (both uncached),14.07,admitted
+1,A+B again (both cached?),1.67,admitted
+1,A+B+C: only C new,13.60,admitted
+2,A+B cold (both uncached),13.44,admitted
+2,A+B again (both cached?),1.69,admitted
+2,A+B+C: only C new,12.50,admitted
+3,A+B cold (both uncached),13.52,admitted
+3,A+B again (both cached?),1.70,admitted
+3,A+B+C: only C new,12.38,admitted
+STEP7DONE

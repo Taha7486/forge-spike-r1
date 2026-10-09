@@ -1,0 +1,41 @@
+== 14:56:19 c3-split3: swap policies/r3c-split-sig.yaml policies/r3c-split-sbom.yaml policies/r3c-split-vuln.yaml
+NAME             AGE   READY
+r3c-split-sbom   1s    true
+r3c-split-sig    1s    true
+r3c-split-vuln   1s    true
+== 14:56:41 c3-split3 start
+done c3-split3 valid=20 attempts=25
+== 15:27:42 c1-sig: swap policies/r3c-split-sig.yaml
+imagevalidatingpolicy.policies.kyverno.io "r3c-split-vuln" deleted
+imagevalidatingpolicy.policies.kyverno.io/r3c-split-sig created
+NAME            AGE   READY
+r3c-split-sig   1s    true
+== 15:28:04 c1-sig start
+done c1-sig valid=20 attempts=27
+== 15:55:00 c2-sig-sbom: swap policies/r3c-split-sig.yaml policies/r3c-split-sbom.yaml
+imagevalidatingpolicy.policies.kyverno.io/r3c-split-sbom created
+NAME             AGE   READY
+r3c-split-sbom   1s    true
+r3c-split-sig    1s    true
+== 15:55:22 c2-sig-sbom start
+done c2-sig-sbom valid=20 attempts=22
+== 16:22:39 c4-tripwire: swap policies/r3c-split-sig.yaml policies/r3c-tripwire-vuln-warn.yaml
+imagevalidatingpolicy.policies.kyverno.io/r3c-tripwire-vuln-warn created
+NAME                     AGE   READY
+r3c-split-sig            2s    true
+r3c-tripwire-vuln-warn   1s    true
+== 16:23:02 c4-tripwire start
+done c4-tripwire valid=20 attempts=23
+== 16:50:10 x-bigsbom: swap policies/r3c-split-sig.yaml policies/r3c-split-sbom.yaml policies/r3c-split-vuln.yaml
+NAME             AGE   READY
+r3c-split-sbom   1s    true
+r3c-split-sig    1s    true
+r3c-split-vuln   1s    true
+== 16:50:32 x-split3-bigsbom start
+done x-split3-bigsbom valid=10 attempts=12
+== 17:04:31 x-unsigned denial timings
+== 17:13:44 restoring full policy
+imagevalidatingpolicy.policies.kyverno.io/r3-verify-forge-images created
+NAME                     AGE   READY
+r3-verify-forge-images   1s    true
+ALL DONE

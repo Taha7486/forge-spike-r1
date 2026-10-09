@@ -1,0 +1,147 @@
+design,mode,N,i,seconds,outcome,note
+B,cold,5,2,14.87,admitted,pod/l1-2 created (server dry run) 
+B,cold,5,1,14.98,admitted,pod/l1-1 created (server dry run) 
+B,cold,5,5,15.65,admitted,pod/l1-5 created (server dry run) 
+B,cold,5,4,16.82,admitted,pod/l1-4 created (server dry run) 
+B,cold,5,3,18.07,admitted,pod/l1-3 created (server dry run) 
+B,cold,10,3,13.64,admitted,pod/l1-3 created (server dry run) 
+B,cold,10,7,14.61,admitted,pod/l1-7 created (server dry run) 
+B,cold,10,1,15.57,admitted,pod/l1-1 created (server dry run) 
+B,cold,10,2,16.54,admitted,pod/l1-2 created (server dry run) 
+B,cold,10,6,17.50,admitted,pod/l1-6 created (server dry run) 
+B,cold,10,8,18.90,admitted,pod/l1-8 created (server dry run) 
+B,cold,10,4,20.07,admitted,pod/l1-4 created (server dry run) 
+B,cold,10,9,21.92,admitted,pod/l1-9 created (server dry run) 
+B,cold,10,10,22.46,admitted,pod/l1-10 created (server dry run) 
+B,cold,10,5,23.50,admitted,pod/l1-5 created (server dry run) 
+B,cold,20,6,16.04,admitted,pod/l1-6 created (server dry run) 
+B,cold,20,5,16.86,admitted,pod/l1-5 created (server dry run) 
+B,cold,20,11,19.10,admitted,pod/l1-11 created (server dry run) 
+B,cold,20,3,19.52,admitted,pod/l1-3 created (server dry run) 
+B,cold,20,13,20.01,admitted,pod/l1-13 created (server dry run) 
+B,cold,20,14,21.36,admitted,pod/l1-14 created (server dry run) 
+B,cold,20,4,23.01,admitted,pod/l1-4 created (server dry run) 
+B,cold,20,12,23.85,admitted,pod/l1-12 created (server dry run) 
+B,cold,20,8,25.04,admitted,pod/l1-8 created (server dry run) 
+B,cold,20,9,26.54,admitted,pod/l1-9 created (server dry run) 
+B,cold,20,20,27.44,admitted,pod/l1-20 created (server dry run) 
+B,cold,20,7,29.59,admitted,pod/l1-7 created (server dry run) 
+B,cold,20,1,30.57,admitted,pod/l1-1 created (server dry run) 
+B,cold,20,16,31.91,admitted,pod/l1-16 created (server dry run) 
+B,cold,20,10,33.04,admitted,pod/l1-10 created (server dry run) 
+B,cold,20,17,33.77,webhook-failure,Error from server (InternalError): error when creating  STDIN : Internal error occurred: failed calling webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig : failed to call webhook: Pos
+B,cold,20,15,33.76,webhook-failure,Error from server (InternalError): error when creating  STDIN : Internal error occurred: failed calling webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig : failed to call webhook: Pos
+B,cold,20,19,33.76,webhook-failure,Error from server (InternalError): error when creating  STDIN : Internal error occurred: failed calling webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig : failed to call webhook: Pos
+B,cold,20,18,33.80,webhook-failure,Error from server (InternalError): error when creating  STDIN : Internal error occurred: failed calling webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig : failed to call webhook: Pos
+B,cold,20,2,33.84,webhook-failure,Error from server (InternalError): error when creating  STDIN : Internal error occurred: failed calling webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig : failed to call webhook: Pos
+B,prime,10,0,13.75,admitted,pod/l1-0 created (server dry run) 
+B,warm,10,2,2.48,admitted,pod/l1-2 created (server dry run) 
+B,warm,10,3,2.68,admitted,pod/l1-3 created (server dry run) 
+B,warm,10,7,2.82,admitted,pod/l1-7 created (server dry run) 
+B,warm,10,5,2.76,admitted,pod/l1-5 created (server dry run) 
+B,warm,10,9,2.89,admitted,pod/l1-9 created (server dry run) 
+B,warm,10,4,3.05,admitted,pod/l1-4 created (server dry run) 
+B,warm,10,10,3.05,admitted,pod/l1-10 created (server dry run) 
+B,warm,10,1,3.07,admitted,pod/l1-1 created (server dry run) 
+B,warm,10,8,3.05,admitted,pod/l1-8 created (server dry run) 
+B,warm,10,6,3.05,admitted,pod/l1-6 created (server dry run) 
+B,prime,20,0,14.04,admitted,pod/l1-0 created (server dry run) 
+B,warm,20,5,3.50,admitted,pod/l1-5 created (server dry run) 
+B,warm,20,3,3.67,admitted,pod/l1-3 created (server dry run) 
+B,warm,20,4,4.09,admitted,pod/l1-4 created (server dry run) 
+B,warm,20,16,4.17,admitted,pod/l1-16 created (server dry run) 
+B,warm,20,11,4.22,admitted,pod/l1-11 created (server dry run) 
+B,warm,20,17,4.20,admitted,pod/l1-17 created (server dry run) 
+B,warm,20,1,4.49,admitted,pod/l1-1 created (server dry run) 
+B,warm,20,9,4.59,admitted,pod/l1-9 created (server dry run) 
+B,warm,20,7,4.61,admitted,pod/l1-7 created (server dry run) 
+B,warm,20,18,4.73,admitted,pod/l1-18 created (server dry run) 
+B,warm,20,10,4.79,admitted,pod/l1-10 created (server dry run) 
+B,warm,20,12,4.85,admitted,pod/l1-12 created (server dry run) 
+B,warm,20,15,4.82,admitted,pod/l1-15 created (server dry run) 
+B,warm,20,19,4.89,admitted,pod/l1-19 created (server dry run) 
+B,warm,20,14,4.93,admitted,pod/l1-14 created (server dry run) 
+B,warm,20,20,4.91,admitted,pod/l1-20 created (server dry run) 
+B,warm,20,8,4.97,admitted,pod/l1-8 created (server dry run) 
+B,warm,20,13,4.98,admitted,pod/l1-13 created (server dry run) 
+B,warm,20,6,4.99,admitted,pod/l1-6 created (server dry run) 
+B,warm,20,2,5.08,admitted,pod/l1-2 created (server dry run) 
+A,cold,5,2,22.58,admitted,pod/l1-2 created (server dry run) 
+A,cold,5,1,25.25,admitted,pod/l1-1 created (server dry run) 
+A,cold,5,4,26.14,admitted,pod/l1-4 created (server dry run) 
+A,cold,5,5,26.71,admitted,pod/l1-5 created (server dry run) 
+A,cold,5,3,27.82,admitted,pod/l1-3 created (server dry run) 
+A,cold,10,2,15.92,admitted,pod/l1-2 created (server dry run) 
+A,cold,10,1,19.10,admitted,pod/l1-1 created (server dry run) 
+A,cold,10,5,24.85,admitted,pod/l1-5 created (server dry run) 
+A,cold,10,4,28.21,admitted,pod/l1-4 created (server dry run) 
+A,cold,10,3,30.13,admitted,pod/l1-3 created (server dry run) 
+A,cold,10,8,32.14,webhook-failure,Error from server (InternalError): error when creating  STDIN : Internal error occurred: failed calling webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sbom : failed to call webhook: Po
+A,cold,10,7,32.15,webhook-failure,Error from server (InternalError): error when creating  STDIN : Internal error occurred: failed calling webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sbom : failed to call webhook: Po
+A,cold,10,9,32.16,webhook-failure,Error from server (InternalError): error when creating  STDIN : Internal error occurred: failed calling webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sbom : failed to call webhook: Po
+A,cold,10,6,32.20,webhook-failure,Error from server (InternalError): error when creating  STDIN : Internal error occurred: failed calling webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-vuln : failed to call webhook: Po
+A,cold,10,10,32.18,webhook-failure,Error from server (InternalError): error when creating  STDIN : Internal error occurred: failed calling webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-vuln : failed to call webhook: Po
+A,cold,20,4,19.47,admitted,pod/l1-4 created (server dry run) 
+A,cold,20,16,25.95,admitted,pod/l1-16 created (server dry run) 
+A,cold,20,2,27.18,admitted,pod/l1-2 created (server dry run) 
+A,cold,20,1,29.16,admitted,pod/l1-1 created (server dry run) 
+A,cold,20,14,31.31,admitted,pod/l1-14 created (server dry run) 
+A,cold,20,9,33.45,admitted,pod/l1-9 created (server dry run) 
+A,cold,20,5,33.96,webhook-failure,Error from server (InternalError): error when creating  STDIN : Internal error occurred: failed calling webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sbom : failed to call webhook: Po
+A,cold,20,20,34.00,webhook-failure,Error from server (InternalError): error when creating  STDIN : Internal error occurred: failed calling webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sbom : failed to call webhook: Po
+A,cold,20,17,34.03,webhook-failure,Error from server (InternalError): error when creating  STDIN : Internal error occurred: failed calling webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig : failed to call webhook: Pos
+A,cold,20,12,34.06,webhook-failure,Error from server (InternalError): error when creating  STDIN : Internal error occurred: failed calling webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sbom : failed to call webhook: Po
+A,cold,20,19,34.07,webhook-failure,Error from server (InternalError): error when creating  STDIN : Internal error occurred: failed calling webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig : failed to call webhook: Pos
+A,cold,20,7,34.27,webhook-failure,Error from server (InternalError): error when creating  STDIN : Internal error occurred: failed calling webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig : failed to call webhook: Pos
+A,cold,20,15,34.25,webhook-failure,Error from server (InternalError): error when creating  STDIN : Internal error occurred: failed calling webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig : failed to call webhook: Pos
+A,cold,20,13,34.26,webhook-failure,Error from server (InternalError): error when creating  STDIN : Internal error occurred: failed calling webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig : failed to call webhook: Pos
+A,cold,20,10,34.30,webhook-failure,Error from server (InternalError): error when creating  STDIN : Internal error occurred: failed calling webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sbom : failed to call webhook: Po
+A,cold,20,3,34.32,webhook-failure,Error from server (InternalError): error when creating  STDIN : Internal error occurred: failed calling webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sbom : failed to call webhook: Po
+A,cold,20,8,34.35,webhook-failure,Error from server (InternalError): error when creating  STDIN : Internal error occurred: failed calling webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sbom : failed to call webhook: Po
+A,cold,20,18,34.31,webhook-failure,Error from server (InternalError): error when creating  STDIN : Internal error occurred: failed calling webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-vuln : failed to call webhook: Po
+A,cold,20,6,34.34,webhook-failure,Error from server (InternalError): error when creating  STDIN : Internal error occurred: failed calling webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sbom : failed to call webhook: Po
+A,cold,20,11,34.47,webhook-failure,Error from server (InternalError): error when creating  STDIN : Internal error occurred: failed calling webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sbom : failed to call webhook: Po
+A,prime,5,0,14.71,admitted,pod/l1-0 created (server dry run) 
+A,warm,5,4,12.51,admitted,pod/l1-4 created (server dry run) 
+A,warm,5,1,17.95,admitted,pod/l1-1 created (server dry run) 
+A,warm,5,3,18.32,admitted,pod/l1-3 created (server dry run) 
+A,warm,5,2,19.47,admitted,pod/l1-2 created (server dry run) 
+A,warm,5,5,20.77,admitted,pod/l1-5 created (server dry run) 
+A,prime,10,0,14.27,admitted,pod/l1-0 created (server dry run) 
+A,warm,10,10,15.08,admitted,pod/l1-10 created (server dry run) 
+A,warm,10,5,15.58,admitted,pod/l1-5 created (server dry run) 
+A,warm,10,6,17.84,admitted,pod/l1-6 created (server dry run) 
+A,warm,10,7,22.26,admitted,pod/l1-7 created (server dry run) 
+A,warm,10,8,24.56,admitted,pod/l1-8 created (server dry run) 
+A,warm,10,4,26.75,admitted,pod/l1-4 created (server dry run) 
+A,warm,10,1,27.91,admitted,pod/l1-1 created (server dry run) 
+A,warm,10,2,31.60,admitted,pod/l1-2 created (server dry run) 
+A,warm,10,3,31.93,webhook-failure,Error from server (InternalError): error when creating  STDIN : Internal error occurred: failed calling webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-vuln : failed to call webhook: Po
+A,warm,10,9,32.13,webhook-failure,Error from server (InternalError): error when creating  STDIN : Internal error occurred: failed calling webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-vuln : failed to call webhook: Po
+A,prime,20,0,15.23,admitted,pod/l1-0 created (server dry run) 
+A,warm,20,3,16.29,admitted,pod/l1-3 created (server dry run) 
+A,warm,20,10,17.31,admitted,pod/l1-10 created (server dry run) 
+A,warm,20,17,19.77,admitted,pod/l1-17 created (server dry run) 
+A,warm,20,9,22.17,admitted,pod/l1-9 created (server dry run) 
+A,warm,20,12,26.87,admitted,pod/l1-12 created (server dry run) 
+A,warm,20,5,26.90,admitted,pod/l1-5 created (server dry run) 
+A,warm,20,8,33.88,webhook-failure,Error from server (InternalError): error when creating  STDIN : Internal error occurred: failed calling webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sbom : failed to call webhook: Po
+A,warm,20,7,33.92,webhook-failure,Error from server (InternalError): error when creating  STDIN : Internal error occurred: failed calling webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sbom : failed to call webhook: Po
+A,warm,20,1,33.98,webhook-failure,Error from server (InternalError): error when creating  STDIN : Internal error occurred: failed calling webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sbom : failed to call webhook: Po
+A,warm,20,19,33.99,webhook-failure,Error from server (InternalError): error when creating  STDIN : Internal error occurred: failed calling webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sbom : failed to call webhook: Po
+A,warm,20,6,33.99,webhook-failure,Error from server (InternalError): error when creating  STDIN : Internal error occurred: failed calling webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sbom : failed to call webhook: Po
+A,warm,20,20,34.01,webhook-failure,Error from server (InternalError): error when creating  STDIN : Internal error occurred: failed calling webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-vuln : failed to call webhook: Po
+A,warm,20,4,34.05,webhook-failure,Error from server (InternalError): error when creating  STDIN : Internal error occurred: failed calling webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-vuln : failed to call webhook: Po
+A,warm,20,16,34.07,webhook-failure,Error from server (InternalError): error when creating  STDIN : Internal error occurred: failed calling webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sbom : failed to call webhook: Po
+A,warm,20,11,34.10,webhook-failure,Error from server (InternalError): error when creating  STDIN : Internal error occurred: failed calling webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sbom : failed to call webhook: Po
+A,warm,20,2,34.11,webhook-failure,Error from server (InternalError): error when creating  STDIN : Internal error occurred: failed calling webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sbom : failed to call webhook: Po
+A,warm,20,15,34.13,webhook-failure,Error from server (InternalError): error when creating  STDIN : Internal error occurred: failed calling webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sbom : failed to call webhook: Po
+A,warm,20,18,34.13,webhook-failure,Error from server (InternalError): error when creating  STDIN : Internal error occurred: failed calling webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-vuln : failed to call webhook: Po
+A,warm,20,13,34.18,webhook-failure,Error from server (InternalError): error when creating  STDIN : Internal error occurred: failed calling webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sbom : failed to call webhook: Po
+A,warm,20,14,34.29,webhook-failure,Error from server (InternalError): error when creating  STDIN : Internal error occurred: failed calling webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-vuln : failed to call webhook: Po
+B,prime,5,0,13.96,admitted,"pod/l1-0 created (server dry run) "
+B,warm,5,5,1.95,admitted,"pod/l1-5 created (server dry run) "
+B,warm,5,3,2.04,admitted,"pod/l1-3 created (server dry run) "
+B,warm,5,2,2.05,admitted,"pod/l1-2 created (server dry run) "
+B,warm,5,1,2.20,admitted,"pod/l1-1 created (server dry run) "
+B,warm,5,4,2.21,admitted,"pod/l1-4 created (server dry run) "

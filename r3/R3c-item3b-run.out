@@ -1,0 +1,168 @@
+18:27:40 == item 3b-1 start: sets A-Fail A-Ignore B-Fail B-Ignore
+18:27:41 == set A-Fail: swap to policies/r3c-split-sig.yaml policies/r3c-split-sbom.yaml policies/r3c-split-vuln.yaml
+NAME             AGE   READY
+r3c-split-sbom   1s    true
+r3c-split-sig    1s    true
+r3c-split-vuln   1s    true
+18:28:03 -- control
+  A-Fail/control golden #1: admitted (14.1 s)
+  A-Fail/control golden #2: admitted (13.2 s)
+  A-Fail/control unsigned #1: denied (6.6 s)
+  A-Fail/control unsigned #2: denied (6.4 s)
+18:28:48 -- tuf-hang
+  A-Fail/tuf-hang golden #1: webhook-failure (30.5 s)
+  A-Fail/tuf-hang golden #2: webhook-failure (30.3 s)
+  A-Fail/tuf-hang golden #3: webhook-failure (30.4 s)
+  A-Fail/tuf-hang unsigned #1: webhook-failure (30.3 s)
+  A-Fail/tuf-hang unsigned #2: webhook-failure (30.3 s)
+  A-Fail/tuf-hang unsigned #3: webhook-failure (30.3 s)
+18:32:39 -- ghcr-hang
+  A-Fail/ghcr-hang golden #1: denied (11.5 s)
+  A-Fail/ghcr-hang golden #2: denied (5.4 s)
+  A-Fail/ghcr-hang golden #3: denied (5.4 s)
+  A-Fail/ghcr-hang unsigned #1: denied (5.4 s)
+  A-Fail/ghcr-hang unsigned #2: denied (5.4 s)
+  A-Fail/ghcr-hang unsigned #3: denied (11.4 s)
+18:35:07 == set A-Ignore: swap to policies/r3c-ign-sig.yaml policies/r3c-ign-sbom.yaml policies/r3c-ign-vuln.yaml
+NAME           AGE   READY
+r3c-ign-sbom   13s   true
+r3c-ign-sig    14s   true
+r3c-ign-vuln   13s   true
+18:35:42 -- control
+  A-Ignore/control golden #1: admitted (15.4 s)
+  A-Ignore/control golden #2: admitted (12.3 s)
+  A-Ignore/control unsigned #1: denied (6.1 s)
+  A-Ignore/control unsigned #2: denied (6.4 s)
+18:36:50 -- tuf-hang
+  A-Ignore/tuf-hang golden #1: admitted (30.4 s)
+  A-Ignore/tuf-hang golden #2: admitted (30.4 s)
+  A-Ignore/tuf-hang golden #3: admitted (30.4 s)
+  A-Ignore/tuf-hang unsigned #1: admitted (30.4 s)
+  A-Ignore/tuf-hang unsigned #2: admitted (30.4 s)
+  A-Ignore/tuf-hang unsigned #3: admitted (30.4 s)
+18:40:42 -- ghcr-hang
+  A-Ignore/ghcr-hang golden #1: denied (5.4 s)
+  A-Ignore/ghcr-hang golden #2: denied (5.4 s)
+  A-Ignore/ghcr-hang golden #3: denied (5.4 s)
+  A-Ignore/ghcr-hang unsigned #1: denied (11.4 s)
+  A-Ignore/ghcr-hang unsigned #2: denied (11.4 s)
+  A-Ignore/ghcr-hang unsigned #3: denied (5.3 s)
+18:43:10 == set B-Fail: swap to policies/r3c-split-sig.yaml
+imagevalidatingpolicy.policies.kyverno.io "r3c-ign-vuln" deleted
+imagevalidatingpolicy.policies.kyverno.io/r3c-split-sig created
+NAME            AGE   READY
+r3c-split-sig   14s   true
+18:43:45 -- control
+  B-Fail/control golden #1: admitted (14.0 s)
+  B-Fail/control golden #2: admitted (1.7 s)
+  B-Fail/control unsigned #1: denied (4.0 s)
+  B-Fail/control unsigned #2: denied (4.3 s)
+18:44:31 -- tuf-hang
+  B-Fail/tuf-hang golden #1: webhook-failure (30.3 s)
+  B-Fail/tuf-hang golden #2: webhook-failure (30.3 s)
+  B-Fail/tuf-hang golden #3: webhook-failure (30.3 s)
+  B-Fail/tuf-hang unsigned #1: webhook-failure (30.3 s)
+  B-Fail/tuf-hang unsigned #2: webhook-failure (30.5 s)
+  B-Fail/tuf-hang unsigned #3: webhook-failure (30.3 s)
+18:48:28 -- ghcr-hang
+  B-Fail/ghcr-hang golden #1: denied (5.4 s)
+  B-Fail/ghcr-hang golden #2: denied (5.3 s)
+  B-Fail/ghcr-hang golden #3: denied (5.3 s)
+  B-Fail/ghcr-hang unsigned #1: denied (11.5 s)
+  B-Fail/ghcr-hang unsigned #2: denied (5.3 s)
+  B-Fail/ghcr-hang unsigned #3: denied (5.4 s)
+18:50:50 == set B-Ignore: swap to policies/r3c-ign-sig.yaml
+imagevalidatingpolicy.policies.kyverno.io "r3c-split-sig" deleted
+imagevalidatingpolicy.policies.kyverno.io/r3c-ign-sig created
+NAME          AGE   READY
+r3c-ign-sig   13s   true
+18:51:24 -- control
+  B-Ignore/control golden #1: admitted (14.9 s)
+  B-Ignore/control golden #2: admitted (2.0 s)
+  B-Ignore/control unsigned #1: denied (4.3 s)
+  B-Ignore/control unsigned #2: denied (4.1 s)
+18:52:21 -- tuf-hang
+  B-Ignore/tuf-hang golden #1: admitted (30.3 s)
+  B-Ignore/tuf-hang golden #2: admitted (30.4 s)
+  B-Ignore/tuf-hang golden #3: admitted (30.3 s)
+  B-Ignore/tuf-hang unsigned #1: admitted (30.3 s)
+  B-Ignore/tuf-hang unsigned #2: admitted (30.3 s)
+  B-Ignore/tuf-hang unsigned #3: admitted (30.3 s)
+18:56:27 -- ghcr-hang
+  B-Ignore/ghcr-hang golden #1: denied (5.3 s)
+  B-Ignore/ghcr-hang golden #2: denied (5.4 s)
+  B-Ignore/ghcr-hang golden #3: denied (5.3 s)
+  B-Ignore/ghcr-hang unsigned #1: denied (11.4 s)
+  B-Ignore/ghcr-hang unsigned #2: denied (5.3 s)
+  B-Ignore/ghcr-hang unsigned #3: denied (5.3 s)
+18:58:49 == item 3b-1 done
+18:58:49 cleanup: restoring
+NAME                     AGE   READY
+r3-verify-forge-images   13s   true
+NAME                                                               AGE   READY
+imagevalidatingpolicy.policies.kyverno.io/r3-verify-forge-images   44s   true
+
+NAME                                                         AGE   READY
+validatingpolicy.policies.kyverno.io/p3-deny-test-label      10s   true
+validatingpolicy.policies.kyverno.io/r1-registry-allowlist   10s   true
+0
+18:59:35 == crash, policy Fail
+imagevalidatingpolicy.policies.kyverno.io/r3c-split-sig created
+NAME            AGE   READY
+r3c-split-sig   0s    true
+19:00:12 EVENT crash-Fail start (probes running)
+19:00:26 EVENT crash-Fail ACTION
+19:00:26 EVENT killing container 88ddb7ef82b329a8abb402afbb25130eb93566b65fc8ab74728b2c46655c9f74 of kyverno-admission-controller-5756b4c88-65bl8 (no graceful stop)
+19:00:28 EVENT crash-Fail action returned
+19:02:05 EVENT crash-Fail end
+19:02:25 == crash, policy Ignore
+imagevalidatingpolicy.policies.kyverno.io/r3c-ign-sig created
+NAME          AGE   READY
+r3c-ign-sig   1s    true
+19:03:02 EVENT crash-Ignore start (probes running)
+19:03:16 EVENT crash-Ignore ACTION
+19:03:16 EVENT killing container 2a66dfcdda1859136768d6ad452982c23199895209250b34d0a051ff7a30f249 of kyverno-admission-controller-5756b4c88-65bl8 (no graceful stop)
+19:03:18 EVENT crash-Ignore action returned
+19:04:54 EVENT crash-Ignore end
+19:05:14 == item 3b crash done
+19:05:14 cleanup: restoring
+NAME                     AGE   READY
+r3-verify-forge-images   1s    true
+NAME                                                               AGE   READY
+imagevalidatingpolicy.policies.kyverno.io/r3-verify-forge-images   32s   true
+
+NAME                                                         AGE   READY
+validatingpolicy.policies.kyverno.io/p3-deny-test-label      11s   true
+validatingpolicy.policies.kyverno.io/r1-registry-allowlist   11s   true
+imagevalidatingpolicy.policies.kyverno.io/r3c-split-sig created
+NAME            AGE   READY
+r3c-split-sig   1s    true
+poddisruptionbudget.policy/r3c-test-pdb created
+19:07:07 pods: kyverno-admission-controller-5756b4c88-65bl8 kyverno-admission-controller-5756b4c88-9mvp4  leader: kyverno-admission-controller-5756b4c88-65bl8
+19:07:07 EVENT delete-leader start (probes running)
+19:07:21 EVENT delete-leader ACTION
+19:07:22 EVENT deleting LEADER pod kyverno-admission-controller-5756b4c88-65bl8
+19:07:22 EVENT delete-leader action returned
+19:08:50 EVENT delete-leader end
+19:09:11 EVENT delete-other start (probes running)
+19:09:25 EVENT delete-other ACTION
+19:09:25 EVENT deleting NON-leader pod kyverno-admission-controller-5756b4c88-sfs47 (leader kyverno-admission-controller-5756b4c88-9mvp4)
+19:09:26 EVENT delete-other action returned
+19:10:53 EVENT delete-other end
+19:11:13 EVENT rollout start (probes running)
+19:11:27 EVENT rollout ACTION
+19:11:27 EVENT rollout restart
+19:11:28 EVENT rollout action returned
+19:13:25 EVENT rollout end
+19:13:46 == item 3b replicas done
+19:13:46 cleanup: restoring
+poddisruptionbudget.policy "r3c-test-pdb" deleted from kyverno namespace
+NAME                     AGE   READY
+r3-verify-forge-images   18s   true
+NAME                                                               AGE   READY
+imagevalidatingpolicy.policies.kyverno.io/r3-verify-forge-images   49s   true
+
+NAME                                                         AGE   READY
+validatingpolicy.policies.kyverno.io/p3-deny-test-label      11s   true
+validatingpolicy.policies.kyverno.io/r1-registry-allowlist   11s   true
+ALL 3B DONE

@@ -1,0 +1,387 @@
+{
+    "apiVersion": "v1",
+    "items": [
+        {
+            "apiVersion": "wgpolicyk8s.io/v1alpha2",
+            "kind": "PolicyReport",
+            "metadata": {
+                "creationTimestamp": "2026-10-08T19:20:38Z",
+                "generation": 2,
+                "labels": {
+                    "app.kubernetes.io/managed-by": "kyverno"
+                },
+                "name": "30cee83d-91c2-463c-8006-b46e5772c9ad",
+                "namespace": "r3c-obs",
+                "ownerReferences": [
+                    {
+                        "apiVersion": "v1",
+                        "kind": "Pod",
+                        "name": "obs-golden",
+                        "uid": "30cee83d-91c2-463c-8006-b46e5772c9ad"
+                    }
+                ],
+                "resourceVersion": "323402",
+                "uid": "4c3fd276-f034-49b7-9ccd-c7bbfca16f2b"
+            },
+            "results": [
+                {
+                    "message": "success",
+                    "policy": "p3-deny-test-label",
+                    "properties": {
+                        "process": "background scan"
+                    },
+                    "result": "pass",
+                    "scored": true,
+                    "source": "KyvernoValidatingPolicy",
+                    "timestamp": {
+                        "nanos": 0,
+                        "seconds": 1791487248
+                    }
+                },
+                {
+                    "message": "success",
+                    "policy": "r3c-obs-sig",
+                    "properties": {
+                        "process": "background scan"
+                    },
+                    "result": "pass",
+                    "rule": "r3c-obs-sig",
+                    "scored": true,
+                    "source": "KyvernoImageValidatingPolicy",
+                    "timestamp": {
+                        "nanos": 0,
+                        "seconds": 1791487271
+                    }
+                },
+                {
+                    "message": "stale vulnerability attestation (scanFinishedOn older than 1h) for: ghcr.io/taha7486/forge-spike-r1@sha256:f5eb8b57a454ab073acb0cea7d6bedfb27d37f48a327ecd65fdb7d9ea5c7c7d5",
+                    "policy": "r3c-obs-stale",
+                    "properties": {
+                        "process": "background scan",
+                        "r3c-stale-scan": "stale or unverified scan for: ghcr.io/taha7486/forge-spike-r1@sha256:f5eb8b57a454ab073acb0cea7d6bedfb27d37f48a327ecd65fdb7d9ea5c7c7d5"
+                    },
+                    "result": "fail",
+                    "rule": "r3c-obs-stale",
+                    "scored": true,
+                    "source": "KyvernoImageValidatingPolicy",
+                    "timestamp": {
+                        "nanos": 0,
+                        "seconds": 1791487260
+                    }
+                }
+            ],
+            "scope": {
+                "apiVersion": "v1",
+                "kind": "Pod",
+                "name": "obs-golden",
+                "namespace": "r3c-obs",
+                "uid": "30cee83d-91c2-463c-8006-b46e5772c9ad"
+            },
+            "summary": {
+                "error": 0,
+                "fail": 1,
+                "pass": 2,
+                "skip": 0,
+                "warn": 0
+            }
+        },
+        {
+            "apiVersion": "wgpolicyk8s.io/v1alpha2",
+            "kind": "PolicyReport",
+            "metadata": {
+                "creationTimestamp": "2026-10-08T19:20:40Z",
+                "generation": 2,
+                "labels": {
+                    "app.kubernetes.io/managed-by": "kyverno"
+                },
+                "name": "3bc4b9e4-3334-4c9f-8e0e-eea1e3dc7b3f",
+                "namespace": "r3c-obs",
+                "ownerReferences": [
+                    {
+                        "apiVersion": "v1",
+                        "kind": "Pod",
+                        "name": "obs-unsigned",
+                        "uid": "3bc4b9e4-3334-4c9f-8e0e-eea1e3dc7b3f"
+                    }
+                ],
+                "resourceVersion": "323344",
+                "uid": "0d09e9f4-f224-4b23-91f8-5e9c6723c50f"
+            },
+            "results": [
+                {
+                    "message": "success",
+                    "policy": "p3-deny-test-label",
+                    "properties": {
+                        "process": "background scan"
+                    },
+                    "result": "pass",
+                    "scored": true,
+                    "source": "KyvernoValidatingPolicy",
+                    "timestamp": {
+                        "nanos": 0,
+                        "seconds": 1791487250
+                    }
+                },
+                {
+                    "message": "no valid signature from the forge-spike-r1 signing workflow for: ghcr.io/taha7486/forge-spike-r1@sha256:3d525eb5beb554f02d6b3004f67d4eba3214b524f0f64237b3d031445168312f",
+                    "policy": "r3c-obs-sig",
+                    "properties": {
+                        "process": "background scan"
+                    },
+                    "result": "fail",
+                    "rule": "r3c-obs-sig",
+                    "scored": true,
+                    "source": "KyvernoImageValidatingPolicy",
+                    "timestamp": {
+                        "nanos": 0,
+                        "seconds": 1791487257
+                    }
+                },
+                {
+                    "message": "missing or unverified vulnerability attestation for: ghcr.io/taha7486/forge-spike-r1@sha256:3d525eb5beb554f02d6b3004f67d4eba3214b524f0f64237b3d031445168312f",
+                    "policy": "r3c-obs-stale",
+                    "properties": {
+                        "process": "background scan",
+                        "r3c-stale-scan": "stale or unverified scan for: ghcr.io/taha7486/forge-spike-r1@sha256:3d525eb5beb554f02d6b3004f67d4eba3214b524f0f64237b3d031445168312f"
+                    },
+                    "result": "fail",
+                    "rule": "r3c-obs-stale",
+                    "scored": true,
+                    "source": "KyvernoImageValidatingPolicy",
+                    "timestamp": {
+                        "nanos": 0,
+                        "seconds": 1791487253
+                    }
+                }
+            ],
+            "scope": {
+                "apiVersion": "v1",
+                "kind": "Pod",
+                "name": "obs-unsigned",
+                "namespace": "r3c-obs",
+                "uid": "3bc4b9e4-3334-4c9f-8e0e-eea1e3dc7b3f"
+            },
+            "summary": {
+                "error": 0,
+                "fail": 2,
+                "pass": 1,
+                "skip": 0,
+                "warn": 0
+            }
+        },
+        {
+            "apiVersion": "wgpolicyk8s.io/v1alpha2",
+            "kind": "PolicyReport",
+            "metadata": {
+                "creationTimestamp": "2026-10-08T19:21:00Z",
+                "generation": 1,
+                "labels": {
+                    "app.kubernetes.io/managed-by": "kyverno"
+                },
+                "name": "b5e37503-0a51-4aeb-bdb8-c32b904a1c75",
+                "namespace": "r3c-obs",
+                "ownerReferences": [
+                    {
+                        "apiVersion": "v1",
+                        "kind": "Pod",
+                        "name": "obs-golden-2",
+                        "uid": "b5e37503-0a51-4aeb-bdb8-c32b904a1c75"
+                    }
+                ],
+                "resourceVersion": "323304",
+                "uid": "4e8ea829-b8af-4fc1-b9be-164ed67073d5"
+            },
+            "results": [
+                {
+                    "message": "no valid signature from the forge-spike-r1 signing workflow for: ghcr.io/taha7486/forge-spike-r1@sha256:f5eb8b57a454ab073acb0cea7d6bedfb27d37f48a327ecd65fdb7d9ea5c7c7d5",
+                    "policy": "r3c-obs-sig",
+                    "properties": {
+                        "process": "background scan"
+                    },
+                    "result": "fail",
+                    "rule": "r3c-obs-sig",
+                    "scored": true,
+                    "source": "KyvernoImageValidatingPolicy",
+                    "timestamp": {
+                        "nanos": 0,
+                        "seconds": 1791487240
+                    }
+                },
+                {
+                    "message": "missing or unverified vulnerability attestation for: ghcr.io/taha7486/forge-spike-r1@sha256:f5eb8b57a454ab073acb0cea7d6bedfb27d37f48a327ecd65fdb7d9ea5c7c7d5",
+                    "policy": "r3c-obs-stale",
+                    "properties": {
+                        "process": "background scan",
+                        "r3c-stale-scan": "stale or unverified scan for: ghcr.io/taha7486/forge-spike-r1@sha256:f5eb8b57a454ab073acb0cea7d6bedfb27d37f48a327ecd65fdb7d9ea5c7c7d5"
+                    },
+                    "result": "fail",
+                    "rule": "r3c-obs-stale",
+                    "scored": true,
+                    "source": "KyvernoImageValidatingPolicy",
+                    "timestamp": {
+                        "nanos": 0,
+                        "seconds": 1791487240
+                    }
+                }
+            ],
+            "scope": {
+                "apiVersion": "v1",
+                "kind": "Pod",
+                "name": "obs-golden-2",
+                "namespace": "r3c-obs",
+                "uid": "b5e37503-0a51-4aeb-bdb8-c32b904a1c75"
+            },
+            "summary": {
+                "error": 0,
+                "fail": 2,
+                "pass": 0,
+                "skip": 0,
+                "warn": 0
+            }
+        },
+        {
+            "apiVersion": "wgpolicyk8s.io/v1alpha2",
+            "kind": "PolicyReport",
+            "metadata": {
+                "creationTimestamp": "2026-10-08T19:21:22Z",
+                "generation": 1,
+                "labels": {
+                    "app.kubernetes.io/managed-by": "kyverno"
+                },
+                "name": "b6b3ddf2-1ced-447a-9795-b50d733d3dbd",
+                "namespace": "r3c-obs",
+                "ownerReferences": [
+                    {
+                        "apiVersion": "v1",
+                        "kind": "Pod",
+                        "name": "obs-unsigned-3",
+                        "uid": "b6b3ddf2-1ced-447a-9795-b50d733d3dbd"
+                    }
+                ],
+                "resourceVersion": "323409",
+                "uid": "d4779afb-8b62-4e24-b3c3-8dfd7e9a0676"
+            },
+            "results": [
+                {
+                    "message": "no valid signature from the forge-spike-r1 signing workflow for: ghcr.io/taha7486/forge-spike-r1@sha256:3d525eb5beb554f02d6b3004f67d4eba3214b524f0f64237b3d031445168312f",
+                    "policy": "r3c-obs-sig",
+                    "properties": {
+                        "process": "background scan"
+                    },
+                    "result": "fail",
+                    "rule": "r3c-obs-sig",
+                    "scored": true,
+                    "source": "KyvernoImageValidatingPolicy",
+                    "timestamp": {
+                        "nanos": 0,
+                        "seconds": 1791487263
+                    }
+                },
+                {
+                    "message": "missing or unverified vulnerability attestation for: ghcr.io/taha7486/forge-spike-r1@sha256:3d525eb5beb554f02d6b3004f67d4eba3214b524f0f64237b3d031445168312f",
+                    "policy": "r3c-obs-stale",
+                    "properties": {
+                        "process": "background scan",
+                        "r3c-stale-scan": "stale or unverified scan for: ghcr.io/taha7486/forge-spike-r1@sha256:3d525eb5beb554f02d6b3004f67d4eba3214b524f0f64237b3d031445168312f"
+                    },
+                    "result": "fail",
+                    "rule": "r3c-obs-stale",
+                    "scored": true,
+                    "source": "KyvernoImageValidatingPolicy",
+                    "timestamp": {
+                        "nanos": 0,
+                        "seconds": 1791487262
+                    }
+                }
+            ],
+            "scope": {
+                "apiVersion": "v1",
+                "kind": "Pod",
+                "name": "obs-unsigned-3",
+                "namespace": "r3c-obs",
+                "uid": "b6b3ddf2-1ced-447a-9795-b50d733d3dbd"
+            },
+            "summary": {
+                "error": 0,
+                "fail": 2,
+                "pass": 0,
+                "skip": 0,
+                "warn": 0
+            }
+        },
+        {
+            "apiVersion": "wgpolicyk8s.io/v1alpha2",
+            "kind": "PolicyReport",
+            "metadata": {
+                "creationTimestamp": "2026-10-08T19:21:17Z",
+                "generation": 1,
+                "labels": {
+                    "app.kubernetes.io/managed-by": "kyverno"
+                },
+                "name": "bb029ab1-8870-4f0f-9ca5-41d75aa7ed7d",
+                "namespace": "r3c-obs",
+                "ownerReferences": [
+                    {
+                        "apiVersion": "v1",
+                        "kind": "Pod",
+                        "name": "obs-golden-3",
+                        "uid": "bb029ab1-8870-4f0f-9ca5-41d75aa7ed7d"
+                    }
+                ],
+                "resourceVersion": "323386",
+                "uid": "b4941150-3d0c-4ab7-86bf-cbf4e1ff7ae8"
+            },
+            "results": [
+                {
+                    "message": "success",
+                    "policy": "r3c-obs-sig",
+                    "properties": {
+                        "process": "background scan"
+                    },
+                    "result": "pass",
+                    "rule": "r3c-obs-sig",
+                    "scored": true,
+                    "source": "KyvernoImageValidatingPolicy",
+                    "timestamp": {
+                        "nanos": 0,
+                        "seconds": 1791487257
+                    }
+                },
+                {
+                    "message": "stale vulnerability attestation (scanFinishedOn older than 1h) for: ghcr.io/taha7486/forge-spike-r1@sha256:f5eb8b57a454ab073acb0cea7d6bedfb27d37f48a327ecd65fdb7d9ea5c7c7d5",
+                    "policy": "r3c-obs-stale",
+                    "properties": {
+                        "process": "background scan",
+                        "r3c-stale-scan": "stale or unverified scan for: ghcr.io/taha7486/forge-spike-r1@sha256:f5eb8b57a454ab073acb0cea7d6bedfb27d37f48a327ecd65fdb7d9ea5c7c7d5"
+                    },
+                    "result": "fail",
+                    "rule": "r3c-obs-stale",
+                    "scored": true,
+                    "source": "KyvernoImageValidatingPolicy",
+                    "timestamp": {
+                        "nanos": 0,
+                        "seconds": 1791487258
+                    }
+                }
+            ],
+            "scope": {
+                "apiVersion": "v1",
+                "kind": "Pod",
+                "name": "obs-golden-3",
+                "namespace": "r3c-obs",
+                "uid": "bb029ab1-8870-4f0f-9ca5-41d75aa7ed7d"
+            },
+            "summary": {
+                "error": 0,
+                "fail": 1,
+                "pass": 1,
+                "skip": 0,
+                "warn": 0
+            }
+        }
+    ],
+    "kind": "List",
+    "metadata": {
+        "resourceVersion": ""
+    }
+}

@@ -1,0 +1,25 @@
+=== 4b: golden under Audit sig + [Warn,Audit] stale(1h)
+Warning: Policy r3c-obs-stale failed: missing or unverified vulnerability attestation for: ghcr.io/taha7486/forge-spike-r1@sha256:f5eb8b57a454ab073acb0cea7d6bedfb27d37f48a327ecd65fdb7d9ea5c7c7d5
+pod/obs-golden created
+took 2.259 s
+
+=== 4b: unsigned under the same policies (expect admitted: nothing is Deny)
+Warning: Policy r3c-obs-stale failed: missing or unverified vulnerability attestation for: ghcr.io/taha7486/forge-spike-r1@sha256:3d525eb5beb554f02d6b3004f67d4eba3214b524f0f64237b3d031445168312f
+pod/obs-unsigned created
+took 1.959 s
+
+NAME           READY   STATUS              RESTARTS   AGE
+obs-golden     1/1     Running             0          4s
+obs-unsigned   0/1     ContainerCreating   0          2s
+=== 4b attempt 2: golden (obs-golden-2)
+Warning: Policy r3c-obs-stale failed: missing or unverified vulnerability attestation for: ghcr.io/taha7486/forge-spike-r1@sha256:f5eb8b57a454ab073acb0cea7d6bedfb27d37f48a327ecd65fdb7d9ea5c7c7d5
+pod/obs-golden-2 created
+dns errors during this create: 2
+=== 4b attempt 3: golden (obs-golden-3)
+Warning: Policy r3c-obs-stale failed: stale vulnerability attestation (scanFinishedOn older than 1h) for: ghcr.io/taha7486/forge-spike-r1@sha256:f5eb8b57a454ab073acb0cea7d6bedfb27d37f48a327ecd65fdb7d9ea5c7c7d5
+pod/obs-golden-3 created
+dns errors during this create: 0
+=== unsigned (obs-unsigned-3), clean attempt
+Warning: Policy r3c-obs-stale failed: missing or unverified vulnerability attestation for: ghcr.io/taha7486/forge-spike-r1@sha256:3d525eb5beb554f02d6b3004f67d4eba3214b524f0f64237b3d031445168312f
+pod/obs-unsigned-3 created
+dns errors since golden create: 0

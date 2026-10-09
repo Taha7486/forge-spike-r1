@@ -1,0 +1,2 @@
+c2-sigonly-cold,1,cold,2.34,denied,7.43,"Error from server: error when creating  tests/r1-t2-golden-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3b-sigonly  denied the re"
+# first c2 attempt: denied 2.34s ~28s after controller start; controller log: 'failed to initialize TUF client (mirror=https://tuf-repo-cdn.sigstore.dev) ... error updating to TUF remote mirror'. Transient cold-start TUF init failure; next cold sample on a fresh pod admitted in 14.6s.

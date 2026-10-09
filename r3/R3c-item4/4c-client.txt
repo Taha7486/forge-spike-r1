@@ -1,0 +1,19 @@
+=== 4c: golden pod created BEFORE the tripwire policy exists (sig Deny only)
+pod/bg-golden created
+took 12.96 s
+seconds until a stale-bg result appeared for the existing pod: ~38
+bg-golden {'error': 0, 'fail': 1, 'pass': 2, 'skip': 0, 'warn': 0}
+   p3-deny-test-label pass success {'process': 'background scan'}
+   r3c-obs-stale-bg fail stale vulnerability attestation (scanFinishedOn older than 1h) for: ghcr.io/taha7486/forge-spike-r1@ {'process': 'background scan', 'r3c-stale-scan': 'stale or unverified scan for: ghcr.io/taha7486/forge-spike-r1@sha256:f5eb8b57a454ab073acb0cea7d6bedfb27d37f48a327ecd65fdb7d9ea5c7c7d5'}
+   r3c-split-sig pass success {'process': 'background scan'}
+=== 4c: pod created AFTER the background-only policy exists
+pod/bg-golden-1 created
+admission took 1.524 s
+report with the tripwire result for bg-golden-1 after ~68 s
+pod/bg-golden-2 created
+admission took 1.754 s
+report with the tripwire result for bg-golden-2 after ~66 s
+NAME          READY   STATUS    RESTARTS   AGE
+bg-golden     1/1     Running   0          3m25s
+bg-golden-1   1/1     Running   0          2m17s
+bg-golden-2   1/1     Running   0          67s

@@ -1,0 +1,6 @@
+=== webhooks after applying the background-only policy (names containing stale-bg: expect none)
+ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig
+vpol.validate.kyverno.svc-fail-9d71e4df
+vpol.validate.kyverno.svc-fail-e94d8fa6
+ivpol.mutate.kyverno.svc-fail-finegrained-r3c-split-sig
+--- stale-bg webhooks: 0

@@ -1,0 +1,16 @@
+=== events in r3c-obs
+LAST SEEN   TYPE     REASON      OBJECT               MESSAGE
+29s         Normal   Scheduled   pod/t2-golden-ghcr   Successfully assigned r3c-obs/t2-golden-ghcr to forge-spike-control-plane
+27s         Normal   Pulled      pod/t2-golden-ghcr   Container image "ghcr.io/taha7486/forge-spike-r1@sha256:f5eb8b57a454ab073acb0cea7d6bedfb27d37f48a327ecd65fdb7d9ea5c7c7d5" already present on machine and can be accessed by the pod
+27s         Normal   Created     pod/t2-golden-ghcr   Container created
+27s         Normal   Started     pod/t2-golden-ghcr   Container started
+
+=== events in kyverno ns mentioning policy
+
+=== policy reports in r3c-obs
+No resources found in r3c-obs namespace.
+
+=== ephemeral/admission reports
+No resources found
+error: the server doesn't have a resource type "admissionreport"
+No resources found

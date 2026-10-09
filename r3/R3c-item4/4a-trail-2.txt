@@ -1,0 +1,3 @@
+=== controller log lines mentioning the unsigned digest (admission controller, --v=2)
+2026-10-08T19:18:12Z TRC github.com/kyverno/kyverno/pkg/image/verifiers/ivpol/cosign/verifier.go:77 > verifying cosign image signature attestor=forgeci digest=sha256:3d525eb5beb554f02d6b3004f67d4eba3214b524f0f64237b3d031445168312f image=ghcr.io/taha7486/forge-spike-r1@sha256:3d525eb5beb554f02d6b3004f67d4eba3214b524f0f64237b3d031
+2026-10-08T19:18:15Z ERR github.com/kyverno/kyverno/pkg/image/verifiers/ivpol/cosign/verifier.go:103 > image verification failed error="failed to verify cosign signatures: no signatures found" attestor=forgeci digest=sha256:3d525eb5beb554f02d6b3004f67d4eba3214b524f0f64237b3d031445168312f image=ghcr.io/taha7486/forge-spike-r1@sha
