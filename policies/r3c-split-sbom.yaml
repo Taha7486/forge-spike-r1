@@ -1,0 +1,39 @@
+apiVersion: policies.kyverno.io/v1
+kind: ImageValidatingPolicy
+metadata:
+  name: r3c-split-sbom
+spec:
+  validationActions: [Deny]
+  failurePolicy: Fail
+  webhookConfiguration:
+    timeoutSeconds: 30
+  matchConstraints:
+    resourceRules:
+      - apiGroups: [""]
+        apiVersions: [v1]
+        operations: [CREATE, UPDATE]
+        resources: [pods]
+  matchImageReferences:
+    - glob: "docker.io/taha7486/forge-spike-r1*"
+    - glob: "ghcr.io/taha7486/forge-spike-r1*"
+  attestors:
+    - name: forgeci
+      cosign:
+        keyless:
+          identities:
+            - subject: "https://github.com/Taha7486/forge-spike-r1/.github/workflows/r1-sign-golden.yml@refs/heads/main"
+              issuer: "https://token.actions.githubusercontent.com"
+  attestations:
+    - name: sbom
+      intoto:
+        type: "https://cyclonedx.org/bom"
+  variables:
+    - name: sbomfail
+      expression: >-
+        images.containers.filter(i,
+          !(verifyAttestationSignatures(i, attestations.sbom, [attestors.forgeci]) > 0 &&
+            extractPayload(i, attestations.sbom).predicate.bomFormat == 'CycloneDX'))
+  validations:
+    - expression: variables.sbomfail.size() == 0
+      messageExpression: >-
+        'missing or invalid CycloneDX SBOM attestation for: ' + variables.sbomfail.join(', ')

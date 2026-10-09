@@ -1,0 +1,65 @@
+apiVersion: policies.kyverno.io/v1
+kind: ImageValidatingPolicy
+metadata:
+  name: r3-verify-forge-images-ctlog
+spec:
+  validationActions: [Deny]
+  failurePolicy: Fail
+  webhookConfiguration:
+    timeoutSeconds: 30
+  matchConstraints:
+    resourceRules:
+      - apiGroups: [""]
+        apiVersions: [v1]
+        operations: [CREATE, UPDATE]
+        resources: [pods]
+  matchImageReferences:
+    - glob: "docker.io/taha7486/forge-spike-r1*"
+    - glob: "ghcr.io/taha7486/forge-spike-r1*"
+  attestors:
+    - name: forgeci
+      cosign:
+        ctlog:
+          url: https://rekor.sigstore.dev
+        keyless:
+          identities:
+            - subject: "https://github.com/Taha7486/forge-spike-r1/.github/workflows/r1-sign-golden.yml@refs/heads/main"
+              issuer: "https://token.actions.githubusercontent.com"
+  attestations:
+    - name: sbom
+      intoto:
+        type: "https://cyclonedx.org/bom"
+    - name: vuln
+      intoto:
+        type: "https://cosign.sigstore.dev/attestation/vuln/v1"
+  variables:
+    - name: sigfail
+      expression: >-
+        images.containers.filter(i, verifyImageSignatures(i, [attestors.forgeci]) == 0)
+    - name: sbomfail
+      expression: >-
+        images.containers.filter(i,
+          !(verifyAttestationSignatures(i, attestations.sbom, [attestors.forgeci]) > 0 &&
+            extractPayload(i, attestations.sbom).predicate.bomFormat == 'CycloneDX'))
+    - name: vulnunverified
+      expression: >-
+        images.containers.filter(i,
+          verifyAttestationSignatures(i, attestations.vuln, [attestors.forgeci]) == 0)
+    - name: vulnstale
+      expression: >-
+        images.containers.filter(i,
+          !(i in variables.vulnunverified) &&
+          !(timestamp(extractPayload(i, attestations.vuln).predicate.metadata.scanFinishedOn) > time.now() - duration('720h')))
+  validations:
+    - expression: variables.sigfail.size() == 0
+      messageExpression: >-
+        'no valid signature from the forge-spike-r1 signing workflow for: ' + variables.sigfail.join(', ')
+    - expression: variables.sbomfail.size() == 0
+      messageExpression: >-
+        'missing or invalid CycloneDX SBOM attestation for: ' + variables.sbomfail.join(', ')
+    - expression: variables.vulnunverified.size() == 0
+      messageExpression: >-
+        'missing or unverified vulnerability attestation for: ' + variables.vulnunverified.join(', ')
+    - expression: variables.vulnstale.size() == 0
+      messageExpression: >-
+        'stale vulnerability attestation (scanFinishedOn older than 720h) for: ' + variables.vulnstale.join(', ')

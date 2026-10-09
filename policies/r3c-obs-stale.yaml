@@ -1,0 +1,50 @@
+apiVersion: policies.kyverno.io/v1
+kind: ImageValidatingPolicy
+metadata:
+  name: r3c-obs-stale
+spec:
+  validationActions: [Warn, Audit]
+  failurePolicy: Fail
+  webhookConfiguration:
+    timeoutSeconds: 30
+  matchConstraints:
+    resourceRules:
+      - apiGroups: [""]
+        apiVersions: [v1]
+        operations: [CREATE, UPDATE]
+        resources: [pods]
+  matchImageReferences:
+    - glob: "docker.io/taha7486/forge-spike-r1*"
+    - glob: "ghcr.io/taha7486/forge-spike-r1*"
+  attestors:
+    - name: forgeci
+      cosign:
+        keyless:
+          identities:
+            - subject: "https://github.com/Taha7486/forge-spike-r1/.github/workflows/r1-sign-golden.yml@refs/heads/main"
+              issuer: "https://token.actions.githubusercontent.com"
+  attestations:
+    - name: vuln
+      intoto:
+        type: "https://cosign.sigstore.dev/attestation/vuln/v1"
+  variables:
+    - name: vulnunverified
+      expression: >-
+        images.containers.filter(i,
+          verifyAttestationSignatures(i, attestations.vuln, [attestors.forgeci]) == 0)
+    - name: vulnstale
+      expression: >-
+        images.containers.filter(i,
+          !(i in variables.vulnunverified) &&
+          !(timestamp(extractPayload(i, attestations.vuln).predicate.metadata.scanFinishedOn) > time.now() - duration('1h')))
+  validations:
+    - expression: variables.vulnunverified.size() == 0
+      messageExpression: >-
+        'missing or unverified vulnerability attestation for: ' + variables.vulnunverified.join(', ')
+    - expression: variables.vulnstale.size() == 0
+      messageExpression: >-
+        'stale vulnerability attestation (scanFinishedOn older than 1h) for: ' + variables.vulnstale.join(', ')
+  auditAnnotations:
+    - key: r3c-stale-scan
+      valueExpression: >-
+        'stale or unverified scan for: ' + variables.vulnstale.join(', ') + variables.vulnunverified.join(', ')
