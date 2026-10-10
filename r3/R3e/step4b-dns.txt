@@ -1,0 +1,9 @@
+      6 [INFO] "AAAA IN tuf-repo-cdn.sigstore.dev.svc.cluster.local. udp 72 false
+      6 [INFO] "AAAA IN tuf-repo-cdn.sigstore.dev.kyverno.svc.cluster.local. udp 80 false
+      6 [INFO] "AAAA IN tuf-repo-cdn.sigstore.dev.cluster.local. udp 68 false
+      6 [INFO] "AAAA IN tuf-repo-cdn.sigstore.dev. udp 54 false
+      6 [INFO] "A IN tuf-repo-cdn.sigstore.dev.svc.cluster.local. udp 72 false
+      6 [INFO] "A IN tuf-repo-cdn.sigstore.dev.kyverno.svc.cluster.local. udp 80 false
+2026-10-09T23:35:26Z ERR github.com/kyverno/kyverno/pkg/image/verifiers/ivpol/cosign/verifier.go:149 > image verification failed error="failed to build cosign verification opts: failed to initialize TUF client (mirror=\"https://tuf-repo-cdn.sigstore.dev\"): updating local metadata and targets: error
+2026-10-09T23:35:26Z ERR github.com/kyverno/kyverno/pkg/image/verifiers/ivpol/cosign/verifier.go:149 > image verification failed error="failed to build cosign verification opts: failed to initialize TUF client (mirror=\"https://tuf-repo-cdn.sigstore.dev\"): updating local metadata and targets: error
+2026-10-09T23:35:26Z ERR github.com/kyverno/kyverno/pkg/image/verifiers/ivpol/cosign/verifier.go:82 > image verification failed error="failed to build cosign verification opts: failed to initialize TUF client (mirror=\"https://tuf-repo-cdn.sigstore.dev\"): updating local metadata and targets: error 

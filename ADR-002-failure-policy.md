@@ -1,6 +1,6 @@
 # ADR-002: Admission failure policy, timeouts and availability of the gate
 
-Status: Accepted (2026-10-09) by the project owner; proposed 2026-10-09. Evidence: [r3/R3c-results.md](r3/R3c-results.md) (appendix), [r3/R3a-results.md](r3/R3a-results.md), [r3/R3b-results.md](r3/R3b-results.md), [r3/R3-prestudy.md](r3/R3-prestudy.md). Amends ADR-001 decision 3 (one policy becomes three) and fills in the values ADR-001 left to this ADR (`failurePolicy`, `timeoutSeconds`).
+Status: Accepted (2026-10-09) by the project owner; proposed 2026-10-09. Addendum 1 (2026-10-10, findings from R3e) Accepted by the project owner on 2026-10-10, see the end of this file. Evidence: [r3/R3c-results.md](r3/R3c-results.md) (appendix), [r3/R3a-results.md](r3/R3a-results.md), [r3/R3b-results.md](r3/R3b-results.md), [r3/R3-prestudy.md](r3/R3-prestudy.md). Amends ADR-001 decision 3 (one policy becomes three) and fills in the values ADR-001 left to this ADR (`failurePolicy`, `timeoutSeconds`).
 
 ## Context
 
@@ -70,3 +70,74 @@ Not yet confirmed: that an image already verified and still cached (one hour per
 - A new Kyverno minor (1.20 expected around November 2026): attestation caching, TUF retry or `trustedRoot` behaviour may change; re-run the latency loop first.
 - A requirement that pod creation must never be blocked by Kyverno or Sigstore trouble (then `Ignore` plus a compensating control).
 - A requirement for fast signature revocation (shorter cache).
+
+---
+
+## Addendum 1 (2026-10-10): findings from the R3e checks
+
+Status: Accepted (2026-10-10) by the project owner. Evidence: [r3/R3e-results.md](r3/R3e-results.md) (3-node kind cluster `forge-r3e`, same laptop and network as R3a to R3c). The six findings were reviewed one by one with the project owner on 2026-10-10; decision A3 was taken by the owner during that review. Where this addendum contradicts the text above, **the addendum wins**; the original text is left as written so the history stays readable.
+
+### A1. Spreading the admission replicas (amends decision 4)
+
+Spreading with `DoNotSchedule` on a cluster with 2 worker nodes **stalls every rolling update** (Helm upgrade, `rollout restart`): the rollout starts the new pod before removing an old one, there is no node left for a third pod, and `maxUnavailable` (40% of 2) rounds to 0, so nothing moves. The gate stays up, only upgrades hang. The fix, tested, is `nodeTaintsPolicy: Honor` in the constraint (my best explanation is that the tainted control-plane node was counted as an empty node; the fix is proven, the cause is not). After it, a `helm upgrade` finished in 82 s with one replica per worker.
+
+Also established:
+- The Helm chart creates the PodDisruptionBudget by itself when `replicas > 1` (the "check in Phase 1" in decision 4 is answered). With `minAvailable: 1` the drain of the last Ready replica is refused.
+- The chart's own anti-affinity is only a preference; the hard constraint is ours.
+- With exactly 2 schedulable nodes, a drained or lost node leaves 1 replica until the node returns (the replacement cannot sit next to the survivor). **The real cluster needs at least 3 worker nodes** so a replacement can be scheduled elsewhere. The values used are in `r3/tools/r3e-kyverno-values.yaml`.
+
+### A2. TUF is needed when a replica starts, not on every verification (amends the Context, decision 6 and the section 11 answer)
+
+R3a to R3c always restarted the controller before blocking TUF, so they measured a freshly started pod and read it as "cold verification". R3e blocked TUF in DNS **without restarting** the controller. Result: a running replica that had initialised once admitted the same image and an image it had never seen, with all three checks, and never asked DNS for the TUF host. A fresh replica under the same block was denied in about 2 s with `failed to initialize TUF client` in its log (the control that proves the block works).
+
+Corrected statements:
+- TUF (Sigstore's key service) is an availability dependency of a **replica starting** (restart, rollout, scale-up, rescheduling after a node loss), not of each admission. Running replicas keep verifying while TUF is down.
+- **Corrected answer to spec section 11, "What happens if Sigstore is unreachable at admission time?"** Only the Sigstore TUF host is needed (plus the registry and its blob CDN); Rekor, Fulcio, the timestamp authority and the CT log are not contacted. Admission controllers that are already running keep verifying, including images they have not seen before, because they keep the trust data they loaded at start. A controller replica that **starts** while TUF is unreachable refuses every pod covered by the image policies (`Fail`): in about 2 seconds if the lookup or connection is refused, in 30 seconds if the host hangs. The message may read like a signature failure, so the runbook points at the controller log. Running pods are never affected. With `Ignore`, a hang would let every pod in unverified, which is why `Ignore` is not used.
+- Not established: how long a running replica can go without TUF (the signed metadata expires in about a week; the tests lasted minutes), and the behaviour when TUF hangs instead of refusing, on a warm replica.
+
+### A3. No in-cluster TUF mirror (decision 6 settled; owner's decision, 2026-10-10)
+
+Decision 6 left the mirror open ("test it, build it if more than about 1% of cold admissions fail at TUF"). It was tested and **will not be built**. Reasons:
+- It works: Kyverno 1.19.1 accepts a plain `http://` mirror (`cosign.tuf.mirror` plus `cosign.tuf.root.data` on the attestor), and with public TUF blocked, fresh replicas still verified through it.
+- But with a mirror configured, Kyverno contacts it **on every admission** (about 4 requests each). With the mirror down, every admission was refused in under 2 s, **also on running replicas**, which the default setup survives (A2). A stale mirror does the same: its timestamp metadata expires in about a week (the current copy: 2026-10-16), and clients reject expired metadata.
+- So the mirror trades a rare external risk (a replica starting while TUF is down) for an internal one on every request. It would need 2 mirror replicas, a daily sync job, an alert on the expiry date and an alert on job failure: more moving parts than the risk justifies for this project.
+- The 1% trigger in decision 6 is withdrawn for this project. What remains: keep the public TUF service, document the risk, and avoid restarting or upgrading Kyverno while Sigstore is known to be down. A mirror stays the answer to "what would production do?" if the risk must be removed; the sync script (`r3/tools/r3e-tuf-sync.py`) and the manifest (`r3/R3e/tuf-mirror-deploy/mirror.yaml`) are kept as the starting point.
+
+### A4. Break-glass recovery (amends decision 10 and the last runbook row)
+
+"Delete the Kyverno webhook configurations by hand; Kyverno recreates them" is **not a recovery** while Kyverno is running: both kinds were deleted in 1.3 s and recreated within 2 s, and 14 plain pod creations over 34 s all failed. The tested procedure:
+1. `kubectl -n kyverno scale deploy kyverno-admission-controller --replicas=0`. Kyverno removes its webhooks on a clean stop; they were gone in about 5 s and plain pods were admitted again.
+2. Repair what is broken.
+3. `kubectl -n kyverno scale deploy kyverno-admission-controller --replicas=2`. Both replicas were Ready in 45 s and the gate worked again.
+
+**While the controller is scaled to 0 the gate is open: an unsigned image was admitted during the test.** The runbook must say so, and the procedure is for emergencies only. The breakage was simulated (the webhook Service emptied and both containers killed), not a real fault.
+
+Platform namespaces are excluded per policy, not in Kyverno's config: a `namespaceSelector` in each policy's `matchConstraints` (`kubernetes.io/metadata.name NotIn [...]`) is merged with the chart's own exclusions (`kube-system`, `kyverno`) and took effect in under 15 s (unsigned admitted in the excluded namespace, denied in another).
+
+Runbook row, replaced: *Everything is refused, including simple pods* — *Kyverno is down or unreachable and `Fail` is on* — *Check the 2 replicas and wait a few seconds; if it persists, use the emergency procedure above and treat the gate as open until it is scaled back to 2.*
+
+### A5. What `Fail` costs when Kyverno goes down (supports decisions 1 and 4)
+
+Measured with 2 replicas, the PDB and spreading, while two loops tried to create a pod with the unsigned image back to back:
+
+| Failure | Gate closed by `Fail` |
+| --- | --- |
+| One replica deleted (leader or other), rollout restart, one node stopped | none seen |
+| One replica killed for running out of memory | about 6 s |
+| Both containers killed at once | about 13 s |
+| Both pods deleted at once | about 41 s |
+
+**No unsigned image was admitted in any scenario: 0 of 329 probes.** The closed window is bounded by how fast a replica becomes Ready again (slow here: spinning disk). Two oddities are unexplained: no refusal at all when a node was stopped, and one refusal 3 s before the memory cap was applied in the out-of-memory test. The "nodes" are Docker containers on one machine, so a node failure here is a container stop, not a network cut or a hung machine.
+
+### A6. Two replicas give availability, not burst capacity (supports the fallback rule of decision 2)
+
+R3c item 5 repeated with 2 replicas and the three policies:
+- Simultaneous pod creations still time out at 30 s: cold 10 pods 5 of 10 (1 replica: 5 of 10), cold 20 pods 13 of 20 (14), warm 20 pods 10 of 20 (14); only warm 10 improved (10 of 10 admitted). The load did split roughly evenly between the replicas.
+- Deployments of 10 and 20 pods rolled out in 79 to 106 s with no failed pod creation (1 replica: 86 to 147 s, 1 failure in 8 runs): a ReplicaSet creates its pods gradually, so a rollout is not a burst.
+- Peak per admission replica: 138 MB of the 512 MB limit and 166% of one core; no restart. The cause of the limit (CPU, disk or the network to the registry) was not measured.
+
+The decision does not change. The fallback rule stays and must be checked on the real cluster in Phase 1 (cold p95, a 10-replica rollout, a burst of 10). Only creating many pods at the same instant is a problem; a normal rollout is not.
+
+### Still open after R3e
+
+How long a running replica can go without TUF; a TUF hang (instead of a refusal) on a running replica; a real node loss with a network cut; the background scan under two replicas; the Phase 1 cloud checks listed in the Consequences section.

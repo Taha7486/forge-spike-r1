@@ -1,0 +1,20 @@
+23:43:36 == A: public TUF blocked in DNS, controllers restarted (empty local state)
+configmap/coredns patched
+23:45:44 A-golden r1-t2-golden-ghcr.yaml: admitted 12.24
+23:45:55 A-golden-again r1-t2-golden-ghcr.yaml: admitted 10.69
+23:45:59 A-unsigned r1-t3-unsigned-ghcr.yaml: denied-by-policy 3.96
+public TUF queries from kyverno (coredns log, 3 min):
+0
+23:46:00 == C: mirror DOWN, controllers warm
+23:46:10 C-golden r1-t2-golden-ghcr.yaml: denied-by-policy 1.78
+23:46:11 C-NEWimage r1-t15-rekor-v2-ghcr.yaml: denied-by-policy 1.76
+23:46:13 C-unsigned r1-t3-unsigned-ghcr.yaml: denied-by-policy 1.54
+23:46:13 == B: mirror DOWN, controllers restarted
+23:47:40 B-golden r1-t2-golden-ghcr.yaml: denied-by-policy 2.31
+23:47:42 B-unsigned r1-t3-unsigned-ghcr.yaml: denied-by-policy 1.76
+cause: failed to initialize TUF client (mirror=\"http://tuf-mirror.tuf-mirror.svc\")
+23:47:42 == D: mirror back (controllers keep running; first the same pods)
+23:48:06 D-golden-same-pods r1-t2-golden-ghcr.yaml: admitted 11.01
+23:51:05 D-golden-fresh-pods r1-t2-golden-ghcr.yaml: admitted 12.15
+23:51:05 cleanup
+configmap/coredns patched

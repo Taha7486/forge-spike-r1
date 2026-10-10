@@ -1,0 +1,57 @@
+== placement
+kyverno-admission-controller-664c498946-9hnhx   1/1   Running   0     4m38s   10.244.2.2   forge-r3e-worker    <none>   <none>
+kyverno-admission-controller-664c498946-tlksl   1/1   Running   0     4m37s   10.244.1.4   forge-r3e-worker2   <none>   <none>
+NAME                           MIN AVAILABLE   MAX UNAVAILABLE   ALLOWED DISRUPTIONS   AGE
+kyverno-admission-controller   1               N/A               1                     4m45s
+NAME                      STATUS   ROLES           AGE     VERSION
+forge-r3e-control-plane   Ready    control-plane   5m36s   v1.35.8
+forge-r3e-worker          Ready    <none>          5m17s   v1.35.8
+forge-r3e-worker2         Ready    <none>          5m18s   v1.35.8
+replicas on: forge-r3e-worker forge-r3e-worker2
+22:22:30 EVENT drain-first-node start (probes running)
+22:22:44 EVENT drain-first-node ACTION
+Warning: ignoring DaemonSet-managed Pods: kube-system/kindnet-5srb4, kube-system/kube-proxy-2p2z9
+evicting pod kyverno/kyverno-cleanup-controller-65bcf944-2445k
+evicting pod kyverno/kyverno-admission-controller-664c498946-9hnhx
+pod/kyverno-cleanup-controller-65bcf944-2445k evicted
+pod/kyverno-admission-controller-664c498946-9hnhx evicted
+node/forge-r3e-worker drained
+22:22:50 EVENT drain-first-node action returned
+22:24:05 EVENT drain-first-node end
+== after first drain
+kyverno-admission-controller-664c498946-kckqv   0/1   Pending   0     79s     <none>       <none>              <none>   <none>
+kyverno-admission-controller-664c498946-tlksl   1/1   Running   0     6m13s   10.244.1.4   forge-r3e-worker2   <none>   <none>
+NAME                           MIN AVAILABLE   MAX UNAVAILABLE   ALLOWED DISRUPTIONS   AGE
+kyverno-admission-controller   1               N/A               0                     6m20s
+22:24:05 EVENT drain-second-node start (probes running)
+22:24:19 EVENT drain-second-node ACTION
+error when evicting pods/"kyverno-admission-controller-664c498946-tlksl" -n "kyverno" (will retry after 5s): Cannot evict pod as it would violate the pod's disruption budget.
+evicting pod kyverno/kyverno-admission-controller-664c498946-tlksl
+There are pending pods in node "forge-r3e-worker2" when an error occurred: error when evicting pods/"kyverno-admission-controller-664c498946-tlksl" -n "kyverno": global timeout reached: 45s
+pod/kyverno-admission-controller-664c498946-tlksl
+error: unable to drain node "forge-r3e-worker2" due to error: error when evicting pods/"kyverno-admission-controller-664c498946-tlksl" -n "kyverno": global timeout reached: 45s, continuing command...
+There are pending nodes to be drained:
+ forge-r3e-worker2
+error when evicting pods/"kyverno-admission-controller-664c498946-tlksl" -n "kyverno": global timeout reached: 45s
+22:25:06 EVENT drain-second-node action returned
+22:25:29 EVENT drain-second-node end
+== after second drain attempt
+kyverno-admission-controller-664c498946-kckqv   0/1   Pending   0     2m43s   <none>       <none>              <none>   <none>
+kyverno-admission-controller-664c498946-tlksl   1/1   Running   0     7m37s   10.244.1.4   forge-r3e-worker2   <none>   <none>
+NAME                           MIN AVAILABLE   MAX UNAVAILABLE   ALLOWED DISRUPTIONS   AGE
+kyverno-admission-controller   1               N/A               0                     7m45s
+2m45s       Normal    Killing             pod/kyverno-cleanup-controller-65bcf944-2445k        Stopping container controller
+2m45s       Normal    Killing             pod/kyverno-admission-controller-664c498946-9hnhx    Stopping container kyverno
+2m42s       Warning   FailedScheduling    pod/kyverno-admission-controller-664c498946-kckqv    0/3 nodes are available: 1 node(s) didn't match pod topology spread constraints, 1 node(s) had untolerated taint(s), 1 node(s) were unschedulable. no new claims to deallocate, preemption: 0/3 nodes are available: 1 No preemption victims found for incoming pod, 2 Preemption is not helpful for scheduling.
+70s         Warning   FailedScheduling    pod/kyverno-admission-controller-664c498946-kckqv    0/3 nodes are available: 1 node(s) had untolerated taint(s), 2 node(s) were unschedulable. no new claims to deallocate, preemption: 0/3 nodes are available: 3 Preemption is not helpful for scheduling.
+69s         Normal    Killing             pod/kyverno-cleanup-controller-65bcf944-djlwn        Stopping container controller
+69s         Normal    Killing             pod/kyverno-reports-controller-5cd5676d5f-2c2b5      Stopping container controller
+69s         Normal    Killing             pod/kyverno-background-controller-5d44457d9-44jmr    Stopping container controller
+68s         Warning   FailedScheduling    pod/kyverno-reports-controller-5cd5676d5f-cqxwq      0/3 nodes are available: 1 node(s) had untolerated taint(s), 2 node(s) were unschedulable. no new claims to deallocate, preemption: 0/3 nodes are available: 3 Preemption is not helpful for scheduling.
+67s         Warning   FailedScheduling    pod/kyverno-background-controller-5d44457d9-72l7l    0/3 nodes are available: 1 node(s) had untolerated taint(s), 2 node(s) were unschedulable. no new claims to deallocate, preemption: 0/3 nodes are available: 3 Preemption is not helpful for scheduling.
+66s         Warning   FailedScheduling    pod/kyverno-cleanup-controller-65bcf944-dnm9r        0/3 nodes are available: 1 node(s) had untolerated taint(s), 2 node(s) were unschedulable. no new claims to deallocate, preemption: 0/3 nodes are available: 3 Preemption is not helpful for scheduling.
+22:25:30 EVENT uncordon both
+node/forge-r3e-worker uncordoned
+node/forge-r3e-worker2 uncordoned
+kyverno-admission-controller-664c498946-kckqv   1/1   Running   0     3m26s   10.244.2.7   forge-r3e-worker    <none>   <none>
+kyverno-admission-controller-664c498946-tlksl   1/1   Running   0     8m20s   10.244.1.4   forge-r3e-worker2   <none>   <none>

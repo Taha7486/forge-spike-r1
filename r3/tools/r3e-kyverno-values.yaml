@@ -1,0 +1,32 @@
+# ADR-002 decisions 4 and 5 as Helm values (starting values). Chart kyverno-3.9.1.
+admissionController:
+  replicas: 2
+  podDisruptionBudget:
+    enabled: true
+    minAvailable: 1
+  # hard spreading: one replica per node (the chart default anti-affinity is only "preferred")
+  topologySpreadConstraints:
+    - maxSkew: 1
+      topologyKey: kubernetes.io/hostname
+      whenUnsatisfiable: DoNotSchedule
+      nodeTaintsPolicy: Honor   # without this the tainted control plane counts as an empty domain and a rolling update stalls (R3e step 3)
+      labelSelector:
+        matchLabels:
+          app.kubernetes.io/component: admission-controller
+          app.kubernetes.io/instance: kyverno
+  container:
+    resources:
+      requests: {cpu: 250m, memory: 256Mi}
+      limits: {memory: 512Mi}
+reportsController:
+  resources:
+    requests: {cpu: 100m, memory: 256Mi}
+    limits: {memory: 512Mi}
+backgroundController:
+  resources:
+    requests: {cpu: 100m, memory: 128Mi}
+    limits: {memory: 512Mi}
+cleanupController:
+  resources:
+    requests: {cpu: 100m, memory: 128Mi}
+    limits: {memory: 512Mi}

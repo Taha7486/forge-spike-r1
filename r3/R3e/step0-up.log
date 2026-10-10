@@ -1,0 +1,60 @@
+io pressure before: some avg10=4.56 avg60=1.62 avg300=1.12 total=185861036
+Creating cluster "forge-r3e" ...
+ • Ensuring node image (kindest/node:v1.35.8) 🖼️  ...
+ ✓ Ensuring node image (kindest/node:v1.35.8) 🖼️
+ • Preparing nodes 📦 📦 📦   ...
+ ✓ Preparing nodes 📦 📦 📦 
+ • Writing configuration 📜  ...
+ ✓ Writing configuration 📜
+ • Starting control-plane 🕹️  ...
+ ✓ Starting control-plane 🕹️
+ • Installing CNI 🔌  ...
+ ✓ Installing CNI 🔌
+ • Installing StorageClass 💾  ...
+ ✓ Installing StorageClass 💾
+ • Joining worker nodes 🚜  ...
+ ✓ Joining worker nodes 🚜
+ • Waiting ≤ 5m0s for control-plane = Ready ⏳  ...
+ ✓ Waiting ≤ 5m0s for control-plane = Ready ⏳
+ • Ready after 25s 💚
+Set kubectl context to "kind-forge-r3e"
+You can now use your cluster with:
+
+kubectl cluster-info --context kind-forge-r3e
+
+Have a question, bug, or feature request? Let us know! https://kind.sigs.k8s.io/#community 🙂
+NAME: kyverno
+LAST DEPLOYED: Fri Oct  9 22:17:41 2026
+NAMESPACE: kyverno
+STATUS: deployed
+REVISION: 1
+NOTES:
+Chart version: 3.9.1
+Kyverno version: v1.19.1
+
+Thank you for installing kyverno! Your release is named kyverno.
+
+The following components have been installed in your cluster:
+- CRDs
+- Admission controller
+- Reports controller
+- Cleanup controller
+- Background controller
+
+
+
+
+⚠️  WARNING: PolicyExceptions are disabled by default. To enable them, set '--enablePolicyException' to true.
+⚠️  WARNING: The legacy kyverno.io policy types are deprecated and will be removed in a future release. Migrate to their policies.kyverno.io replacements:
+    - ClusterPolicy / Policy → ValidatingPolicy, MutatingPolicy, GeneratingPolicy, ImageValidatingPolicy (and their namespaced variants)
+    - ClusterCleanupPolicy / CleanupPolicy → DeletingPolicy / NamespacedDeletingPolicy
+    - PolicyException (kyverno.io) → PolicyException (policies.kyverno.io)
+    See https://kyverno.io/docs/guides/migration-to-cel/ for the migration guide.
+
+💡 Note: There is a trade-off when deciding which approach to take regarding Namespace exclusions. Please see the documentation at https://kyverno.io/docs/installation/#security-vs-operability to understand the risks.
+NAME                                            READY   STATUS    RESTARTS   AGE     IP           NODE                NOMINATED NODE   READINESS GATES
+kyverno-admission-controller-664c498946-9hnhx   1/1     Running   0          2m14s   10.244.2.2   forge-r3e-worker    <none>           <none>
+kyverno-admission-controller-664c498946-tlksl   1/1     Running   0          2m13s   10.244.1.4   forge-r3e-worker2   <none>           <none>
+kyverno-background-controller-5d44457d9-44jmr   1/1     Running   0          2m14s   10.244.1.2   forge-r3e-worker2   <none>           <none>
+kyverno-cleanup-controller-65bcf944-2445k       1/1     Running   0          2m14s   10.244.2.3   forge-r3e-worker    <none>           <none>
+kyverno-reports-controller-5cd5676d5f-2c2b5     1/1     Running   0          2m14s   10.244.1.3   forge-r3e-worker2   <none>           <none>

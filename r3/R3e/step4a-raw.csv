@@ -1,0 +1,13 @@
+phase,step,image,seconds,outcome,detail
+A,warm-cold,r1-t2-golden-ghcr,15.79,admitted,"pod/t2-golden-ghcr created (server dry run) "
+A,warm-again,r1-t2-golden-ghcr,13.19,admitted,"pod/t2-golden-ghcr created (server dry run) "
+A,blocked-check-new-image,r1-t15-rekor-v2-ghcr,12.22,admitted,"pod/t15-rekor-v2-ghcr created (server dry run) "
+A,blocked-golden,r1-t2-golden-ghcr,12.78,admitted,"pod/t2-golden-ghcr created (server dry run) "
+A,blocked-golden-2,r1-t2-golden-ghcr,13.02,admitted,"pod/t2-golden-ghcr created (server dry run) "
+A,unblocked-golden,r1-t2-golden-ghcr,13.82,admitted,"pod/t2-golden-ghcr created (server dry run) "
+B,warm-cold,r1-t2-golden-ghcr,14.45,admitted,"pod/t2-golden-ghcr created (server dry run) "
+B,warm-again,r1-t2-golden-ghcr,1.78,admitted,"pod/t2-golden-ghcr created (server dry run) "
+B,blocked-check-new-image,r1-t15-rekor-v2-ghcr,9.76,admitted,"pod/t15-rekor-v2-ghcr created (server dry run) "
+B,blocked-golden,r1-t2-golden-ghcr,1.84,admitted,"pod/t2-golden-ghcr created (server dry run) "
+B,blocked-golden-2,r1-t2-golden-ghcr,1.71,admitted,"pod/t2-golden-ghcr created (server dry run) "
+B,unblocked-golden,r1-t2-golden-ghcr,1.90,admitted,"pod/t2-golden-ghcr created (server dry run) "

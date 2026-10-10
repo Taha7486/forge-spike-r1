@@ -1,0 +1,19 @@
+22:33:47 EVENT delete-leader start (probes running)
+22:34:01 EVENT delete-leader ACTION
+22:34:01 EVENT deleting LEADER pod kyverno-admission-controller-664c498946-9s8nb
+22:34:02 EVENT delete-leader action returned
+22:35:34 EVENT delete-leader end
+22:36:00 restored: 66rst:Running:forge-r3e-worker2 6nxqx:Running:forge-r3e-worker 
+22:36:00 EVENT delete-other start (probes running)
+22:36:15 EVENT delete-other ACTION
+22:36:15 EVENT deleting NON-leader pod kyverno-admission-controller-664c498946-6nxqx (leader kyverno-admission-controller-664c498946-66rst)
+22:36:15 EVENT delete-other action returned
+22:37:45 EVENT delete-other end
+22:38:11 restored: 66rst:Running:forge-r3e-worker2 qktps:Running:forge-r3e-worker 
+22:38:11 EVENT rollout-restart start (probes running)
+22:38:25 EVENT rollout-restart ACTION
+22:38:25 EVENT rollout restart
+22:38:26 EVENT rollout-restart action returned
+22:40:26 EVENT rollout-restart end
+22:47:32 restored: 66rst:Running:forge-r3e-worker2 qktps:Running:forge-r3e-worker lx66c:Pending:<none> 
+22:47:32 == step3 single done

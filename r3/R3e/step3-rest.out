@@ -1,0 +1,40 @@
+22:50:31 EVENT rollout-restart-fixed start (probes running)
+22:50:45 EVENT rollout-restart-fixed ACTION
+22:50:45 EVENT rollout restart
+22:50:46 EVENT rollout-restart-fixed action returned
+22:52:45 EVENT rollout-restart-fixed end
+22:53:12 restored: d4m2f:Running:forge-r3e-worker ldjrr:Running:forge-r3e-worker2 
+22:53:12 EVENT delete-both-graceful start (probes running)
+22:53:26 EVENT delete-both-graceful ACTION
+22:53:26 EVENT deleting BOTH pods at once
+22:53:27 EVENT delete-both-graceful action returned
+22:55:16 EVENT delete-both-graceful end
+22:55:43 restored: mxkb9:Running:forge-r3e-worker2 swxm5:Running:forge-r3e-worker 
+22:55:43 EVENT crash-both start (probes running)
+22:55:57 EVENT crash-both ACTION
+22:55:57 EVENT killing BOTH containers (no graceful stop)
+E1009 22:55:59.933921    5673 remote_runtime.go:459] "StopContainer from runtime service failed" err="rpc error: code = DeadlineExceeded desc = context deadline exceeded" containerID="eb2a1293cf3f845eb11b228751793903dcb6b610e8482f1c65296cef1a9e1fd2"
+time="2026-10-09T22:55:59Z" level=fatal msg="stopping the container \"eb2a1293cf3f845eb11b228751793903dcb6b610e8482f1c65296cef1a9e1fd2\": rpc error: code = DeadlineExceeded desc = context deadline exceeded"
+E1009 22:56:00.021388    4996 remote_runtime.go:459] "StopContainer from runtime service failed" err="rpc error: code = DeadlineExceeded desc = context deadline exceeded" containerID="b0a003cf1c9f02fb2b31f203b15bfb60d2424221d7faf7c1d3249edd6b0b1564"
+time="2026-10-09T22:56:00Z" level=fatal msg="stopping the container \"b0a003cf1c9f02fb2b31f203b15bfb60d2424221d7faf7c1d3249edd6b0b1564\": rpc error: code = DeadlineExceeded desc = context deadline exceeded"
+22:57:51 EVENT crash-both action returned
+22:57:51 EVENT crash-both end
+22:58:18 restored: mxkb9:Running:4m52s swxm5:Running:4m50s 
+22:58:18 EVENT node-stop start (probes running)
+22:58:32 EVENT node-stop ACTION
+22:58:32 EVENT stopping node forge-r3e-worker (hosts the LEADER)
+22:58:38 EVENT node-stop action returned
+23:01:46 EVENT node-stop end
+23:01:46 EVENT starting node forge-r3e-worker again
+23:03:01 restored: mxkb9:Running:9m35s swxm5:Running:9m33s 
+23:03:01 EVENT oom-one start (probes running)
+23:03:15 EVENT oom-one ACTION
+23:03:16 EVENT OOM: capping memory of the LEADER container kyverno-admission-controller-6d6f7958b6-mxkb9 on forge-r3e-worker2 to 40M
+cgroup /sys/fs/cgroup/kubelet.slice/kubelet-kubepods.slice/kubelet-kubepods-burstable.slice/kubelet-kubepods-burstable-pod98050890_0b03_44a0_acfb_cf2bf6bbeb64.slice/cri-containerd-a0e4066b611c5dd8c8d663fb8cfe8cc2e0bf2b7f90e52c01d43a91d8b07ae26b.scope
+memory.max now 41943040
+23:03:17 EVENT oom-one action returned
+23:05:06 EVENT oom-one end
+kyverno-admission-controller-6d6f7958b6-mxkb9 lastState=OOMKilled restarts=2
+kyverno-admission-controller-6d6f7958b6-swxm5 lastState=Unknown restarts=2
+23:05:33 restored: mxkb9:Running:12m swxm5:Running:12m 
+23:05:33 == step3 roll both crash-both node oom done

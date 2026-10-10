@@ -1,0 +1,9 @@
+phase,step,image,seconds,outcome,detail
+A,warm-cold,r1-t2-golden-ghcr,15.10,admitted,"pod/t2-golden-ghcr created (server dry run) "
+A,warm-again,r1-t2-golden-ghcr,12.80,admitted,"pod/t2-golden-ghcr created (server dry run) "
+A,blocked-check-new-image,r1-t15-rekor-v2-ghcr,5.41,denied-by-policy,"Error from server: error when creating  tests/r1-t15-rekor-v2-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied t"
+A,blocked-golden,r1-t2-golden-ghcr,10.62,denied-by-policy,"Error from server: error when creating  tests/r1-t2-golden-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the "
+A,blocked-golden-2,r1-t2-golden-ghcr,10.97,denied-by-policy,"Error from server: error when creating  tests/r1-t2-golden-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-vuln  denied the"
+A,unblocked-golden,r1-t2-golden-ghcr,5.39,denied-by-policy,"Error from server: error when creating  tests/r1-t2-golden-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sbom  denied the"
+B,warm-cold,r1-t2-golden-ghcr,5.38,denied-by-policy,"Error from server: error when creating  tests/r1-t2-golden-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the "
+B,warm-again,r1-t2-golden-ghcr,5.32,denied-by-policy,"Error from server: error when creating  tests/r1-t2-golden-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied the "

@@ -1,0 +1,24 @@
+23:33:44 0-open-warmup-golden r1-t2-golden-ghcr.yaml: admitted 14.73
+configmap/coredns patched
+23:34:02 blocked
+23:34:14 1-warm-pod-blocked-golden r1-t2-golden-ghcr.yaml: admitted 12.08
+23:34:25 1-warm-pod-blocked-NEWimage r1-t15-rekor-v2-ghcr.yaml: admitted 11.19
+--- coredns log for the TUF host (warm pod, last 120 s)
+23:35:23 fresh pod
+23:35:25 3-fresh-pod-blocked-golden r1-t2-golden-ghcr.yaml: denied-by-policy 2.13
+23:35:26 3-fresh-pod-blocked-NEWimage r1-t15-rekor-v2-ghcr.yaml: denied-by-policy 1.66
+--- coredns log for the TUF host (fresh pod, last 120 s)
+      6 [INFO] "AAAA IN tuf-repo-cdn.sigstore.dev.svc.cluster.local. udp 72 false
+      6 [INFO] "AAAA IN tuf-repo-cdn.sigstore.dev.kyverno.svc.cluster.local. udp 80 false
+      6 [INFO] "AAAA IN tuf-repo-cdn.sigstore.dev.cluster.local. udp 68 false
+      6 [INFO] "AAAA IN tuf-repo-cdn.sigstore.dev. udp 54 false
+      6 [INFO] "A IN tuf-repo-cdn.sigstore.dev.svc.cluster.local. udp 72 false
+      6 [INFO] "A IN tuf-repo-cdn.sigstore.dev.kyverno.svc.cluster.local. udp 80 false
+2026-10-09T23:35:26Z ERR github.com/kyverno/kyverno/pkg/image/verifiers/ivpol/cosign/verifier.go:149 > image verification failed error="failed to build cosign verification opts: failed to initialize TUF client (mirror=\"https://tuf-repo-cdn.sigstore.dev\"): updating local metadata and targets: error
+2026-10-09T23:35:26Z ERR github.com/kyverno/kyverno/pkg/image/verifiers/ivpol/cosign/verifier.go:149 > image verification failed error="failed to build cosign verification opts: failed to initialize TUF client (mirror=\"https://tuf-repo-cdn.sigstore.dev\"): updating local metadata and targets: error
+2026-10-09T23:35:26Z ERR github.com/kyverno/kyverno/pkg/image/verifiers/ivpol/cosign/verifier.go:82 > image verification failed error="failed to build cosign verification opts: failed to initialize TUF client (mirror=\"https://tuf-repo-cdn.sigstore.dev\"): updating local metadata and targets: error 
+configmap/coredns patched
+23:35:43 unblocked
+23:36:43 4-fresh-pod-unblocked-golden r1-t2-golden-ghcr.yaml: admitted 14.91
+23:36:43 cleanup
+configmap/coredns patched (no change)

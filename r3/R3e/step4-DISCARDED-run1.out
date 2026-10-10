@@ -1,0 +1,17 @@
+23:07:52 A warm-cold r1-t2-golden-ghcr.yaml: admitted 15.10
+23:08:05 A warm-again r1-t2-golden-ghcr.yaml: admitted 12.80
+configmap/coredns configured
+23:11:37 TUF blocked in CoreDNS
+23:11:42 A blocked-check-new-image r1-t15-rekor-v2-ghcr.yaml: denied-by-policy 5.41
+23:11:53 A blocked-golden r1-t2-golden-ghcr.yaml: denied-by-policy 10.62
+23:12:04 A blocked-golden-2 r1-t2-golden-ghcr.yaml: denied-by-policy 10.97
+configmap/coredns unchanged
+23:15:36 TUF unblocked
+23:15:41 A unblocked-golden r1-t2-golden-ghcr.yaml: denied-by-policy 5.39
+imagevalidatingpolicy.policies.kyverno.io "r3c-split-sbom" deleted
+imagevalidatingpolicy.policies.kyverno.io "r3c-split-vuln" deleted
+23:17:00 B warm-cold r1-t2-golden-ghcr.yaml: denied-by-policy 5.38
+23:17:05 B warm-again r1-t2-golden-ghcr.yaml: denied-by-policy 5.32
+configmap/coredns unchanged
+23:19:51 cleanup
+configmap/coredns unchanged

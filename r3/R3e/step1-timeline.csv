@@ -1,0 +1,122 @@
+label,utc_time,seconds,outcome,detail
+EVENT,22:22:30,0,-,drain-first-node start (probes running)
+STATE,22:22:33,0,webhook-present,9hnhx:1/1:Running tlksl:1/1:Running 
+STATE,22:22:35,0,webhook-present,9hnhx:1/1:Running tlksl:1/1:Running 
+drain-first-node-p1,22:22:30,6.77,denied-by-policy,"Error from server: error when creating  tests/r1-t3-unsigned-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied th"
+STATE,22:22:38,0,webhook-present,9hnhx:1/1:Running tlksl:1/1:Running 
+drain-first-node-p2,22:22:30,8.81,denied-by-policy,"Error from server: error when creating  tests/r1-t3-unsigned-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sbom  denied t"
+STATE,22:22:40,0,webhook-present,9hnhx:1/1:Running tlksl:1/1:Running 
+STATE,22:22:43,0,webhook-present,9hnhx:1/1:Running tlksl:1/1:Running 
+drain-first-node-p1,22:22:37,6.14,denied-by-policy,"Error from server: error when creating  tests/r1-t3-unsigned-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied th"
+EVENT,22:22:44,0,-,drain-first-node ACTION
+drain-first-node-p2,22:22:39,6.22,denied-by-policy,"Error from server: error when creating  tests/r1-t3-unsigned-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sbom  denied t"
+STATE,22:22:46,0,webhook-present,9hnhx:1/1:Terminating kckqv:0/1:Pending tlksl:1/1:Running 
+STATE,22:22:49,0,webhook-present,kckqv:0/1:Pending tlksl:1/1:Running 
+EVENT,22:22:50,0,-,drain-first-node action returned
+drain-first-node-p1,22:22:43,8.47,denied-by-policy,"Error from server: error when creating  tests/r1-t3-unsigned-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-vuln  denied t"
+STATE,22:22:52,0,webhook-present,kckqv:0/1:Pending tlksl:1/1:Running 
+STATE,22:22:55,0,webhook-present,kckqv:0/1:Pending tlksl:1/1:Running 
+drain-first-node-p2,22:22:46,9.68,denied-by-policy,"Error from server: error when creating  tests/r1-t3-unsigned-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied th"
+STATE,22:22:57,0,webhook-present,kckqv:0/1:Pending tlksl:1/1:Running 
+drain-first-node-p1,22:22:52,8.04,denied-by-policy,"Error from server: error when creating  tests/r1-t3-unsigned-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied th"
+STATE,22:23:00,0,webhook-present,kckqv:0/1:Pending tlksl:1/1:Running 
+STATE,22:23:03,0,webhook-present,kckqv:0/1:Pending tlksl:1/1:Running 
+drain-first-node-p2,22:22:55,8.27,denied-by-policy,"Error from server: error when creating  tests/r1-t3-unsigned-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-vuln  denied t"
+STATE,22:23:06,0,webhook-present,kckqv:0/1:Pending tlksl:1/1:Running 
+drain-first-node-p1,22:23:00,6.85,denied-by-policy,"Error from server: error when creating  tests/r1-t3-unsigned-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sbom  denied t"
+STATE,22:23:08,0,webhook-present,kckqv:0/1:Pending tlksl:1/1:Running 
+drain-first-node-p2,22:23:04,6.67,denied-by-policy,"Error from server: error when creating  tests/r1-t3-unsigned-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied th"
+STATE,22:23:11,0,webhook-present,kckqv:0/1:Pending tlksl:1/1:Running 
+STATE,22:23:13,0,webhook-present,kckqv:0/1:Pending tlksl:1/1:Running 
+drain-first-node-p1,22:23:07,7.18,denied-by-policy,"Error from server: error when creating  tests/r1-t3-unsigned-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sbom  denied t"
+STATE,22:23:16,0,webhook-present,kckqv:0/1:Pending tlksl:1/1:Running 
+drain-first-node-p2,22:23:10,6.84,denied-by-policy,"Error from server: error when creating  tests/r1-t3-unsigned-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sbom  denied t"
+STATE,22:23:18,0,webhook-present,kckqv:0/1:Pending tlksl:1/1:Running 
+drain-first-node-p1,22:23:14,5.93,denied-by-policy,"Error from server: error when creating  tests/r1-t3-unsigned-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sbom  denied t"
+STATE,22:23:21,0,webhook-present,kckqv:0/1:Pending tlksl:1/1:Running 
+drain-first-node-p2,22:23:17,6.01,denied-by-policy,"Error from server: error when creating  tests/r1-t3-unsigned-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied th"
+STATE,22:23:24,0,webhook-present,kckqv:0/1:Pending tlksl:1/1:Running 
+STATE,22:23:27,0,webhook-present,kckqv:0/1:Pending tlksl:1/1:Running 
+drain-first-node-p1,22:23:20,7.13,denied-by-policy,"Error from server: error when creating  tests/r1-t3-unsigned-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-vuln  denied t"
+STATE,22:23:29,0,webhook-present,kckqv:0/1:Pending tlksl:1/1:Running 
+drain-first-node-p2,22:23:23,8.46,denied-by-policy,"Error from server: error when creating  tests/r1-t3-unsigned-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-vuln  denied t"
+STATE,22:23:32,0,webhook-present,kckqv:0/1:Pending tlksl:1/1:Running 
+STATE,22:23:35,0,webhook-present,kckqv:0/1:Pending tlksl:1/1:Running 
+drain-first-node-p1,22:23:27,8.60,denied-by-policy,"Error from server: error when creating  tests/r1-t3-unsigned-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied th"
+STATE,22:23:37,0,webhook-present,kckqv:0/1:Pending tlksl:1/1:Running 
+STATE,22:23:40,0,webhook-present,kckqv:0/1:Pending tlksl:1/1:Running 
+drain-first-node-p2,22:23:32,8.53,denied-by-policy,"Error from server: error when creating  tests/r1-t3-unsigned-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-vuln  denied t"
+STATE,22:23:42,0,webhook-present,kckqv:0/1:Pending tlksl:1/1:Running 
+drain-first-node-p1,22:23:36,8.98,denied-by-policy,"Error from server: error when creating  tests/r1-t3-unsigned-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sbom  denied t"
+STATE,22:23:45,0,webhook-present,kckqv:0/1:Pending tlksl:1/1:Running 
+STATE,22:23:48,0,webhook-present,kckqv:0/1:Pending tlksl:1/1:Running 
+drain-first-node-p2,22:23:40,8.53,denied-by-policy,"Error from server: error when creating  tests/r1-t3-unsigned-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied th"
+STATE,22:23:50,0,webhook-present,kckqv:0/1:Pending tlksl:1/1:Running 
+drain-first-node-p1,22:23:45,7.23,denied-by-policy,"Error from server: error when creating  tests/r1-t3-unsigned-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-vuln  denied t"
+STATE,22:23:53,0,webhook-present,kckqv:0/1:Pending tlksl:1/1:Running 
+drain-first-node-p2,22:23:49,6.66,denied-by-policy,"Error from server: error when creating  tests/r1-t3-unsigned-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied th"
+STATE,22:23:55,0,webhook-present,kckqv:0/1:Pending tlksl:1/1:Running 
+STATE,22:23:58,0,webhook-present,kckqv:0/1:Pending tlksl:1/1:Running 
+drain-first-node-p1,22:23:52,6.47,denied-by-policy,"Error from server: error when creating  tests/r1-t3-unsigned-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sbom  denied t"
+drain-first-node-p2,22:23:56,6.11,denied-by-policy,"Error from server: error when creating  tests/r1-t3-unsigned-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sbom  denied t"
+drain-first-node-p1,22:23:59,6.18,denied-by-policy,"Error from server: error when creating  tests/r1-t3-unsigned-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied th"
+EVENT,22:24:05,0,-,drain-first-node end
+EVENT,22:24:05,0,-,drain-second-node start (probes running)
+STATE,22:24:08,0,webhook-present,kckqv:0/1:Pending tlksl:1/1:Running 
+STATE,22:24:10,0,webhook-present,kckqv:0/1:Pending tlksl:1/1:Running 
+drain-second-node-p2,22:24:05,5.65,denied-by-policy,"Error from server: error when creating  tests/r1-t3-unsigned-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-vuln  denied t"
+STATE,22:24:13,0,webhook-present,kckqv:0/1:Pending tlksl:1/1:Running 
+drain-second-node-p1,22:24:05,9.09,denied-by-policy,"Error from server: error when creating  tests/r1-t3-unsigned-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-vuln  denied t"
+STATE,22:24:15,0,webhook-present,kckqv:0/1:Pending tlksl:1/1:Running 
+drain-second-node-p2,22:24:11,6.23,denied-by-policy,"Error from server: error when creating  tests/r1-t3-unsigned-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sbom  denied t"
+STATE,22:24:18,0,webhook-present,kckqv:0/1:Pending tlksl:1/1:Running 
+EVENT,22:24:19,0,-,drain-second-node ACTION
+drain-second-node-p1,22:24:15,6.04,denied-by-policy,"Error from server: error when creating  tests/r1-t3-unsigned-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-vuln  denied t"
+STATE,22:24:20,0,webhook-present,kckqv:0/1:Pending tlksl:1/1:Running 
+STATE,22:24:25,0,webhook-present,kckqv:0/1:Pending tlksl:1/1:Running 
+STATE,22:24:27,0,webhook-present,kckqv:0/1:Pending tlksl:1/1:Running 
+drain-second-node-p2,22:24:17,10.22,denied-by-policy,"Error from server: error when creating  tests/r1-t3-unsigned-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied th"
+STATE,22:24:30,0,webhook-present,kckqv:0/1:Pending tlksl:1/1:Running 
+drain-second-node-p1,22:24:21,9.81,denied-by-policy,"Error from server: error when creating  tests/r1-t3-unsigned-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied th"
+STATE,22:24:32,0,webhook-present,kckqv:0/1:Pending tlksl:1/1:Running 
+drain-second-node-p2,22:24:28,5.80,denied-by-policy,"Error from server: error when creating  tests/r1-t3-unsigned-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied th"
+STATE,22:24:35,0,webhook-present,kckqv:0/1:Pending tlksl:1/1:Running 
+drain-second-node-p1,22:24:31,6.15,denied-by-policy,"Error from server: error when creating  tests/r1-t3-unsigned-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied th"
+STATE,22:24:37,0,webhook-present,kckqv:0/1:Pending tlksl:1/1:Running 
+drain-second-node-p2,22:24:33,6.36,denied-by-policy,"Error from server: error when creating  tests/r1-t3-unsigned-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sbom  denied t"
+STATE,22:24:40,0,webhook-present,kckqv:0/1:Pending tlksl:1/1:Running 
+STATE,22:24:42,0,webhook-present,kckqv:0/1:Pending tlksl:1/1:Running 
+drain-second-node-p1,22:24:37,6.23,denied-by-policy,"Error from server: error when creating  tests/r1-t3-unsigned-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sbom  denied t"
+STATE,22:24:45,0,webhook-present,kckqv:0/1:Pending tlksl:1/1:Running 
+drain-second-node-p2,22:24:40,6.07,denied-by-policy,"Error from server: error when creating  tests/r1-t3-unsigned-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-vuln  denied t"
+STATE,22:24:47,0,webhook-present,kckqv:0/1:Pending tlksl:1/1:Running 
+drain-second-node-p1,22:24:43,6.25,denied-by-policy,"Error from server: error when creating  tests/r1-t3-unsigned-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied th"
+STATE,22:24:50,0,webhook-present,kckqv:0/1:Pending tlksl:1/1:Running 
+STATE,22:24:53,0,webhook-present,kckqv:0/1:Pending tlksl:1/1:Running 
+drain-second-node-p2,22:24:46,7.36,denied-by-policy,"Error from server: error when creating  tests/r1-t3-unsigned-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied th"
+STATE,22:24:55,0,webhook-present,kckqv:0/1:Pending tlksl:1/1:Running 
+drain-second-node-p1,22:24:49,8.92,denied-by-policy,"Error from server: error when creating  tests/r1-t3-unsigned-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied th"
+STATE,22:24:59,0,webhook-present,kckqv:0/1:Pending tlksl:1/1:Running 
+STATE,22:25:01,0,webhook-present,kckqv:0/1:Pending tlksl:1/1:Running 
+drain-second-node-p2,22:24:53,8.84,denied-by-policy,"Error from server: error when creating  tests/r1-t3-unsigned-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sbom  denied t"
+STATE,22:25:04,0,webhook-present,kckqv:0/1:Pending tlksl:1/1:Running 
+drain-second-node-p1,22:24:58,6.83,denied-by-policy,"Error from server: error when creating  tests/r1-t3-unsigned-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied th"
+EVENT,22:25:06,0,-,drain-second-node action returned
+STATE,22:25:06,0,webhook-present,kckqv:0/1:Pending tlksl:1/1:Running 
+drain-second-node-p2,22:25:02,5.83,denied-by-policy,"Error from server: error when creating  tests/r1-t3-unsigned-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sbom  denied t"
+STATE,22:25:09,0,webhook-present,kckqv:0/1:Pending tlksl:1/1:Running 
+drain-second-node-p1,22:25:05,6.23,denied-by-policy,"Error from server: error when creating  tests/r1-t3-unsigned-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied th"
+STATE,22:25:11,0,webhook-present,kckqv:0/1:Pending tlksl:1/1:Running 
+STATE,22:25:14,0,webhook-present,kckqv:0/1:Pending tlksl:1/1:Running 
+drain-second-node-p2,22:25:08,6.49,denied-by-policy,"Error from server: error when creating  tests/r1-t3-unsigned-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-vuln  denied t"
+STATE,22:25:16,0,webhook-present,kckqv:0/1:Pending tlksl:1/1:Running 
+drain-second-node-p1,22:25:11,6.09,denied-by-policy,"Error from server: error when creating  tests/r1-t3-unsigned-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-vuln  denied t"
+STATE,22:25:19,0,webhook-present,kckqv:0/1:Pending tlksl:1/1:Running 
+drain-second-node-p2,22:25:15,5.69,denied-by-policy,"Error from server: error when creating  tests/r1-t3-unsigned-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied th"
+STATE,22:25:21,0,webhook-present,kckqv:0/1:Pending tlksl:1/1:Running 
+drain-second-node-p1,22:25:18,5.80,denied-by-policy,"Error from server: error when creating  tests/r1-t3-unsigned-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied th"
+STATE,22:25:24,0,webhook-present,kckqv:0/1:Pending tlksl:1/1:Running 
+drain-second-node-p2,22:25:20,5.79,denied-by-policy,"Error from server: error when creating  tests/r1-t3-unsigned-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sig  denied th"
+drain-second-node-p1,22:25:23,5.78,denied-by-policy,"Error from server: error when creating  tests/r1-t3-unsigned-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3c-split-sbom  denied t"
+EVENT,22:25:29,0,-,drain-second-node end
+EVENT,22:25:30,0,-,uncordon both

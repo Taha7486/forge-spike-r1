@@ -1,0 +1,4 @@
+2026-10-09T23:28:42Z TRC github.com/kyverno/kyverno/cmd/internal/flag.go:335 > logger=setup/flag tufRoot= v=2
+2026-10-09T23:28:42Z TRC github.com/kyverno/kyverno/cmd/internal/flag.go:335 > logger=setup/flag tufRootRaw= v=2
+2026-10-09T23:28:42Z TRC github.com/kyverno/kyverno/cmd/internal/flag.go:335 > logger=setup/flag tufRoot= v=2
+2026-10-09T23:28:42Z TRC github.com/kyverno/kyverno/cmd/internal/flag.go:335 > logger=setup/flag tufRootRaw= v=2

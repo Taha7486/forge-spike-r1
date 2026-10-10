@@ -1,0 +1,11 @@
+step,image,seconds,outcome,detail
+A-golden,r1-t2-golden-ghcr,12.24,admitted,"pod/t2-golden-ghcr created (server dry run) "
+A-golden-again,r1-t2-golden-ghcr,10.69,admitted,"pod/t2-golden-ghcr created (server dry run) "
+A-unsigned,r1-t3-unsigned-ghcr,3.96,denied-by-policy,"Error from server: error when creating  tests/r1-t3-unsigned-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3e-mirror-sbom  denied "
+C-golden,r1-t2-golden-ghcr,1.78,denied-by-policy,"Error from server: error when creating  tests/r1-t2-golden-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3e-mirror-vuln  denied th"
+C-NEWimage,r1-t15-rekor-v2-ghcr,1.76,denied-by-policy,"Error from server: error when creating  tests/r1-t15-rekor-v2-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3e-mirror-sig  denied "
+C-unsigned,r1-t3-unsigned-ghcr,1.54,denied-by-policy,"Error from server: error when creating  tests/r1-t3-unsigned-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3e-mirror-vuln  denied "
+B-golden,r1-t2-golden-ghcr,2.31,denied-by-policy,"Error from server: error when creating  tests/r1-t2-golden-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3e-mirror-sbom  denied th"
+B-unsigned,r1-t3-unsigned-ghcr,1.76,denied-by-policy,"Error from server: error when creating  tests/r1-t3-unsigned-ghcr.yaml : admission webhook  ivpol.validate.kyverno.svc-fail-finegrained-r3e-mirror-sig  denied t"
+D-golden-same-pods,r1-t2-golden-ghcr,11.01,admitted,"pod/t2-golden-ghcr created (server dry run) "
+D-golden-fresh-pods,r1-t2-golden-ghcr,12.15,admitted,"pod/t2-golden-ghcr created (server dry run) "

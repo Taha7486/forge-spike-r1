@@ -1,0 +1,5 @@
+mode,N,first_ready_s,all_ready_s,ready_at_end,failedcreate_events,reviews_podA,reviews_podB,peak_mem_A,peak_mem_B
+cold,10,86.4,90.6,10,0,13,23,73.23,97.55
+cold,20,97.2,105.6,20,0,36,30,95.65,90.9
+warm,10,71.6,79.4,10,0,15,24,78.05,91.12
+warm,20,12.9,104.5,20,0,36,36,105,86.01
