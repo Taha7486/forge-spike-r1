@@ -22,6 +22,8 @@ The lookalike signer for T7 lives in the sibling repo `forge-spike-r1-lookalike`
 
 Exact pins and digests are in ADR-001. In short: cosign v3.1.3, Kyverno app v1.19.1 (chart 3.9.1), kind v0.33.0 on `kindest/node:v1.35.8` (digest-pinned), helm v3.22.0 (3.x on purpose, to keep chart variables down), oras v1.3.4, Syft v1.51.1, Trivy v0.74.0. Actions are pinned by commit SHA, not tag.
 
+Phase 1 tools (installed 2026-10-11 in `~/.local/bin`, downloads checked against the publisher's signature): Terraform v1.16.5 (official HashiCorp binary; the unpinned, self-updating snap was removed), AWS CLI v2.37.12 (installed under `~/.local/aws-cli`), tflint v0.64.0 (checksums file verified with cosign keyless; the AWS rule set plugin is added later in the Terraform config).
+
 ## Notes
 
 - `gh` is intentionally not installed: the repos were created in the web UI and no token lives on the laptop. Workflows are started from the Actions page.
