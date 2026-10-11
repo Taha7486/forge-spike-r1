@@ -4,9 +4,9 @@ Date: 2026-10-02. Environment: kind v0.33.0 (node kindest/node v1.35.8), Kyverno
 
 Leg A = GHCR (tag-schema fallback). Leg B = Docker Hub (native Referrers API).
 
-## Proposed outcome
+## Outcome
 
-Green. All of T1–T16 now have results on both legs where the plan asks for it; the former deviations are closed (struck through below). T1–T13 pass with cosign 3.1.3 defaults and no fallback flags; T14–T16 are recorded. The deviations are not failures but they limit what is proven, so ADR-001 should repeat them.
+Green. All of T1–T16 now have results on both legs where the plan asks for it; the former deviations are closed (struck through below). T1–T13 pass with cosign 3.1.3 defaults and no fallback flags; T14–T16 are recorded. The deviations were not failures but limited what was proven; all are closed below.
 
 Deviations from the plan's "primary leg is B":
 

@@ -2,6 +2,8 @@
 
 Status: Accepted (2026-10-06) by the project owner; proposed 2026-10-02. Evidence: [RESULTS.md](RESULTS.md).
 
+Later changes (2026-10-11): [ADR-002](ADR-002-failure-policy.md) amends decision 3 (one policy becomes three) and sets `failurePolicy: Fail` and `timeoutSeconds: 30`. The target registry is now ECR on AWS (ADR-003, in the private docs repo), so every "ACR" below reads "ECR", which R2 tests. The text below is left as accepted.
+
 ## Context
 
 Forge signs images and attests an SBOM and a vulnerability scan in CI, and Kyverno must admit only what the pipeline produced. Risk R1 asked whether cosign 3.x's default bundle format works with Kyverno 1.19.1's `ImageValidatingPolicy`, on a registry with the native Referrers API and on one with only the tag-schema fallback.
@@ -13,8 +15,8 @@ Forge signs images and attests an SBOM and a vulnerability scan in CI, and Kyver
 3. **Verification: one `ImageValidatingPolicy` plus a separate allowlist.**
    - Keyless attestor with an exact `subject` and `issuer`; no regex.
    - Four validations, each with a `messageExpression` that names the failing image and the cause: signature, CycloneDX SBOM (`extractPayload(...).predicate.bomFormat == 'CycloneDX'`), vulnerability attestation verified, and vulnerability scan fresh within `duration('168h')` (`extractPayload(...).predicate.metadata.scanFinishedOn`). Verified and fresh are separate validations so a deny says "stale" or "missing or unverified", never both (T12).
-   - Registry credentials: `credentials.secrets: [dockerhub-ro]`, a read-only Docker Hub token in a `dockerconfigjson` Secret in the `kyverno` namespace (avoids the anonymous pull limit; same mechanism R2 needs for ACR). Whether the credential is actually used was not separately proven (no wrong-password control).
-- `failurePolicy: Fail`, `timeoutSeconds: 30` for the spike; the final values belong to ADR-002 (R3).
+   - Registry credentials: `credentials.secrets: [dockerhub-ro]`, a read-only Docker Hub token in a `dockerconfigjson` Secret in the `kyverno` namespace (avoids the anonymous pull limit; a stored token, unlike ECR, where Kyverno will use an IAM role). Whether the credential is actually used was not separately proven (no wrong-password control).
+- `failurePolicy: Fail`, `timeoutSeconds: 30` for the spike; the final values were set in ADR-002 (R3).
    - A separate `ValidatingPolicy` denies registries outside the allowlist, because an IVP skips images that its `matchImageReferences` does not match (T4).
 4. **Keep the SBOM and vuln checks as the gate.** In the new bundle format an attestation satisfies `verifyImageSignatures` (T16), so "signed" does not prove the full pipeline ran.
 
@@ -41,7 +43,7 @@ Forge signs images and attests an SBOM and a vulnerability scan in CI, and Kyver
 
 - GHCR: tag-schema fallback (referrers endpoint returns 404). Works with cosign 3.1.3 and Kyverno 1.19.1. Each descriptor in the fallback index carries `artifactType: application/vnd.dev.sigstore.bundle.v0.3+json` (read 2026-10-05), so the cosign #4641 gap does not occur with 3.1.3.
 - Docker Hub: native Referrers API (200).
-- Consequence for R2: GHCR is a viable fallback registry for this bundle format; ACR is expected to use the native path, to be confirmed in R2.
+- Consequence for R2: GHCR is a viable fallback registry for this bundle format; ECR documents native referrers support, to be confirmed in R2.
 
 ## Transparency log observed
 
@@ -51,7 +53,7 @@ Forge signs images and attests an SBOM and a vulnerability scan in CI, and Kyver
 
 ## Consequences and debts
 
-- **Latency is tight.** Admission takes 18–26 s against a 30 s maximum webhook timeout, because cosign makes many sequential round trips and the policy runs three verifications. Mitigations to decide in R3b and ADR-002: dropping `verifyImageSignatures` (redundant given decision 4), never re-signing an existing digest, and re-measuring against in-region ACR. This is the main risk carried into Phase 1.
+- **Latency is tight.** Admission takes 18–26 s against a 30 s maximum webhook timeout, because cosign makes many sequential round trips and the policy runs three verifications. Mitigations to decide in R3b and ADR-002: dropping `verifyImageSignatures` (redundant given decision 4), never re-signing an existing digest, and re-measuring against in-region ECR. This is the main risk carried into Phase 1.
 - **Deny messages must stay dynamic.** A static message cannot tell a missing signature from a wrong identity or an infrastructure error; the controller log is the only place the real cause shows for some failures.
 - **Identity patterns:** keep exact subjects; if a regex is ever needed, anchor it (`^…$`) and include the slash after the repo name (T7).
 - **Freshness:** the 168h window makes long-lived images deniable. Freshness is renewed by rebuilding the image (new digest, fresh attestations), never by re-attesting an existing digest; re-attesting piles bundles onto the same digest and slows every admission.

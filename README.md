@@ -2,7 +2,7 @@
 
 Phase 0 spike for Forge, risk R1: does cosign 3.x's default bundle format work with Kyverno 1.19.1's `ImageValidatingPolicy`, on a registry with the native Referrers API (Docker Hub) and on one with the tag-schema fallback (GHCR)?
 
-**Outcome: Green.** Decision in [ADR-001-signing-format.md](ADR-001-signing-format.md) (Accepted), evidence per test in [RESULTS.md](RESULTS.md). R3 (Sigstore egress, latency, failurePolicy) reuses this repo's images and cluster.
+**Outcome: Green.** Decision in [ADR-001-signing-format.md](ADR-001-signing-format.md) (Accepted), evidence per test in [RESULTS.md](RESULTS.md). R3 (Sigstore egress, latency, failurePolicy) reused this repo's images; it is closed, with the decision in [ADR-002-failure-policy.md](ADR-002-failure-policy.md) (Accepted) and the evidence in `r3/`.
 
 ## Layout
 
@@ -15,6 +15,10 @@ Phase 0 spike for Forge, risk R1: does cosign 3.x's default bundle format work w
 | `policies/r1-registry-allowlist.yaml` | Separate `ValidatingPolicy` (an IVP skips images it does not match) |
 | `signing-config/` | Pinned cosign signing configs: `rekor-v1-only.json` (used) and `rekor-v2-only.json` (T15) |
 | `tests/` | One Pod manifest per test and leg (`r1-t<N>-…-hub|ghcr.yaml`) |
+| `Dockerfile` | The thin image the variants are built from (pinned podinfo plus `LABEL variant`) |
+| `ADR-001-signing-format.md`, `ADR-002-failure-policy.md` | The two decisions of Phase 0 |
+| `RESULTS.md`, `PARKED.md` | R1 evidence per test; ideas parked by the R5 tripwires |
+| `r3/` | R3 work: results (`R3a` to `R3e`), the pre-study, the extra policies in `policies/r3*`, raw data, and `tools/` (latency loop, failure tests, cluster scripts) |
 
 The lookalike signer for T7 lives in the sibling repo `forge-spike-r1-lookalike`.
 
@@ -22,7 +26,7 @@ The lookalike signer for T7 lives in the sibling repo `forge-spike-r1-lookalike`
 
 Exact pins and digests are in ADR-001. In short: cosign v3.1.3, Kyverno app v1.19.1 (chart 3.9.1), kind v0.33.0 on `kindest/node:v1.35.8` (digest-pinned), helm v3.22.0 (3.x on purpose, to keep chart variables down), oras v1.3.4, Syft v1.51.1, Trivy v0.74.0. Actions are pinned by commit SHA, not tag.
 
-Phase 1 tools (installed 2026-10-11 in `~/.local/bin`, downloads checked against the publisher's signature): Terraform v1.16.5 (official HashiCorp binary; the unpinned, self-updating snap was removed), AWS CLI v2.37.12 (installed under `~/.local/aws-cli`), tflint v0.64.0 (checksums file verified with cosign keyless; the AWS rule set plugin is added later in the Terraform config).
+Phase 1 tools (installed 2026-10-11 in `~/.local/bin`, downloads checked against the publisher's signature): Terraform v1.16.5 (official HashiCorp binary; the unpinned, self-updating snap was removed), AWS CLI v2.37.12 (installed under `~/.local/aws-cli`), tflint v0.64.0 (checksums file verified with cosign keyless; its AWS ruleset plugin 0.49.0 is pinned in `.tflint.hcl` of the separate public repo `forge-infra`, where the Terraform lives).
 
 ## Notes
 
@@ -39,10 +43,11 @@ Phase 1 tools (installed 2026-10-11 in `~/.local/bin`, downloads checked against
 
 ## Environment traps (this laptop, kind on a spinning disk)
 
-- After a node restart, reapply the IPv6 workaround: `docker exec forge-spike-control-plane sysctl -w net.ipv6.conf.eth0.disable_ipv6=1 net.ipv6.conf.default.disable_ipv6=1`. Never set `.all`: it breaks the API server's own webhook calls.
+- The snap-installed `kubectl` prints nothing in a non-interactive shell unless its output is piped: append `| cat` to every kubectl command, and never redirect kubectl output straight to a file (an empty CoreDNS config once broke cluster DNS that way).
 - The first admissions after boot or after a policy change often hit the 30 s webhook timeout; retry.
 - Home-router DNS sometimes drops the A record for `tuf-repo-cdn.sigstore.dev`; CoreDNS caches the bad answer for 30 s. Wait and retry.
-- The cluster does not auto-start any more (`docker update --restart=no`). Start it on a quiet machine and expect minutes.
+- Kind clusters do not auto-start (`docker update --restart=no`). Start them on a quiet machine (I/O pressure avg10 well under 8: `awk '/^some/' /proc/pressure/io`) and expect minutes.
+- The R3e cluster `forge-r3e` (kind, 1 control plane + 2 workers, context `kind-forge-r3e`, Kyverno 1.19.1 with the ADR-002 values) is STOPPED. Resume: `docker start forge-r3e-control-plane forge-r3e-worker forge-r3e-worker2`, wait for Ready, then `kubectl --context kind-forge-r3e -n kyverno get pods | cat`. Stop: `docker stop -t 180` on the three nodes (exit 130 is normal). Rebuild: `r3/tools/r3e-up.sh`. `r3/tools/cluster-up.sh` and `cluster-down.sh` still name the old, deleted `forge-spike` cluster.
 
 ## Runbook: confusing refusals (ADR-002, decision 11 and Addendum 1)
 

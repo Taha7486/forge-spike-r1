@@ -8,7 +8,7 @@ Risk R3 asked what the admission gate depends on, how long it takes, and what ha
 
 All numbers below were measured on a laptop (spinning disk, 4 cores, one kind node, one Kyverno replica, home internet, one image). They show the shape of the behaviour, not the values on a cloud cluster. The target cloud is not settled, so this ADR says nothing that depends on Azure or AWS; cloud values are re-measured in Phase 1 (see the fallback rule).
 
-Note (2026-10-11): the target cloud was settled afterwards as AWS (EKS and ECR). Nothing in this ADR changes; the re-measurement now happens on EKS, and the host-name egress allowlist cannot be enforced by AWS security groups (they filter by IP and port).
+Note (2026-10-11): the target cloud was settled afterwards as AWS (EKS and ECR). Nothing in this ADR changes; the re-measurement now happens on EKS, and the host-name egress allowlist cannot be enforced by AWS security groups (they filter by IP and port). R3e has also been run since the Consequences below were written (Addendum 1 records it): the "Untested (R3e)" bullet is superseded, except spreading on real nodes and load on EKS, which wait for the cloud cluster.
 
 What was found:
 - At admission only three hosts are contacted: Sigstore's TUF service, the registry and the registry's blob CDN (`ghcr.io` and `pkg-containers.githubusercontent.com` in the spike). Rekor, Fulcio, the timestamp authority and the CT log are not (R3a).
