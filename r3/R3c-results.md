@@ -1,6 +1,6 @@
 # R3c results (started 2026-10-08)
 
-> **Short version first:** the decisions taken from this evidence are in `R3_Decisions.md` (Forge folder, one page, plain language). This file is the long technical appendix with the raw evidence; read it only to check a number.
+> **Short version first:** the decisions taken from this evidence are in `ADR-002-failure-policy.md` (this repo) and, in one page of plain language, in `R3_Decisions.md` (Forge docs folder, `docs/archive/r3/`). This file is the long technical appendix with the raw evidence; read it only to check a number.
 
 R3c = failure modes, latency of the split design, observability and load for image verification at admission. Work list order: 1) cause of the transient TUF-init denials, 2) split-policy latency, 3) failure modes under Fail and Ignore, 4) denial observability, 5) load test, 6) write-up. Each item below has the finding first, then a plain explanation. Context: `R3-prestudy.md`, `R3b-results.md`.
 
