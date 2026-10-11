@@ -86,7 +86,7 @@ The public-good default signing config was still Rekor v1 only on 2026-10-02. Fo
 4. Do not re-sign or re-attest a digest that already has bundles; each extra bundle adds round trips to every admission (golden has 5 bundles after the T-series re-runs).
 5. `duration('7d')` is invalid; write hours.
 6. The allowlist matches raw image strings, so short names such as `nginx:1.27` can bypass a `startsWith` on a full prefix; fine under deny-by-default, revisit in Phase 2.
-7. Webhook timeout headroom is nil: 30 s is the Kubernetes maximum and admission takes 18–26 s here. Re-measure on in-region ACR.
+7. Webhook timeout headroom is nil: 30 s is the Kubernetes maximum and admission takes 18–26 s here. Re-measure on the real cloud registry (ECR on AWS, decided 2026-10-11).
 8. Freshness is renewed by rebuilding the image (new digest, fresh attestations), never by re-attesting an existing digest (ADR-001). The spike images carry vuln scans from 2026-10-02 and leave the 168h window around 2026-10-09; R3 uses a longer window instead of re-signing.
 9. Policy authoring traps: CEL attestor names cannot contain hyphens (`forge-ci` parses as `forge` minus `ci`; use `forgeci`). After every `kubectl apply` confirm `kubectl get ivpol` shows Ready and that a Kyverno log line appears, because a failed apply can hide and a dry-run then "admits" with no policy present. A pass also needs a negative control.
 10. Registry credentials: Kyverno reads them from `credentials.secrets` (a `dockerconfigjson` Secret in the `kyverno` namespace). Proven used by a wrong-password control (401 from `auth.docker.io`). Use a separate read-only token for it, not the CI token.

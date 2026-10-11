@@ -8,6 +8,8 @@ Risk R3 asked what the admission gate depends on, how long it takes, and what ha
 
 All numbers below were measured on a laptop (spinning disk, 4 cores, one kind node, one Kyverno replica, home internet, one image). They show the shape of the behaviour, not the values on a cloud cluster. The target cloud is not settled, so this ADR says nothing that depends on Azure or AWS; cloud values are re-measured in Phase 1 (see the fallback rule).
 
+Note (2026-10-11): the target cloud was settled afterwards as AWS (EKS and ECR). Nothing in this ADR changes; the re-measurement now happens on EKS, and the host-name egress allowlist cannot be enforced by AWS security groups (they filter by IP and port).
+
 What was found:
 - At admission only three hosts are contacted: Sigstore's TUF service, the registry and the registry's blob CDN (`ghcr.io` and `pkg-containers.githubusercontent.com` in the spike). Rekor, Fulcio, the timestamp authority and the CT log are not (R3a).
 - A single policy with all three checks never finished a cold admission inside 30 s (0 of 30). Each check repeats the trust setup and lists the registry's bundles. Three separate policies, each with its own `timeoutSeconds`, run in parallel: cold p50 15.2 s, worst 22.8 s.
@@ -84,7 +86,8 @@ Spreading with `DoNotSchedule` on a cluster with 2 worker nodes **stalls every r
 Also established:
 - The Helm chart creates the PodDisruptionBudget by itself when `replicas > 1` (the "check in Phase 1" in decision 4 is answered). With `minAvailable: 1` the drain of the last Ready replica is refused.
 - The chart's own anti-affinity is only a preference; the hard constraint is ours.
-- With exactly 2 schedulable nodes, a drained or lost node leaves 1 replica until the node returns (the replacement cannot sit next to the survivor). **The real cluster needs at least 3 worker nodes** so a replacement can be scheduled elsewhere. The values used are in `r3/tools/r3e-kyverno-values.yaml`.
+- With exactly 2 schedulable nodes, a drained or lost node leaves 1 replica until the node returns (the replacement cannot sit next to the survivor). The gate keeps working on the one replica (`Fail` still refuses what it cannot check); only the redundancy is lost, and a second failure in that window closes the gate for the time measured in A5. Three worker nodes remove this window, at the price of a third node.
+  **Amended 2026-10-10 (owner's decision, replaces the earlier wording "the real cluster needs at least 3 worker nodes"):** the demo cluster plans for 2 worker nodes and accepts the window above; 3 worker nodes is the recommendation for production. Revisit in Phase 1 with the real node prices (managed node pools usually replace a dead node on their own). The values used are in `r3/tools/r3e-kyverno-values.yaml`.
 
 ### A2. TUF is needed when a replica starts, not on every verification (amends the Context, decision 6 and the section 11 answer)
 

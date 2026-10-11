@@ -71,4 +71,4 @@ Any one of these means stop and write the idea in [PARKED.md](PARKED.md) instead
 - A fifth repository beyond the four in spec §3.2.
 - Notes saying "portal", "frontend for" or "my dashboard".
 
-**Phase 1 task:** when Phase 1 creates the repos, each gets a CI job that fails on the file patterns of the first tripwire. Exclude the vendored upstream path (podinfo and Juice Shop ship HTML, CSS and `package.json`, so the check fails on day one without the exclusion).
+These are written rules checked by hand. A CI check for the first tripwire was considered and dropped on 2026-10-10.
