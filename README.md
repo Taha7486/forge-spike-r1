@@ -17,7 +17,7 @@ Phase 0 spike for Forge, risk R1: does cosign 3.x's default bundle format work w
 | `tests/` | One Pod manifest per test and leg (`r1-t<N>-…-hub|ghcr.yaml`) |
 | `Dockerfile` | The thin image the variants are built from (pinned podinfo plus `LABEL variant`) |
 | `ADR-001-signing-format.md`, `ADR-002-failure-policy.md` | The two decisions of Phase 0 |
-| `RESULTS.md`, `PARKED.md` | R1 evidence per test; ideas parked by the R5 tripwires |
+| `RESULTS.md` | R1 evidence per test |
 | `r3/` | R3 work: results (`R3a` to `R3e`), the pre-study, the extra policies in `policies/r3*`, raw data, and `tools/` (latency loop, failure tests, cluster scripts) |
 
 The lookalike signer for T7 lives in the sibling repo `forge-spike-r1-lookalike`.
@@ -69,7 +69,7 @@ Emergency procedure (tested in R3e): deleting the Kyverno webhook configurations
 
 ## Scope tripwires (R5)
 
-Any one of these means stop and write the idea in [PARKED.md](PARKED.md) instead:
+Any one of these means stop and write the idea in [PARKED.md](https://github.com/Taha7486/forge-gitops/blob/main/PARKED.md) (moved to the `forge-gitops` repo in Phase 1) instead:
 
 - A `package.json`, `.html`, `.css`, `.tsx`, `.jsx`, `.vue` or `.svelte` file outside a vendored upstream directory.
 - `conformity` gaining `http.ListenAndServe`, `html/template` or a `--serve` flag (HTTP client calls, to Rekor for instance, are fine).
